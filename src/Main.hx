@@ -5,6 +5,8 @@ import processing.core.PApplet;
 class Main extends PApplet {
 	static var end = 400 * Math.PI;
 	
+	var logo:PShape;
+	
 	public function setup():Void {
 		size(800, 600);
 		frameRate(60);

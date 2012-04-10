@@ -26,7 +26,7 @@
     <OutputPath>.</OutputPath>
     <CustomCommands>
       <CustomCommands>
-        <Command type="Build" command="haxe build.hxml" workingdir="${SolutionDir}" externalConsole="true" />
+        <Command type="Build" command="haxe build.hxml" workingdir="${SolutionDir}" />
       </CustomCommands>
     </CustomCommands>
   </PropertyGroup>
@@ -87,11 +87,15 @@
     <Compile Include="assets\nme.svg" />
     <Compile Include="src\Main.hx" />
     <Compile Include="hxProcessing.nmml" />
-    <Compile Include="src\ddf\minim\analysis\Minim.hx" />
     <Compile Include="src\processing\core\PApplet.hx" />
+    <Compile Include="src\processing\core\PShape.hx" />
+    <Compile Include="src\ddf\minim\Minim.hx" />
+    <Compile Include="src\ddf\minim\AudioPlayer.hx" />
+    <Compile Include="src\ddf\minim\analysis\FFT.hx" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="src\ddf\" />
     <Folder Include="src\processing\" />
+    <Folder Include="src\ddf\minim\analysis\" />
   </ItemGroup>
 </Project>
