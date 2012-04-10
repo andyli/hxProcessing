@@ -2,7 +2,7 @@ package ddf.minim;
 
 import processing.core.PApplet;
 
-extern class AudioPlayer {
+extern class AudioPlayer extends AudioSource {
 	public function cue(millis:Int):Void;
 	public function isLooping():Bool;
 	public function isPlaying():Bool;

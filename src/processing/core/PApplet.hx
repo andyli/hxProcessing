@@ -9,7 +9,7 @@ extern class PApplet {
 	 * Structure
 	 */
 	
-	public function size(width:Int, height:Int):Void;
+	public function size(width:Int, height:Int, mode:String):Void;
 	
 	/* 
 	 * Environment
@@ -42,6 +42,14 @@ extern class PApplet {
 	public function loadShape(filename:String):Null<PShape>;
 	public function shape(sh:PShape, x:Single, y:Single, width:Single, height:Single):Void;
 	
+	/* 
+	 * Color
+	 */
+	public function background(value1:Int, value2:Int, value3:Int):Void;
+	public function fill(value1:Int, value2:Int, value3:Int, alpha:Int):Void;
+	public function noFill():Void;
+	public function noStroke():Void;
+	public function stroke(value1:Int, value2:Int, value3:Int, alpha:Int):Void;
 	
 	/*
 	 * Math

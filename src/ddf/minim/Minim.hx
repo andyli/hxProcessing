@@ -3,7 +3,7 @@ package ddf.minim;
 import processing.core.PApplet;
 
 extern class Minim {
-	public function new(parent:PApplet);
+	public function new(parent:PApplet):Void;
 	
 	public function loadFile(filename:String, bufferSize:Int):AudioPlayer;
 	public function stop():Void;

@@ -92,6 +92,10 @@
     <Compile Include="src\ddf\minim\Minim.hx" />
     <Compile Include="src\ddf\minim\AudioPlayer.hx" />
     <Compile Include="src\ddf\minim\analysis\FFT.hx" />
+    <Compile Include="src\ddf\minim\AudioSource.hx" />
+    <Compile Include="src\ddf\minim\AudioBuffer.hx" />
+    <Compile Include="src\ddf\minim\analysis\FourierTransform.hx" />
+    <Compile Include="src\processing\core\PConstants.hx" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="src\ddf\" />
