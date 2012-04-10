@@ -19,7 +19,7 @@ class Main extends PApplet {
 		smooth();
 		
 		minim = new Minim(this);
-		jingle = minim.loadFile("jingle.mp3", 2048);
+		jingle = minim.loadFile("java.mp3", 2048);
 		jingle.loop();
 		fft = new FFT(jingle.bufferSize(), jingle.sampleRate());
 	}
