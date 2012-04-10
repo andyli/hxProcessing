@@ -1,7 +1,7 @@
 package ddf.minim;
 
 #if !jvm
-typedef Single = Float;
+private typedef Single = Float;
 #end
 
 extern class AudioSource {

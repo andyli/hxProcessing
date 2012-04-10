@@ -1,7 +1,7 @@
 package processing.core;
 
 #if !jvm
-typedef Single = Float;
+private typedef Single = Float;
 #end
 
 extern class PConstants {
