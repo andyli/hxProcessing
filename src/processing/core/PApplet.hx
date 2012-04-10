@@ -1,5 +1,9 @@
 package processing.core;
 
+#if !jvm
+typedef Single = Float;
+#end
+
 extern class PApplet {
 	/* 
 	 * Structure
