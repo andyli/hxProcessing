@@ -8,7 +8,14 @@ extern class PApplet {
 	/* 
 	 * Structure
 	 */
-	
+	public function draw():Void;
+	public function exit():Void;
+	public function loop():Void;
+	public function noLoop():Void;
+	public function popStyle():Void;
+	public function pushStyle():Void;
+	public function redraw():Void;
+	public function setup():Void;
 	public function size(width:Int, height:Int, mode:String):Void;
 	
 	/* 
@@ -43,6 +50,13 @@ extern class PApplet {
 	public function shape(sh:PShape, x:Single, y:Single, width:Single, height:Single):Void;
 	
 	/* 
+	 * Input
+	 */
+	public var mouseX:Int;
+	public var mouseY:Int;
+	
+	
+	/* 
 	 * Color
 	 */
 	public function background(value1:Int, value2:Int, value3:Int):Void;
@@ -50,6 +64,14 @@ extern class PApplet {
 	public function noFill():Void;
 	public function noStroke():Void;
 	public function stroke(value1:Int, value2:Int, value3:Int, alpha:Int):Void;
+	
+	/* 
+	 * Typography
+	 */
+	public function createFont(name:String, size:Single, smooth:Bool):PFont;
+	public function loadFont(fontname:String):PFont;
+	public function text(stringdata:String, x:Single, y:Single):Void;
+	public function textFont(font:PFont, size:Single):Void;
 	
 	/*
 	 * Math

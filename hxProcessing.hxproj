@@ -10,10 +10,10 @@
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
-    <OutputPath>.\</OutputPath>
+    <OutputPath>.</OutputPath>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
-    <OutputPath>.\</OutputPath>
+    <OutputPath>.</OutputPath>
   </PropertyGroup>
   <ItemGroup>
     <Compile Include="assets\nme.svg" />
@@ -28,6 +28,7 @@
     <Compile Include="src\ddf\minim\AudioBuffer.hx" />
     <Compile Include="src\ddf\minim\analysis\FourierTransform.hx" />
     <Compile Include="src\processing\core\PConstants.hx" />
+    <Compile Include="src\processing\core\PFont.hx" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="src\ddf\" />
