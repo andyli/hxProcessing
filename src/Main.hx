@@ -20,7 +20,7 @@ class Main extends PApplet {
 		frameRate(60);
 		smooth();
 		
-		font = createFont("CourierNew", 36, true);
+		font = loadFont("CourierNew36.vlw");
 		textFont(font, 24);
 		
 		minim = new Minim(this);

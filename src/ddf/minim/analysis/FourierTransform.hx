@@ -5,6 +5,9 @@ private typedef Single = Float;
 #end
 
 extern class FourierTransform {
+	static public var HAMMING:Int;
+	static public var NONE:Int;
+
 	public function avgSize():Int;
 	public function calcAvg(lowFreq:Single, hiFreq:Single):Single;
 	public function forward(buffer:jvm.NativeArray<Single>):Void;
