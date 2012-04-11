@@ -1,66 +1,18 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 10.00
 # Visual Studio 2008
-Project("{319CB2C6-23BD-43E1-85B5-2AAFA3577041}") = "hxProcessing", "hxProcessing.nmeproj", "{1AA6BF05-C8C8-43D2-B63A-8FFF39F18698}"
+Project("{319CB2C6-23BD-43E1-85B5-2AAFA3577041}") = "hxProcessing", "hxProcessing.hxproj", "{1AA6BF05-C8C8-43D2-B63A-8FFF39F18698}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
-		Debug|Android = Debug|Android
-		Debug|BlackBerry = Debug|BlackBerry
-		Debug|Flash = Debug|Flash
-		Debug|HTML5 = Debug|HTML5
-		Debug|iOS = Debug|iOS
-		Debug|Linux = Debug|Linux
-		Debug|Mac = Debug|Mac
-		Debug|webOS = Debug|webOS
-		Debug|Windows = Debug|Windows
-		Release|Android = Release|Android
-		Release|BlackBerry = Release|BlackBerry
-		Release|Flash = Release|Flash
-		Release|HTML5 = Release|HTML5
-		Release|iOS = Release|iOS
-		Release|Linux = Release|Linux
-		Release|Mac = Release|Mac
-		Release|webOS = Release|webOS
-		Release|Windows = Release|Windows
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{1AA6BF05-C8C8-43D2-B63A-8FFF39F18698}.Debug|Android.ActiveCfg = Debug|Android
-		{1AA6BF05-C8C8-43D2-B63A-8FFF39F18698}.Debug|Android.Build.0 = Debug|Android
-		{1AA6BF05-C8C8-43D2-B63A-8FFF39F18698}.Debug|BlackBerry.ActiveCfg = Debug|BlackBerry
-		{1AA6BF05-C8C8-43D2-B63A-8FFF39F18698}.Debug|BlackBerry.Build.0 = Debug|BlackBerry
-		{1AA6BF05-C8C8-43D2-B63A-8FFF39F18698}.Debug|Flash.ActiveCfg = Debug|Flash
-		{1AA6BF05-C8C8-43D2-B63A-8FFF39F18698}.Debug|Flash.Build.0 = Debug|Flash
-		{1AA6BF05-C8C8-43D2-B63A-8FFF39F18698}.Debug|HTML5.ActiveCfg = Debug|HTML5
-		{1AA6BF05-C8C8-43D2-B63A-8FFF39F18698}.Debug|HTML5.Build.0 = Debug|HTML5
-		{1AA6BF05-C8C8-43D2-B63A-8FFF39F18698}.Debug|iOS.ActiveCfg = Debug|iOS
-		{1AA6BF05-C8C8-43D2-B63A-8FFF39F18698}.Debug|iOS.Build.0 = Debug|iOS
-		{1AA6BF05-C8C8-43D2-B63A-8FFF39F18698}.Debug|Linux.ActiveCfg = Debug|Linux
-		{1AA6BF05-C8C8-43D2-B63A-8FFF39F18698}.Debug|Linux.Build.0 = Debug|Linux
-		{1AA6BF05-C8C8-43D2-B63A-8FFF39F18698}.Debug|Mac.ActiveCfg = Debug|Mac
-		{1AA6BF05-C8C8-43D2-B63A-8FFF39F18698}.Debug|Mac.Build.0 = Debug|Mac
-		{1AA6BF05-C8C8-43D2-B63A-8FFF39F18698}.Debug|webOS.ActiveCfg = Debug|webOS
-		{1AA6BF05-C8C8-43D2-B63A-8FFF39F18698}.Debug|webOS.Build.0 = Debug|webOS
-		{1AA6BF05-C8C8-43D2-B63A-8FFF39F18698}.Debug|Windows.ActiveCfg = Debug|Windows
-		{1AA6BF05-C8C8-43D2-B63A-8FFF39F18698}.Debug|Windows.Build.0 = Debug|Windows
-		{1AA6BF05-C8C8-43D2-B63A-8FFF39F18698}.Release|Android.ActiveCfg = Release|Android
-		{1AA6BF05-C8C8-43D2-B63A-8FFF39F18698}.Release|Android.Build.0 = Release|Android
-		{1AA6BF05-C8C8-43D2-B63A-8FFF39F18698}.Release|BlackBerry.ActiveCfg = Release|BlackBerry
-		{1AA6BF05-C8C8-43D2-B63A-8FFF39F18698}.Release|BlackBerry.Build.0 = Release|BlackBerry
-		{1AA6BF05-C8C8-43D2-B63A-8FFF39F18698}.Release|Flash.ActiveCfg = Release|Flash
-		{1AA6BF05-C8C8-43D2-B63A-8FFF39F18698}.Release|Flash.Build.0 = Release|Flash
-		{1AA6BF05-C8C8-43D2-B63A-8FFF39F18698}.Release|HTML5.ActiveCfg = Release|HTML5
-		{1AA6BF05-C8C8-43D2-B63A-8FFF39F18698}.Release|HTML5.Build.0 = Release|HTML5
-		{1AA6BF05-C8C8-43D2-B63A-8FFF39F18698}.Release|iOS.ActiveCfg = Release|iOS
-		{1AA6BF05-C8C8-43D2-B63A-8FFF39F18698}.Release|iOS.Build.0 = Release|iOS
-		{1AA6BF05-C8C8-43D2-B63A-8FFF39F18698}.Release|Linux.ActiveCfg = Release|Linux
-		{1AA6BF05-C8C8-43D2-B63A-8FFF39F18698}.Release|Linux.Build.0 = Release|Linux
-		{1AA6BF05-C8C8-43D2-B63A-8FFF39F18698}.Release|Mac.ActiveCfg = Release|Mac
-		{1AA6BF05-C8C8-43D2-B63A-8FFF39F18698}.Release|Mac.Build.0 = Release|Mac
-		{1AA6BF05-C8C8-43D2-B63A-8FFF39F18698}.Release|webOS.ActiveCfg = Release|webOS
-		{1AA6BF05-C8C8-43D2-B63A-8FFF39F18698}.Release|webOS.Build.0 = Release|webOS
-		{1AA6BF05-C8C8-43D2-B63A-8FFF39F18698}.Release|Windows.ActiveCfg = Release|Windows
-		{1AA6BF05-C8C8-43D2-B63A-8FFF39F18698}.Release|Windows.Build.0 = Release|Windows
+		{1AA6BF05-C8C8-43D2-B63A-8FFF39F18698}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1AA6BF05-C8C8-43D2-B63A-8FFF39F18698}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1AA6BF05-C8C8-43D2-B63A-8FFF39F18698}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1AA6BF05-C8C8-43D2-B63A-8FFF39F18698}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(MonoDevelopProperties) = preSolution
 		StartupItem = hxProcessing.nmeproj
