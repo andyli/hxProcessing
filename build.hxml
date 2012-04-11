@@ -1,3 +1,7 @@
 -java bin
 -main Main
 -cp src
+-lib polygonal
+-lib feffects
+-lib casalib
+--no-inline

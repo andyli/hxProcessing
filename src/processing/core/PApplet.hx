@@ -52,18 +52,46 @@ extern class PApplet {
 	/* 
 	 * Input
 	 */
+	public function mouseClicked():Void;
+	public function mouseDragged():Void;
+	public function mouseMoved():Void;
+	public function mousePressed():Void;
+	public function mouseReleased():Void;
 	public var mouseX:Int;
 	public var mouseY:Int;
+	public var pmouseX:Int;
+	public var pmouseY:Int;
+	
+	public var keyCode:Int;
+	public function keyPressed():Void;
+	public function keyReleased():Void;
+	
+	/*
+	 * Transform
+	 */
+	public function applyMatrix(n00:Single, n01:Single, n02:Single, n03:Single, n04:Single, n05:Single, n06:Single, n07:Single, n08:Single, n09:Single, n10:Single, n11:Single, n12:Single, n13:Single, n14:Single, n15:Single):Void;
+	public function popMatrix():Void;
+	public function printMatrix():Void;
+	public function pushMatrix():Void;
+	public function resetMatrix():Void;
+	public function rotate(angle:Single):Void;
+	public function rotateX(angle:Single):Void;
+	public function rotateY(angle:Single):Void;
+	public function rotateZ(angle:Single):Void;
+	public function scale(x:Single, y:Single, z:Single):Void;
+	public function shearX(angle:Single):Void;
+	public function shearY(angle:Single):Void;
+	public function translate(x:Single, y:Single, z:Single):Void;
 	
 	
 	/* 
 	 * Color
 	 */
 	public function background(value1:Int, value2:Int, value3:Int):Void;
-	public function fill(value1:Int, value2:Int, value3:Int, alpha:Int):Void;
+	public function fill(value1:Single, value2:Single, value3:Single, alpha:Single):Void;
 	public function noFill():Void;
 	public function noStroke():Void;
-	public function stroke(value1:Int, value2:Int, value3:Int, alpha:Int):Void;
+	public function stroke(value1:Single, value2:Single, value3:Single, alpha:Single):Void;
 	
 	/* 
 	 * Typography

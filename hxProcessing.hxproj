@@ -18,7 +18,6 @@
   <ItemGroup>
     <Compile Include="assets\nme.svg" />
     <Compile Include="src\Main.hx" />
-    <Compile Include="hxProcessing.nmml" />
     <Compile Include="src\processing\core\PApplet.hx" />
     <Compile Include="src\processing\core\PShape.hx" />
     <Compile Include="src\ddf\minim\Minim.hx" />
@@ -29,6 +28,8 @@
     <Compile Include="src\ddf\minim\analysis\FourierTransform.hx" />
     <Compile Include="src\processing\core\PConstants.hx" />
     <Compile Include="src\processing\core\PFont.hx" />
+    <Compile Include="build.hxml" />
+    <Compile Include="src\ddf\minim\analysis\BeatDetect.hx" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="src\ddf\" />
