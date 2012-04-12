@@ -92,6 +92,39 @@ extern class PApplet {
 	public function shearY(angle:Single):Void;
 	public function translate(x:Single, y:Single, z:Single):Void;
 	
+	/*
+	 * Lights, Camera
+	 */
+	public function ambientLight(v1:Single, v2:Single, v3:Single, x:Single, y:Single, z:Single):Void;
+	public function directionalLight(v1:Single, v2:Single, v3:Single, nx:Single, ny:Single, nz:Single):Void;
+	public function lightFalloff(constant:Single, linear:Single, quadratic:Single):Void;
+	public function lightSpecular(v1:Single, v2:Single, v3:Single):Void;
+	public function lights():Void;
+	public function noLights():Void;
+	public function normal(nx:Single, ny:Single, nz:Single):Void;
+	public function pointLight(v1:Single, v2:Single, v3:Single, x:Single, y:Single, z:Single):Void;
+	public function spotLight(v1:Single, v2:Single, v3:Single, x:Single, y:Single, z:Single, nx:Single, ny:Single, nz:Single, angle:Single, concentration:Single):Void;
+	
+	public function beginCamera():Void;
+	public function camera(eyeX:Single, eyeY:Single, eyeZ:Single, centerX:Single, centerY:Single, centerZ:Single, upX:Single, upY:Single, upZ:Single):Void;
+	public function endCamera():Void;
+	public function frustum(left:Single, right:Single, bottom:Single, top:Single, near:Single, far:Single):Void;
+	public function ortho(left:Single, right:Single, bottom:Single, top:Single, near:Single, far:Single):Void;
+	public function perspective(fov:Single, aspect:Single, zNear:Single, zFar:Single):Void;
+	public function printCamera():Void;
+	public function printProjection():Void;
+	
+	public function modelX(x:Single, y:Single, z:Single):Single;
+	public function modelY(x:Single, y:Single, z:Single):Single;
+	public function modelZ(x:Single, y:Single, z:Single):Single;
+	public function screenX(x:Single, y:Single, z:Single):Single;
+	public function screenY(x:Single, y:Single, z:Single):Single;	
+	public function screenZ(x:Single, y:Single, z:Single):Single;
+	
+	public function ambient(v1:Single, v2:Single, v3:Single):Void;
+	public function emissive(v1:Single, v2:Single, v3:Single):Void;
+	public function shininess(shine:Single):Void;
+	public function specular(v1:Single, v2:Single, v3:Single):Void;
 	
 	/* 
 	 * Color

@@ -31,10 +31,17 @@
     <Compile Include="build.hxml" />
     <Compile Include="src\ddf\minim\analysis\BeatDetect.hx" />
     <Compile Include="src\processing\core\PVector.hx" />
+    <Compile Include="src\processing\core\PImage.hx" />
+    <Compile Include="demo\Demo1.hx" />
+    <Compile Include="src\toxi\geom\Matrix4x4.hx" />
+    <Compile Include="src\toxi\geom\Vec3D.hx" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="src\ddf\" />
     <Folder Include="src\processing\" />
     <Folder Include="src\ddf\minim\analysis\" />
+    <Folder Include="demo\" />
+    <Folder Include="src\toxi\" />
+    <Folder Include="src\toxi\geom\" />
   </ItemGroup>
 </Project>

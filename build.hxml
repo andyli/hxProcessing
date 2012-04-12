@@ -1,6 +1,7 @@
 -java bin
--main Main
+-main Demo1
 -cp src
+-cp demo
 -lib polygonal
 -lib feffects
 -lib casalib
