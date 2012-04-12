@@ -1,5 +1,5 @@
 -java bin
--main Demo1
+-main Demo2
 -cp src
 -cp demo
 -lib polygonal

@@ -4,13 +4,7 @@ package toxi.geom;
 private typedef Single = Float;
 #end
 
-extern class Vec3D implements ReadonlyVec3D {
-	public function new(x:Single, y:Single, z:Single):Void;
-	
-	public function set(x:Single, y:Single, z:Single):Vec3D;
-	
-	//from ReadonlyVec3D
-	
+extern interface ReadonlyVec3D {
 	public function add(v:Vec3D):Vec3D;
 	public function angleBetween(v:ReadonlyVec3D, forceNormalize:Bool):Single;
 	public function compareTo(v:ReadonlyVec3D):Int;

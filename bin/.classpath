@@ -11,5 +11,6 @@
 	<classpathentry kind="lib" path="tritonus_aos.jar"/>
 	<classpathentry kind="lib" path="tritonus_share.jar"/>
 	<classpathentry kind="lib" path="toxiclibscore.jar"/>
+	<classpathentry kind="lib" path="colorutils.jar"/>
 	<classpathentry kind="output" path="bin"/>
 </classpath>

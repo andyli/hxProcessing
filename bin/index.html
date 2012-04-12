@@ -3,35 +3,29 @@
   <head>
     <!-- charset must remain utf-8 to be handled properly by Processing -->
     <meta http-equiv="content-type" content="text/html; charset=utf-8" />
-
     <title>hxProcessing</title>
-
     <style type="text/css">
-      /* <![CDATA[ */
-	
-	body {
-  	  margin: 60px 0px 0px 55px;
-	  font-family: verdana, geneva, arial, helvetica, sans-serif; 
-	  font-size: 11px; 
-	  background-color: #ddddcc; 
-	  text-decoration: none; 
-	  font-weight: normal; 
-	  line-height: normal; 
-	}
-		 
-	a          { color: #3399cc; }
-	a:link     { color: #3399cc; text-decoration: underline; }
-	a:visited  { color: #3399cc; text-decoration: underline; }
-	a:active   { color: #3399cc; text-decoration: underline; }
-	a:hover    { color: #3399cc; text-decoration: underline; }
-
-      /* ]]> */
+		body {
+	  	  margin: 60px 0px 0px 55px;
+		  font-family: verdana, geneva, arial, helvetica, sans-serif; 
+		  font-size: 11px; 
+		  background-color: #ddddcc; 
+		  text-decoration: none; 
+		  font-weight: normal; 
+		  line-height: normal; 
+		}
+			 
+		a          { color: #3399cc; }
+		a:link     { color: #3399cc; text-decoration: underline; }
+		a:visited  { color: #3399cc; text-decoration: underline; }
+		a:active   { color: #3399cc; text-decoration: underline; }
+		a:hover    { color: #3399cc; text-decoration: underline; }
     </style>    
   </head>
 
   <body>
     <div id="content">
-      <div id="TestProcessing_container">
+      <div id="Processing_container">
 
 	<!-- This version plays nicer with older browsers, 
 	     but requires JavaScript to be enabled. 
@@ -44,7 +38,7 @@
 
 	  var attributes = { 
             code: 'haxe.langdef.Demo1.class',
-            archive: 'Main.jar,jl1.0.jar,jsminim.jar,minim-spi.jar,minim.jar,mp3spi1.9.4.jar,tritonus_aos.jar,tritonus_share.jar,toxiclibscore.jar,core.jar',
+            archive: 'Main.jar,jl1.0.jar,jsminim.jar,minim-spi.jar,minim.jar,mp3spi1.9.4.jar,tritonus_aos.jar,tritonus_share.jar,toxiclibscore.jar,colorutils.jar,core.jar',
             width: 800, 
             height: 600,
           };
@@ -62,11 +56,11 @@
 	  <!--[if !IE]> -->
 	  <object classid="java:haxe.langdef.Demo1.class" 
             	  type="application/x-java-applet"
-            	  archive="Main.jar,jl1.0.jar,jsminim.jar,minim-spi.jar,minim.jar,mp3spi1.9.4.jar,tritonus_aos.jar,tritonus_share.jar,toxiclibscore.jar,core.jar"
+            	  archive="Main.jar,jl1.0.jar,jsminim.jar,minim-spi.jar,minim.jar,mp3spi1.9.4.jar,tritonus_aos.jar,tritonus_share.jar,toxiclibscore.jar,colorutils.jar,core.jar"
             	  width="800" height="600"
             	  standby="Loading Processing software..." >
             
-	    <param name="archive" value="Main.jar,jl1.0.jar,jsminim.jar,minim-spi.jar,minim.jar,mp3spi1.9.4.jar,tritonus_aos.jar,tritonus_share.jar,toxiclibscore.jar,core.jar" />
+	    <param name="archive" value="Main.jar,jl1.0.jar,jsminim.jar,minim-spi.jar,minim.jar,mp3spi1.9.4.jar,tritonus_aos.jar,tritonus_share.jar,toxiclibscore.jar,colorutils.jar,core.jar" />
 	    
 	    <param name="mayscript" value="true" />
 	    <param name="scriptable" value="true" />
@@ -86,7 +80,7 @@
 		    standby="Loading Processing software..."  >
 	      
 	      <param name="code" value="haxe.langdef.Demo1" />
-	      <param name="archive" value="Main.jar,jl1.0.jar,jsminim.jar,minim-spi.jar,minim.jar,mp3spi1.9.4.jar,tritonus_aos.jar,tritonus_share.jar,toxiclibscore.jar,core.jar" />
+	      <param name="archive" value="Main.jar,jl1.0.jar,jsminim.jar,minim-spi.jar,minim.jar,mp3spi1.9.4.jar,tritonus_aos.jar,tritonus_share.jar,toxiclibscore.jar,colorutils.jar,core.jar" />
 	      
 	      <param name="mayscript" value="true" />
 	      <param name="scriptable" value="true" />
