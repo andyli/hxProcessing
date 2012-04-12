@@ -30,6 +30,7 @@
     <Compile Include="src\processing\core\PFont.hx" />
     <Compile Include="build.hxml" />
     <Compile Include="src\ddf\minim\analysis\BeatDetect.hx" />
+    <Compile Include="src\processing\core\PVector.hx" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="src\ddf\" />

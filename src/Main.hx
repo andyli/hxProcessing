@@ -3,11 +3,12 @@ package;
 import processing.core.PApplet;
 import processing.core.PConstants;
 import processing.core.PFont;
+import processing.core.PVector;
+using processing.core.PVector;
 import ddf.minim.Minim;
 import ddf.minim.AudioPlayer;
 import ddf.minim.analysis.FFT;
 import ddf.minim.analysis.BeatDetect;
-import de.polygonal.core.math.Vec2;
 import org.casalib.util.NumberUtil;
 using Std;
 
@@ -19,6 +20,10 @@ using Std;
 import feffects.easing.Quad;
 import feffects.easing.Bounce;
 import feffects.easing.Expo;
+
+#if !jvm
+private typedef Single = Float;
+#end
 
 typedef RGB = {
     var r:Float;
@@ -32,14 +37,14 @@ typedef HSL = {
     var l:Float;
 }
 
-class Pt extends Vec2 {
-	public function new(x:Float = 0, y:Float = 0):Void {
-		super(x, y);
+class Pt extends PVector {
+	public function new():Void {
+		super(0, 0, 0);
 		t = 0;
 	}
 	
 	public var t:Float;
-	public var target:Vec2;
+	public var target:PVector;
 	public var size:Float;
 }
 
@@ -129,11 +134,11 @@ class Main extends PApplet {
 			var v = beat.isOnset(i) ? jingle.mix.level() : 0;
 			var need = v > 0;
 			while (need || Math.pow(v, 0.2) > Math.random()*10) {
-				var d = new Vec2();
+				var d = new PVector(0,0,0);
 				var v = v * 1000;
 				d.x = NumberUtil.randomWithinRange(-v, v);
 				d.y = NumberUtil.randomWithinRange(-v, v);
-				d.clamp(v);
+				d.limit(v);
 				var pt = new Pt();
 				pt.target = d;
 				pts[i].push(pt);

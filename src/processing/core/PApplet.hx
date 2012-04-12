@@ -66,6 +66,15 @@ extern class PApplet {
 	public function keyPressed():Void;
 	public function keyReleased():Void;
 	
+	/* 
+	 * Output
+	 */
+	public function print(data:Dynamic):Void;
+	public function println(data:Dynamic):Void;
+	
+	public function save(filename:String):Void;
+	public function saveFrame(filename:String):Void;
+	
 	/*
 	 * Transform
 	 */
@@ -120,6 +129,20 @@ extern class PApplet {
 	public function round(value:Single):Int;
 	public function sq(value:Single):Single;
 	public function sqrt(value:Single):Single;
+	
+	public function noise(x:Single, y:Single, z:Single):Single;
+	public function noiseDetail(octaves:Int, falloff:Single):Void;
+	public function noiseSeed(x:Int):Void;
+	public function random(low:Single, high:Single):Single;
+	public function randomSeed(value:Int):Void;
+	
+	/* 
+	 * Constants
+	 */
+	static public var HALF_PI:Single;
+	static public var PI:Single;
+	static public var QUARTER_PI:Single;
+	static public var TWO_PI:Single;
 	
 	static public function main(args:jvm.NativeArray<String>):Void;
 }
