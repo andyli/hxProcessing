@@ -10,6 +10,7 @@ import toxi.geom.Triangle3D;
 import toxi.geom.Triangle2D;
 import toxi.geom.Vec3D;
 import toxi.geom.Vec2D;
+import toxi.geom.Line2D;
 
 #if !jvm
 private typedef Single = Float;
@@ -22,7 +23,7 @@ class Pt extends Vec3D {
 	}
 	
 	public function set_(x:Single, y:Single, z:Single):Pt {
-		set(x, y, z);
+		set(new Vec3D(x, y, z));
 		return this;
 	}
 	
@@ -39,8 +40,7 @@ class Demo2 extends PApplet {
 	var font:PFont;
 	var fontSize:Float;
 	
-	var pts:Array<Array<Pt>>;
-	var triangles:Array<Triangle3D>;
+	var triangles:Array<Array<Triangle3D>>;
 	
 	function drawTri(tri:Triangle3D):Void {
 		beginShape();
@@ -60,9 +60,10 @@ class Demo2 extends PApplet {
 		
 		triangles = [];
 		var pl = [new Pt().set_(0, 3, 0), new Pt().set_(3, 0, 0), new Pt().set_(0, -3, 0), new Pt().set_(-3, 0, 0)];
-		pts = [pl];
-		for (i in 0...2) {
+		var pts = [pl];
+		for (i in 0...4) {
 			var pln = [];
+			var tril = [];
 			pl = pts[pts.length-1];
 			
 			var ptp = pl[pl.length-1];
@@ -72,39 +73,57 @@ class Demo2 extends PApplet {
 				pln.push(new Pt().set_(tri.b.x(), tri.b.y(), 0));
 				pln.push(new Pt().set_(tri.c.x(), tri.c.y(), 0));
 				pln.push(new Pt().set_(tri.a.x(), tri.a.y(), 0));
-				triangles.push(new Triangle3D(tri.a.to3DXY(), tri.b.to3DXY(), tri.c.to3DXY()));
+				tril.push(new Triangle3D(tri.a.to3DXY(), tri.b.to3DXY(), tri.c.to3DXY()));
 				ptp = pt;
 			}
 			
-			
+			triangles.push(tril);
 			pts.push(pln);
 		}
+		
+		triangles.reverse();
 	}
 	
 	override public function draw():Void {
 		background(0, 0, 0);
 		
 		lights();
-		//directionalLight(51, 102, 126, -1, 0, 0);
 		pointLight(255, 255, 255, 35, 40, 0);
 		
 		translate(width * 0.5, height * 0.5, 0);
 		scale(20, 20, 20);
 		rotateY(frameCount * 0.05);
-		/*
-		for (pl in pts) {
-			var ptp = pl[pl.length-1];
-			for (i in 0...pl.length) {
-				var pt = pl[i];
-				line(pt.x(), pt.y(), pt.z(), ptp.x(), ptp.y(), ptp.z());
-				ptp = pt;
-			}
-		}
-		*/
 		noStroke();
-		fill(color.red() * 255, color.green() * 255, color.blue() * 255, 255);
-		for (tri in triangles) {
-			drawTri(tri);
+		var cl = color;
+		var zInc = 1;
+		pushMatrix();
+		for (tril in triangles) {
+			fill(cl.red() * 255, cl.green() * 255, cl.blue() * 255, 255);
+			cl = cl.getLightened(0.1);
+			for (tri in tril) {
+				var a = tri.a.copy();
+				var b = tri.b.copy();
+				var c = tri.a.interpolateTo(tri.b, 0.5).interpolateTo(tri.c, 0.125);
+				a.setComponent(2, zInc);
+				b.setComponent(2, zInc);
+				drawTri(new Triangle3D(a, b, c));
+			}
+			translate(0, 0 , zInc);
+		}
+		popMatrix();
+		var cl = color;
+		for (tril in triangles) {
+			fill(cl.red() * 255, cl.green() * 255, cl.blue() * 255, 255);
+			cl = cl.getLightened(0.1);
+			for (tri in tril) {
+				var a = tri.a.copy();
+				var b = tri.b.copy();
+				var c = tri.a.interpolateTo(tri.b, 0.5).interpolateTo(tri.c, 0.125);
+				a.setComponent(2, -zInc);
+				b.setComponent(2, -zInc);
+				drawTri(new Triangle3D(a, b, c));
+			}
+			translate(0, 0 , -zInc);
 		}
 	}
 	

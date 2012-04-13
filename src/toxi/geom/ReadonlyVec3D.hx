@@ -5,7 +5,7 @@ private typedef Single = Float;
 #end
 
 extern interface ReadonlyVec3D {
-	public function add(v:Vec3D):Vec3D;
+	public function add(v:ReadonlyVec3D):Vec3D;
 	public function angleBetween(v:ReadonlyVec3D, forceNormalize:Bool):Single;
 	public function compareTo(v:ReadonlyVec3D):Int;
 	public function copy():Vec3D;
