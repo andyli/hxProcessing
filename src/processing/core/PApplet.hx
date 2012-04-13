@@ -46,6 +46,14 @@ extern class PApplet {
 	public function noSmooth():Void;
 	public function smooth():Void;
 	
+	public function beginShape():Void;
+	public function bezierVertex(cx1:Single, cy1:Single, cz1:Single, cx2:Single, cy2:Single, cz2:Single, x:Single, y:Single, z:Single):Void;
+	public function curveVertex(x:Single, y:Single, z:Single):Void;
+	public function endShape(MODE:Int):Void;
+	public function texture(img:PImage):Void;
+	public function textureMode(MODE:Int):Void;
+	public function vertex(x:Single, y:Single, z:Single):Void;
+	
 	public function loadShape(filename:String):Null<PShape>;
 	public function shape(sh:PShape, x:Single, y:Single, width:Single, height:Single):Void;
 	
