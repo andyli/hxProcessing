@@ -17,7 +17,6 @@
   </PropertyGroup>
   <ItemGroup>
     <Compile Include="assets\nme.svg" />
-    <Compile Include="src\Main.hx" />
     <Compile Include="src\processing\core\PApplet.hx" />
     <Compile Include="src\processing\core\PShape.hx" />
     <Compile Include="src\ddf\minim\Minim.hx" />

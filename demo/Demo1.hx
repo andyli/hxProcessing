@@ -40,7 +40,6 @@ class Demo1 extends PApplet {
 	
 	var minim:Minim;
 	var jingle:AudioPlayer;
-	var fft:FFT;
 	var beat:BeatDetect;
 	
 	var initPts:Array<Vec3D>;
@@ -66,9 +65,8 @@ class Demo1 extends PApplet {
 		textFont(font, fontSize = 12);
 		
 		minim = new Minim(this);
-		jingle = minim.loadFile("java.mp3", 512);
+		jingle = minim.loadFile("java.mp3", 1024);
 		jingle.loop();
-		fft = new FFT(jingle.bufferSize(), jingle.sampleRate());
 		beat = new BeatDetect(jingle.bufferSize(), jingle.sampleRate());
 		
 		triangles = [];
@@ -109,7 +107,6 @@ class Demo1 extends PApplet {
 		background(200, 235, 255);
 		
 		beat.detect(jingle.mix.toArray());
-		fft.forward(jingle.mix.toArray());
 		
 		#if debug
 			var ty = fontSize;
@@ -170,19 +167,18 @@ class Demo1 extends PApplet {
 			fill(cl.red() * 255, cl.green() * 255, cl.blue() * 255, i == 0 ? 250 : 235);
 			cl = cl.getLightened(0.2);
 			
-			var fftValue = Math.pow(fft.getBand(map(i, 0, triangles.length, 0 , fft.specSize()).int()), 0.1) * 0.05;
 			var beating = beat.isOnset(map(i, 0, triangles.length, 0 , 27).int());
 			for (t in 0...tril.length) {
 				var tri = tril[t];
 				var a = tri.a.copy();
 				var b = tri.b.copy();
 				var cScale = triangles_v[i][t] = i == 0 ? 
-					1 : //map(jingle.position(), 0, jingle.length(), 0, 1) : 
+					1 :
 					beating && Math.random() < 0.1 ? 0.5 : triangles_v[i][t] * 0.9;
 				var c = tri.a.interpolateTo(tri.b, 0.5).interpolateTo(tri.c, cScale);
 				drawTri(new Triangle3D(a, b, c));
 			}
-			if (i != 0) translate(0, 0 , 2.0 + fftValue);
+			if (i != 0) translate(0, 0 , 1.0 + (beating ? jingle.mix.level() : 0));
 		}
 		popMatrix();
 	}
