@@ -41,6 +41,9 @@
     <Compile Include="src\toxi\color\ReadonlyTColor.hx" />
     <Compile Include="src\toxi\geom\Triangle3D.hx" />
     <Compile Include="src\toxi\geom\ReadonlyVec3D.hx" />
+    <Compile Include="src\toxi\geom\Triangle2D.hx" />
+    <Compile Include="src\toxi\geom\Vec2D.hx" />
+    <Compile Include="src\toxi\geom\ReadonlyVec2D.hx" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="src\ddf\" />

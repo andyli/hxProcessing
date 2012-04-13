@@ -7,7 +7,9 @@ import processing.core.PVector;
 import org.casalib.util.NumberUtil;
 import toxi.color.TColor;
 import toxi.geom.Triangle3D;
+import toxi.geom.Triangle2D;
 import toxi.geom.Vec3D;
+import toxi.geom.Vec2D;
 
 #if !jvm
 private typedef Single = Float;
@@ -51,18 +53,18 @@ class Demo2 extends PApplet {
 		
 		var pl = [new Pt().set_(0, 3, 0), new Pt().set_(3, 0, 0), new Pt().set_(0, -3, 0), new Pt().set_(-3, 0, 0)];
 		pts = [pl];
-		for (i in 0...5) {
+		for (i in 0...1) {
 			var pln = [];
 			pl = pts[pts.length-1];
 			
 			var ptp = pl[pl.length-1];
 			for (i in 0...pl.length) {
 				var pt = pl[i];
-				var tri = Triangle3D.createEquilateralFrom(ptp, pt);
-				pln.push(new Pt().set_(tri.a.x(), tri.a.y(), tri.a.z()));
-				pln.push(new Pt().set_(tri.b.x(), tri.b.y(), tri.b.z()));
-				pln.push(new Pt().set_(tri.c.x(), tri.c.y(), tri.c.z()));
-				pln.push(new Pt().set_(tri.a.x(), tri.a.y(), tri.a.z()));
+				var tri = Triangle2D.createEquilateralFrom(pt.to2DXY(), ptp.to2DXY());
+				pln.push(new Pt().set_(tri.a.x(), tri.a.y(), 0));
+				pln.push(new Pt().set_(tri.b.x(), tri.b.y(), 0));
+				pln.push(new Pt().set_(tri.c.x(), tri.c.y(), 0));
+				pln.push(new Pt().set_(tri.a.x(), tri.a.y(), 0));
 				ptp = pt;
 			}
 			
@@ -75,7 +77,7 @@ class Demo2 extends PApplet {
 		background(0, 0, 0);
 		stroke(color.red() * 255, color.green() * 255, color.blue() * 255, 255);
 		translate(width * 0.5, height * 0.5, 0);
-		scale(80, 80, 80);
+		scale(20, 20, 20);
 		rotateY(frameCount * 0.05);
 		for (pl in pts) {
 			var ptp = pl[pl.length-1];

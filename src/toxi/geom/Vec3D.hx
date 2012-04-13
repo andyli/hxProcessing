@@ -51,6 +51,9 @@ extern class Vec3D implements ReadonlyVec3D {
 	public function toArray():jvm.NativeArray<Single>;
 	public function toCartesian():Vec3D;
 	public function toSpherical():Vec3D;
+	public function to2DXY():Vec2D;
+	public function to2DXZ():Vec2D;
+	public function to2DYZ():Vec2D;
 	public function x():Single;
 	public function y():Single;
 	public function z():Single;
