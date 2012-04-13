@@ -32,11 +32,9 @@
     <Compile Include="src\ddf\minim\analysis\BeatDetect.hx" />
     <Compile Include="src\processing\core\PVector.hx" />
     <Compile Include="src\processing\core\PImage.hx" />
-    <Compile Include="demo\Demo1.hx" />
     <Compile Include="src\toxi\geom\Matrix4x4.hx" />
     <Compile Include="src\toxi\geom\Vec3D.hx" />
     <Compile Include="README.md" />
-    <Compile Include="demo\Demo2.hx" />
     <Compile Include="src\toxi\color\TColor.hx" />
     <Compile Include="src\toxi\color\ReadonlyTColor.hx" />
     <Compile Include="src\toxi\geom\Triangle3D.hx" />
@@ -45,6 +43,7 @@
     <Compile Include="src\toxi\geom\Vec2D.hx" />
     <Compile Include="src\toxi\geom\ReadonlyVec2D.hx" />
     <Compile Include="src\toxi\geom\Line2D.hx" />
+    <Compile Include="demo\Demo1.hx" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="src\ddf\" />

@@ -4,7 +4,12 @@ import processing.core.PApplet;
 import processing.core.PConstants;
 import processing.core.PFont;
 import processing.core.PVector;
-using processing.core.PVector;
+import toxi.color.TColor;
+import toxi.geom.Triangle3D;
+import toxi.geom.Triangle2D;
+import toxi.geom.Vec3D;
+import toxi.geom.Vec2D;
+import toxi.geom.Line2D;
 import ddf.minim.Minim;
 import ddf.minim.AudioPlayer;
 import ddf.minim.analysis.FFT;
@@ -25,53 +30,36 @@ import feffects.easing.Expo;
 private typedef Single = Float;
 #end
 
-typedef RGB = {
-    var r:Float;
-    var g:Float;
-    var b:Float;
-}
-
-typedef HSL = {
-    var h:Float;
-    var s:Float;
-    var l:Float;
-}
-
-class Pt extends PVector {
-	public function new():Void {
-		super(0, 0, 0);
-		t = 0;
-	}
-	
-	public var t:Float;
-	public var target:PVector;
-	public var size:Float;
-}
-
 class Demo1 extends PApplet {
 	static var end = 400 * Math.PI;
 	
-	static var haxeRGB = {
-		r: 0xF1 / 255.0,
-		g: 0x89 / 255.0,
-		b: 0x40 / 255.0
-	}
-	
-	static var haxeHSL = rgb2hsl(haxeRGB);
+	static var color = TColor.newHex("f18940");
 	
 	var font:PFont;
 	var fontSize:Float;
+	
 	var minim:Minim;
 	var jingle:AudioPlayer;
 	var fft:FFT;
 	var beat:BeatDetect;
 	
-	var pts:Array<Array<Pt>>;
-	var pt:Pt;
+	var initPts:Array<Vec3D>;
+	var triangles:Array<Array<Triangle3D>>;
+	var triangles_v:Array<Array<Float>>;
+	
+	var rots:Array<Single>;
+	
+	function drawTri(tri:Triangle3D):Void {
+		beginShape();
+		vertex(tri.a.x(), tri.a.y(), tri.a.z());
+		vertex(tri.b.x(), tri.b.y(), tri.b.z());
+		vertex(tri.c.x(), tri.c.y(), tri.c.z());
+		endShape(PConstants.CLOSE);
+	}
 	
 	override public function setup():Void {
 		size(800, 600, PConstants.P3D);
-		frameRate(60);
+		frameRate(24);
 		smooth();
 		
 		font = loadFont("CourierNew36.vlw");
@@ -82,84 +70,119 @@ class Demo1 extends PApplet {
 		jingle.loop();
 		fft = new FFT(jingle.bufferSize(), jingle.sampleRate());
 		beat = new BeatDetect(jingle.bufferSize(), jingle.sampleRate());
-		beat.setSensitivity(100);
 		
-		pts = [];
-		for (i in 0...fft.specSize()) {
-			pts.push(new Array<Pt>());
+		triangles = [];
+		triangles_v = [];
+		rots = [];
+		var pl = initPts = [new Vec3D(0, 3, 0), new Vec3D(3, 0, 0), new Vec3D(0, -3, 0), new Vec3D(-3, 0, 0)];
+		var pts = [pl];
+		for (i in 0...6) {
+			var pln = [];
+			var tril = [];
+			var trivl = [];
+			pl = pts[pts.length-1];
+			
+			var ptp = pl[pl.length-1];
+			for (i in 0...pl.length) {
+				var pt = pl[i];
+				var tri = Triangle2D.createEquilateralFrom(pt.to2DXY(), ptp.to2DXY());
+				var	a = new Vec3D(tri.a.x(), tri.a.y(), pt.z()),
+					b = new Vec3D(tri.b.x(), tri.b.y(), ptp.z()),
+					c = new Vec3D(tri.c.x(), tri.c.y(), pt.z()+1);
+				pln.push(b);
+				pln.push(c);
+				pln.push(a);
+				tril.push(new Triangle3D(a, b, c));
+				trivl.push(0.0);
+				ptp = pt;
+			}
+			
+			triangles.push(tril);
+			triangles_v.push(trivl);
+			pts.push(pln);
+			rots.push(0);
 		}
+		
 	}
 	
 	override public function draw():Void {
-		background(0, 0, 0);
-		stroke(255, 255, 255, 255);
+		background(200, 235, 255);
 		
-		var ty = fontSize;
-		fill(255, 255, 255, 255);
 		beat.detect(jingle.mix.toArray());
-		if (beat.isHat()) text("isHat", 0, ty); ty += fontSize;
-		if (beat.isKick()) text("isKick", 0, ty); ty += fontSize;
-		if (beat.isSnare()) text("isSnare", 0, ty); ty += fontSize;
-		var ons = [];
-		var nums = [];
-		for (i in 0...27) {
-			if (beat.isOnset(i)) ons.push("##");
-			else ons.push("--");
-			
-			nums.push(i < 10 ? "0" + i : i.string());
-		}
-		text(nums.join(","), 0, ty); ty += fontSize;
-		text(ons.join(","), 0, ty); ty += fontSize;
-		
-		
 		fft.forward(jingle.mix.toArray());
-		for (i in 0...fft.specSize()) {
-			line(i, height, 0, i, height - fft.getBand(i)*4, 0);
-		}
 		
-		if (mouseX > 0 && mouseX < fft.specSize()) {
-			text(mouseX + "(" + fft.indexToFreq(mouseX) + "Hz): " + Math.pow(fft.getBand(mouseX), 0.1) * 10, 0, ty); ty += fontSize;
-		}
+		#if debug
+			var ty = fontSize;
+			fill(255, 255, 255, 255);
+			stroke(255, 255, 255, 255);
+			if (beat.isHat()) text("isHat", 0, ty); ty += fontSize;
+			if (beat.isKick()) text("isKick", 0, ty); ty += fontSize;
+			if (beat.isSnare()) text("isSnare", 0, ty); ty += fontSize;
+			var ons = [];
+			var nums = [];
+			for (i in 0...27) {
+				if (beat.isOnset(i)) ons.push("##");
+				else ons.push("--");
+				
+				nums.push(i < 10 ? "0" + i : i.string());
+			}
+			text(nums.join(","), 0, ty); ty += fontSize;
+			text(ons.join(","), 0, ty); ty += fontSize;
+			
+			for (i in 0...fft.specSize()) {
+				line(i, height, 0, i, height - fft.getBand(i)*4, 0);
+			}
+			
+			if (mouseX > 0 && mouseX < fft.specSize()) {
+				text(mouseX + "(" + fft.indexToFreq(mouseX) + "Hz): " + Math.pow(fft.getBand(mouseX), 0.1) * 10, 0, ty); ty += fontSize;
+			}
+		#end
+		
+		
+		translate(width * 0.5, height * 0.5, 0);
+		
+		
+		lights();
+		pointLight(155, 155, 155, Math.sin(frameCount * 0.05) * 120, Math.cos(frameCount * 0.03) * 120, 120);
+		lightSpecular(255, 255, 255); 
+		ambient(0, 0, 0);
+		emissive(0, 0, 0);
+		specular(255, 255, 255);
+		shininess(255);
+		
+		//rotateY(frameCount * 0.05);
+		noStroke();
+		
+		var cl = color;
 		
 		pushMatrix();
-		noStroke();
-		translate(width * 0.5, height * 0.5, 0);
-		for (i in 0...27) {
-			var hsl = {
-				h: map(i, 0, 27, 270, 360),
-				s: 1.0,
-				l: 0.5
-			};
+		scale(25, 25, -20);
+		fill(cl.red() * 255, cl.green() * 255, cl.blue() * 255, 250);
+		beginShape();
+		vertex(initPts[0].x(), initPts[0].y(), initPts[0].z());
+		vertex(initPts[1].x(), initPts[1].y(), initPts[1].z());
+		vertex(initPts[2].x(), initPts[2].y(), initPts[2].z());
+		vertex(initPts[3].x(), initPts[3].y(), initPts[3].z());
+		endShape(PConstants.CLOSE);
+		
+		for (i in 0...triangles.length) {
+			var tril = triangles[i];
+			fill(cl.red() * 255, cl.green() * 255, cl.blue() * 255, i == 0 ? 250 : 235);
+			cl = cl.getLightened(0.2);
 			
-			var v = beat.isOnset(i) ? jingle.mix.level() : 0;
-			var need = v > 0;
-			while (need || Math.pow(v, 0.2) > Math.random()*10) {
-				var d = new PVector(0,0,0);
-				var v = v * 1000;
-				d.x = NumberUtil.randomWithinRange(-v, v);
-				d.y = NumberUtil.randomWithinRange(-v, v);
-				d.limit(v);
-				var pt = new Pt();
-				pt.target = d;
-				pts[i].push(pt);
-				
-				need = false;
+			var fftValue = Math.pow(fft.getBand(map(i, 0, triangles.length, 0 , fft.specSize()).int()), 0.1) * 0.05;
+			var beating = beat.isOnset(map(i, 0, triangles.length, 0 , 27).int());
+			for (t in 0...tril.length) {
+				var tri = tril[t];
+				var a = tri.a.copy();
+				var b = tri.b.copy();
+				var cScale = triangles_v[i][t] = i == 0 ? 
+					1 : //map(jingle.position(), 0, jingle.length(), 0, 1) : 
+					beating && Math.random() < 0.1 ? 0.5 : triangles_v[i][t] * 0.9;
+				var c = tri.a.interpolateTo(tri.b, 0.5).interpolateTo(tri.c, cScale);
+				drawTri(new Triangle3D(a, b, c));
 			}
-			
-			
-			
-			for (pt in pts[i]) {
-				if (pt.t > 1) {
-					pts[i].remove(pt);
-				}
-				var x = Quad.easeIn(pt.t, pt.x, pt.target.x - pt.x, 1);
-				var y = Quad.easeIn(pt.t, pt.y, pt.target.y - pt.y, 1);
-				hsl.l = Expo.easeIn(pt.t, 0, 1, 1);
-				var rgb = hsl2rgb(hsl);
-				fill(rgb.r * 255, rgb.g * 255, rgb.b * 255, pt.t * 255);
-				ellipse(x, y, 15, 15);
-				pt.t += 0.05;
-			}
+			if (i != 0) translate(0, 0 , 2.0 + fftValue);
 		}
 		popMatrix();
 	}
@@ -170,101 +193,4 @@ class Demo1 extends PApplet {
 		args[1] = "hxProcessing";
 		PApplet.main(args);
 	}
-	
-	//http://haxe.org/doc/snip/colorconverter
-	public static function hsl2rgb(hsl:HSL): RGB {
-	    var q:Float = if (hsl.l < 1.0 / 2.0)
-	    {
-	        hsl.l * (1 + hsl.s);
-	    } else
-	    {
-	        hsl.l + hsl.s - (hsl.l * hsl.s);
-	    }
-	    
-	    var p:Float = 2 * hsl.l - q;
-	    
-	    var hk:Float = (hsl.h % 360) / 360.0;
-	    
-	    var tr:Float = hk + 1.0 / 3.0;
-	    var tg:Float = hk;
-	    var tb:Float = hk - 1.0 / 3.0;
-	    
-	    var tc:Array<Float> = [tr,tg,tb];
-	    for (n in 0...tc.length)
-	    {
-	        var t:Float = tc[n];
-	        if (t < 0) t += 1;
-	        if (t > 1) t -= 1;
-	        tc[n] = if (t < 1.0 / 6.0)
-	        {
-	            p + ((q - p) * 6 * t);
-	        } else if (t < 1.0 / 2.0)
-	        {
-	            q;
-	        } else if (t < 2.0 / 3.0)
-	        {
-	            p + ((q - p) * 6.0 * (2.0 / 3.0 - t));
-	        } else
-	        {
-	            p;
-	        }
-	    }
-	    
-	    return {
-	        r: tc[0],
-	        g: tc[1],
-	        b: tc[2],
-	    }
-	}
-	
-	public static function maxRGB(rgb:RGB) : Float
-    {
-        return Math.max(rgb.r, Math.max(rgb.g, rgb.b));
-    }
-    
-    public static function minRGB(rgb:RGB) : Float
-    {
-        return Math.min(rgb.r, Math.min(rgb.g, rgb.b));
-    }
-	
-	public static function rgb2hsl(rgb:RGB):HSL {
-        var max:Float = maxRGB(rgb);
-        var min:Float = minRGB(rgb);
-        var add:Float = max + min;
-        var sub:Float = max - min;
-        
-        var h:Float = if (max == min)
-        {
-            0;
-        } else if (max == rgb.r)
-        {
-            (60 * (rgb.g - rgb.b) / sub + 360) % 360;
-        } else if (max == rgb.g)
-        {
-            60 * (rgb.b - rgb.r) / sub + 120;
-        } else if (max == rgb.b)
-        {
-            60 * (rgb.r - rgb.g) / sub + 240;
-        }
-        
-        var l:Float = add / 2;
-        
-        var s:Float = if (max == min)
-        {
-            0;
-        } else if (l <= 1 / 2)
-        {
-            sub / add;
-        } else
-        {
-            sub / (2 - add);
-        }
-        
-        return {
-            h: h,
-            s: s,
-            l: l,
-        }
-        
-    }
 }
