@@ -66,7 +66,8 @@ class Demo1 extends PApplet {
 		
 		minim = new Minim(this);
 		jingle = minim.loadFile("java.mp3", 1024);
-		jingle.loop();
+		jingle.play();
+		//jingle.loop();
 		beat = new BeatDetect(jingle.bufferSize(), jingle.sampleRate());
 		
 		triangles = [];
