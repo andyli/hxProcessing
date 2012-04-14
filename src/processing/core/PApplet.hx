@@ -146,7 +146,21 @@ extern class PApplet {
 	/*
 	 * Image
 	 */
+	public function image(img:PImage, x:Single, y:Single, width:Single, height:Single):Void;
+	public function imageMode(MODE:Int):Void;
+	public function loadImage(filename:String):Null<PImage>;
+	public function noTint():Void;
+	public function requestImage(filename:String):Null<PImage>;
+	public function tint(value1:Single, value2:Single, value3:Single, alpha:Single):Void;
+	
+	public function blend(srcImg:PImage, x:Int, y:Int, width:Int, height:Int, dx:Int, dy:Int, dwidth:Int, dheight:Int, MODE:Int):Void;
+	public function copy(srcImg:PImage, x:Int, y:Int, width:Int, height:Int, dx:Int, dy:Int, dwidth:Int, dheight:Int):Void;
 	public function filter(MODE:Int, level:Single):Void;
+	public function get(x:Int, y:Int, width:Int, height:Int):PImage;
+	public function loadPixels():Void;
+	public var pixels:jvm.NativeArray<Int>;
+	public function set(x:Int, y:Int, image:PImage):Void;
+	public function updatePixels():Void;
 	
 	/* 
 	 * Typography

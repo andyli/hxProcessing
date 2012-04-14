@@ -2,12 +2,16 @@ package;
 
 import processing.core.PApplet;
 import processing.core.PConstants;
+import processing.core.PColor;
 import processing.core.PFont;
 import processing.core.PVector;
+import processing.core.PImage;
 import toxi.geom.Vec2D;
 import toxi.geom.Rect;
 import toxi.color.TColor;
+using toxi.color.TColor;
 import org.casalib.util.NumberUtil;
+using org.casalib.util.NumberUtil;
 using Std;
 
 #if !jvm
@@ -32,23 +36,24 @@ class Block {
 class Demo2 extends PApplet {
 	var theta:Float;
 	var blocks:Array<Array<Block>>;
+	var tree:PImage;
 	
 	override function setup():Void {
+		background(0, 0, 0);
+		frameRate(30);
 		size(800, 600, PConstants.JAVA2D);
 		smooth();
 		
 		var block = new Block();
 		block.rect = new Rect(0, 0, width, height);
-		block.color = TColor.newRGBA(0, 0, 1, 1);
+		block.color = TColor.newRGBA(0.2, 0.2, 1, 1);
 		block.population = 0.9;
 		
 		blocks = [[block]];
 		branch([block]);
-	}
-	
-	override function draw():Void {
-		background(0, 0, 0);
-		frameRate(30);
+		
+		tree = loadImage("MeteorRepository1Icons_0_tree.png");
+		
 		noStroke();
 		for (blockLayer in blocks) {
 			for (block in blockLayer) {
@@ -58,6 +63,37 @@ class Demo2 extends PApplet {
 		
 		filter(PConstants.BLUR, 6);
 		filter(PConstants.POSTERIZE, 4);
+		
+		loadPixels();
+		for(i in 0...35) {
+			var pt;
+			do {
+				pt = new Vec2D(NumberUtil.randomIntegerWithinRange(5, width-22), NumberUtil.randomIntegerWithinRange(5, height-22));
+			} while (checkPtIsLand(pt));
+			
+			do {
+				pt.addSelf(new Vec2D(10 * NumberUtil.randomIntegerWithinRange(-2, 2), 10 * NumberUtil.randomIntegerWithinRange(-2, 2)));
+			} while (checkPtIsLand(pt) && Math.random() < 0.8);
+			
+			image(tree, pt.x(), pt.y(), 16, 16);
+		}
+	}
+	
+	function idx(pt:Vec2D):Int {
+		return (pt.x() + pt.y() * width).int();
+	}
+	
+	function checkPtIsLand(pt:Vec2D):Bool {
+		return	!pt.x().isBetween(5, width-22) ||
+				!pt.y().isBetween(5, height-22) || 
+				!pixels[idx(pt.add(new Vec2D(-5, -5)))].newARGB().hue().isBetween(0.2,0.3) ||
+				!pixels[idx(pt.add(new Vec2D(21, -5)))].newARGB().hue().isBetween(0.2,0.3) ||
+				!pixels[idx(pt.add(new Vec2D(21, 21)))].newARGB().hue().isBetween(0.2,0.3) ||
+				!pixels[idx(pt.add(new Vec2D(-5, 21)))].newARGB().hue().isBetween(0.2,0.3);
+	}
+	
+	override function draw():Void {
+		
 	}
 	
 	function branch(pBlockLayer:Array<Block>, i:Single = 1):Void {
@@ -88,7 +124,7 @@ class Demo2 extends PApplet {
 						cast pBlock.rect.getLeft() + nX, 
 						cast pBlock.rect.getTop() + nY
 					));
-				nBlock.color = Math.random() < 0.5 ? pBlock.color : TColor.newRGBA(0.1, 0.4, 0, 1);
+				nBlock.color = Math.random() < 0.5 ? pBlock.color : TColor.newRGBA(0.3, 0.6, 0.2, 1);
 				nBlock.population = pBlock.population * NumberUtil.randomWithinRange(0.6, 0.8);
 				blockLayer.push(nBlock);
 			}

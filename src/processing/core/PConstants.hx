@@ -253,21 +253,21 @@ extern class PConstants {
 	// blend mode keyword definitions
 	// @see processing.core.PImage#blendColor(int,int,int)
 	
-	public static var REPLACE:Single;
-	public static var BLEND:Single;
-	public static var ADD:Single;
-	public static var SUBTRACT:Single;
-	public static var LIGHTEST:Single;
-	public static var DARKEST:Single;
-	public static var DIFFERENCE:Single;
-	public static var EXCLUSION:Single;
-	public static var MULTIPLY:Single;
-	public static var SCREEN:Single;
-	public static var OVERLAY:Single;
-	public static var HARD_LIGHT:Single;
-	public static var SOFT_LIGHT:Single;
-	public static var DODGE:Single;
-	public static var BURN:Single;
+	public static var REPLACE:Int;
+	public static var BLEND:Int;
+	public static var ADD:Int;
+	public static var SUBTRACT:Int;
+	public static var LIGHTEST:Int;
+	public static var DARKEST:Int;
+	public static var DIFFERENCE:Int;
+	public static var EXCLUSION:Int;
+	public static var MULTIPLY:Int;
+	public static var SCREEN:Int;
+	public static var OVERLAY:Int;
+	public static var HARD_LIGHT:Int;
+	public static var SOFT_LIGHT:Int;
+	public static var DODGE:Int;
+	public static var BURN:Int;
 	
 	// colour component bitmasks
 	

@@ -45,6 +45,7 @@
     <Compile Include="demo\Demo1.hx" />
     <Compile Include="demo\Demo2.hx" />
     <Compile Include="src\toxi\geom\Rect.hx" />
+    <Compile Include="src\processing\core\PColor.hx" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="src\ddf\" />

@@ -182,6 +182,12 @@ class Demo1 extends PApplet {
 			if (i != 0) translate(0, 0 , 1.0 + (beating ? jingle.mix.level() : 0));
 		}
 		popMatrix();
+		
+		/* good effect but slow...
+		var cap = get(0, 0, width, height);
+		filter(PConstants.BLUR, 2);
+		blend(cap, 0, 0, width, height, 0, 0, width, height, PConstants.LIGHTEST);
+		*/
 	}
 	
 	static function main():Void {
