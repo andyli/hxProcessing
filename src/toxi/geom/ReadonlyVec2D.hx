@@ -4,7 +4,7 @@ package toxi.geom;
 private typedef Single = Float;
 #end
 
-extern class ReadonlyVec2D {
+extern interface ReadonlyVec2D {
 	public function add(v:ReadonlyVec2D):Vec2D;
 	public function angleBetween(v:ReadonlyVec2D, forceNormalize:Bool):Single;
 	public function bisect(p:Vec2D):Vec3D;

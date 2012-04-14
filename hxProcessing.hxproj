@@ -43,6 +43,8 @@
     <Compile Include="src\toxi\geom\ReadonlyVec2D.hx" />
     <Compile Include="src\toxi\geom\Line2D.hx" />
     <Compile Include="demo\Demo1.hx" />
+    <Compile Include="demo\Demo2.hx" />
+    <Compile Include="src\toxi\geom\Rect.hx" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="src\ddf\" />

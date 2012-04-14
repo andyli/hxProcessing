@@ -5,6 +5,10 @@ private typedef Single = Float;
 #end
 
 extern class Vec2D implements ReadonlyVec2D {
+	@:overload(function(x:Single, y:Single):Void {})
+	@:overload(function(v:ReadonlyVec2D):Void {})
+	public function new():Void;
+	
 	public function abs():Vec2D;
 	public function add(v:ReadonlyVec2D):Vec2D;
 	public function addSelf(v:Vec2D):Vec2D;

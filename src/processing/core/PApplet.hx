@@ -143,6 +143,11 @@ extern class PApplet {
 	public function noStroke():Void;
 	public function stroke(value1:Single, value2:Single, value3:Single, alpha:Single):Void;
 	
+	/*
+	 * Image
+	 */
+	public function filter(MODE:Int, level:Single):Void;
+	
 	/* 
 	 * Typography
 	 */
@@ -170,6 +175,16 @@ extern class PApplet {
 	public function round(value:Single):Int;
 	public function sq(value:Single):Single;
 	public function sqrt(value:Single):Single;
+	
+	public function acos(value:Single):Single;
+	public function asin(value:Single):Single;
+	public function atan(value:Single):Single;
+	public function atan2(y:Single, x:Single):Single;
+	public function cos(rad:Single):Single;
+	public function degrees(value:Single):Single;
+	public function radians(value:Single):Single;
+	public function sin(rad:Single):Single;
+	public function tan(rad:Single):Single;
 	
 	public function noise(x:Single, y:Single, z:Single):Single;
 	public function noiseDetail(octaves:Int, falloff:Single):Void;
