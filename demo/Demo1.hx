@@ -30,6 +30,7 @@ import feffects.easing.Expo;
 private typedef Single = Float;
 #end
 
+@:nativegen
 class Demo1 extends PApplet {
 	static var end = 400 * Math.PI;
 	

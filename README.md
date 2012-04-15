@@ -4,6 +4,6 @@
 
 Currently only provides a partial Processing 1.5.1 API for quick demostration propose.
 
-# Credits
+# Demos
 
-Audio track in demo app is [*Java* by *ertekox ambient*](http://soundcloud.com/ertekox-ambient/java) (CC BY-NC-ND 3.0).
+Demos can be viewed at http://andyli.github.com/hxProcessing/.

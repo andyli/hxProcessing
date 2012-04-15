@@ -37,7 +37,7 @@ extern class PApplet {
 	public function ellipse(x:Single, y:Single, width:Single, height:Single):Void;
 	//@:overload(function(x1:Single, y1:Single, x2:Single, y2:Single):Void{})
 	public function line(x1:Single, y1:Single, z1:Single, x2:Single, y2:Single, z2:Single):Void;
-	//@:overload(function(x:Single, y:Single):Void {})
+	@:overload(function(x:Single, y:Single):Void {})
 	public function point(x:Single, y:Single, z:Single):Void;
 	public function quad(x1:Single, y1:Single, x2:Single, y2:Single, x3:Single, y3:Single, x4:Single, y4:Single):Void;
 	public function rect(x:Single, y:Single, width:Single, height:Single):Void;

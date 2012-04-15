@@ -32,7 +32,8 @@ class Block {
 		p.rect(rect.x, rect.y, rect.width, rect.height);
 	}
 }
- 
+
+@:nativegen
 class Demo2 extends PApplet {
 	var theta:Float;
 	var blocks:Array<Array<Block>>;
