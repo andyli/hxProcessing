@@ -46,6 +46,11 @@
     <Compile Include="demo\Demo2.hx" />
     <Compile Include="src\toxi\geom\Rect.hx" />
     <Compile Include="src\processing\core\PColor.hx" />
+    <Compile Include="src\processing\core\PMatrix.hx" />
+    <Compile Include="src\processing\core\PMatrix2D.hx" />
+    <Compile Include="src\processing\core\PMatrix3D.hx" />
+    <Compile Include="src\processing\core\PGraphics.hx" />
+    <Compile Include="src\processing\core\PStyle.hx" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="src\ddf\" />
