@@ -2,7 +2,7 @@ package processing.core;
 
 #if !jvm private typedef Single = Float; #end
 
-extern class PStyle implements PConstants {
+extern class PStyle implements processing.core.PConstants {
 
 	public var ambientB:Single;
 	public var ambientG:Single;
@@ -32,7 +32,7 @@ extern class PStyle implements PConstants {
 	public var strokeWeight:Single;
 	public var textAlign:Int;
 	public var textAlignY:Int;
-	public var textFont: PFont;
+	public var textFont:PFont;
 	public var textLeading:Single;
 	public var textMode:Int;
 	public var textSize:Single;

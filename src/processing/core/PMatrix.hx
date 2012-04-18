@@ -1,8 +1,13 @@
 package processing.core;
 
-extern interface PMatrix {
+#if !jvm private typedef Single = Float; #end
+
+extern interface PMatrix  {
+
+	
 
 	@:overload(function(source:PMatrix3D):Void{})
+	/* Multiply this matrix by another. */
 	@:overload(function(source:PMatrix):Void{})
 	@:overload(function(n00:Single, n01:Single, n02:Single, n10:Single, n11:Single, n12:Single):Void{})
 	@:overload(function(n00:Single, n01:Single, n02:Single, n03:Single, n10:Single, n11:Single, n12:Single, n13:Single, n20:Single, n21:Single, n22:Single, n23:Single, n30:Single, n31:Single, n32:Single, n33:Single):Void{})
@@ -10,17 +15,23 @@ extern interface PMatrix {
 	
 	public function determinant():Single;
 	
+	/* Copies the matrix contents into a float array. */
 	@:overload(function(target:jvm.NativeArray<Single>):jvm.NativeArray<Single>{})
-	public function get(): PMatrix;
+	/* Returns a copy of this PMatrix. */
+	public function get():PMatrix;
 	
+	/* Invert this matrix. */
 	public function invert():Bool;
 	
-	@:overload(function(source:PVector, target: PVector): PVector{})
+	/* Multiply a PVector by this matrix. */
+	@:overload(function(source:PVector, target:PVector):PVector{})
+	/* Multiply a multi-element vector against this matrix. */
 	public function mult(source:jvm.NativeArray<Single>, target:jvm.NativeArray<Single>):jvm.NativeArray<Single>;
 	
 	@:overload(function(left:PMatrix3D):Void{})
 	@:overload(function(n00:Single, n01:Single, n02:Single, n10:Single, n11:Single, n12:Single):Void{})
 	@:overload(function(n00:Single, n01:Single, n02:Single, n03:Single, n10:Single, n11:Single, n12:Single, n13:Single, n20:Single, n21:Single, n22:Single, n23:Single, n30:Single, n31:Single, n32:Single, n33:Single):Void{})
+	/* Apply another matrix to the left of this one. */
 	public function preApply(left:PMatrix2D):Void;
 	
 	public function reset():Void;
@@ -50,6 +61,8 @@ extern interface PMatrix {
 	@:overload(function(tx:Single, ty:Single, tz:Single):Void{})
 	public function translate(tx:Single, ty:Single):Void;
 	
-	 
-
+	/* Transpose this matrix. */
+	public function transpose():Void;
+	
+	
 }

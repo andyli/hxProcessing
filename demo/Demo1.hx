@@ -3,6 +3,7 @@ package;
 import processing.core.PApplet;
 import processing.core.PConstants;
 import processing.core.PFont;
+import processing.core.PImage;
 import processing.core.PVector;
 import toxi.color.TColor;
 import toxi.geom.Triangle3D;
@@ -34,10 +35,10 @@ private typedef Single = Float;
 class Demo1 extends PApplet {
 	static var end = 400 * Math.PI;
 	
-	static var color = TColor.newHex("f18940");
+	static var logoColor:TColor = TColor.newHex("f18940");
 	
 	var font:PFont;
-	var fontSize:Float;
+	var fontSize:Single;
 	
 	var minim:Minim;
 	var jingle:AudioPlayer;
@@ -127,18 +128,9 @@ class Demo1 extends PApplet {
 			}
 			text(nums.join(","), 0, ty); ty += fontSize;
 			text(ons.join(","), 0, ty); ty += fontSize;
-			
-			for (i in 0...fft.specSize()) {
-				line(i, height, 0, i, height - fft.getBand(i)*4, 0);
-			}
-			
-			if (mouseX > 0 && mouseX < fft.specSize()) {
-				text(mouseX + "(" + fft.indexToFreq(mouseX) + "Hz): " + Math.pow(fft.getBand(mouseX), 0.1) * 10, 0, ty); ty += fontSize;
-			}
 		#end
 		
-		
-		translate(width * 0.5, height * 0.5, 0);
+		translate(cast width * 0.5, cast height * 0.5, 0);
 		
 		
 		lights();
@@ -152,7 +144,7 @@ class Demo1 extends PApplet {
 		//rotateY(frameCount * 0.05);
 		noStroke();
 		
-		var cl = color;
+		var cl = logoColor;
 		
 		pushMatrix();
 		scale(25, 25, -20);
@@ -169,7 +161,7 @@ class Demo1 extends PApplet {
 			fill(cl.red() * 255, cl.green() * 255, cl.blue() * 255, i == 0 ? 250 : 235);
 			cl = cl.getLightened(0.2);
 			
-			var beating = beat.isOnset(map(i, 0, triangles.length, 0 , 27).int());
+			var beating = beat.isOnset(PApplet.map(i, 0, triangles.length, 0 , 27).int());
 			for (t in 0...tril.length) {
 				var tri = tril[t];
 				var a = tri.a.copy();
@@ -180,7 +172,7 @@ class Demo1 extends PApplet {
 				var c = tri.a.interpolateTo(tri.b, 0.5).interpolateTo(tri.c, cScale);
 				drawTri(new Triangle3D(a, b, c));
 			}
-			if (i != 0) translate(0, 0 , 1.0 + (beating ? jingle.mix.level() : 0));
+			if (i != 0) translate(0, 0 , (beating ? jingle.mix.level() : 0) + 1);
 		}
 		popMatrix();
 		

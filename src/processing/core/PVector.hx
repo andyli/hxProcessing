@@ -20,25 +20,25 @@ extern class PVector {
 	
 	
 	/* Add two vectors */
-	@:overload(function(v1:PVector, v2: PVector):PVector{})
+	@:overload(function(v1:PVector, v2:PVector):PVector{})
 	@:overload(function(x:Single, y:Single, z:Single):Void{})
 	/* Add two vectors into a target vector */
-	@:overload(function(v1:PVector, v2: PVector, target: PVector):PVector{})
+	@:overload(function(v1:PVector, v2:PVector, target:PVector):PVector{})
 	/* ( begin auto-generated from PVector_add.xml ) Adds x, y, and z components to a vector, adds one vector to another, or adds two independent vectors together. */
 	public function add(v:PVector):Void;
 	
 	/* ( begin auto-generated from PVector_angleBetween.xml ) Calculates and returns the angle (in radians) between two vectors. */
-	static public function angleBetween(v1:PVector, v2: PVector):Single;
+	static public function angleBetween(v1:PVector, v2:PVector):Single;
 	
 	/* ( begin auto-generated from PVector_array.xml ) Return a representation of this vector as a float array. */
 	public function array():jvm.NativeArray<Single>;
 	
-	@:overload(function(v:PVector, target: PVector): PVector{})
-	@:overload(function(v1:PVector, v2: PVector, target: PVector):PVector{})
+	@:overload(function(v:PVector, target:PVector):PVector{})
+	@:overload(function(v1:PVector, v2:PVector, target:PVector):PVector{})
 	/* ( begin auto-generated from PVector_cross.xml ) Calculates and returns a vector composed of the cross product between two vectors. */
-	public function cross(v:PVector): PVector;
+	public function cross(v:PVector):PVector;
 	
-	@:overload(function(v1:PVector, v2: PVector):Single{})
+	@:overload(function(v1:PVector, v2:PVector):Single{})
 	/* ( begin auto-generated from PVector_dist.xml ) Calculates the Euclidean distance between two points (considering a point as a vector object). */
 	public function dist(v:PVector):Single;
 	
@@ -47,14 +47,14 @@ extern class PVector {
 	/* Divide a vector by a scalar and return the result in a new vector. */
 	@:overload(function(v:PVector, n:Single):PVector{})
 	/* Divide each element of one vector by the individual elements of another vector, and return the result as a new PVector. */
-	@:overload(function(v1:PVector, v2: PVector):PVector{})
+	@:overload(function(v1:PVector, v2:PVector):PVector{})
 	/* Divide a vector by a scalar and store the result in another vector. */
-	@:overload(function(v:PVector, n:Single, target: PVector):PVector{})
-	@:overload(function(v1:PVector, v2: PVector, target: PVector):PVector{})
+	@:overload(function(v:PVector, n:Single, target:PVector):PVector{})
+	@:overload(function(v1:PVector, v2:PVector, target:PVector):PVector{})
 	/* ( begin auto-generated from PVector_div.xml ) Divides a vector by a scalar or divides one vector by another. */
 	public function div(n:Single):Void;
 	
-	@:overload(function(v1:PVector, v2: PVector):Single{})
+	@:overload(function(v1:PVector, v2:PVector):Single{})
 	@:overload(function(x:Single, y:Single, z:Single):Single{})
 	/* ( begin auto-generated from PVector_dot.xml ) Calculates the dot product of two vectors. */
 	public function dot(v:PVector):Single;
@@ -63,7 +63,7 @@ extern class PVector {
 	
 	@:overload(function(target:jvm.NativeArray<Single>):jvm.NativeArray<Single>{})
 	/* ( begin auto-generated from PVector_get.xml ) Gets a copy of the vector, returns a PVector object. */
-	public function get(): PVector;
+	public function get():PVector;
 	
 	public function hashCode():Int;
 	
@@ -85,14 +85,14 @@ extern class PVector {
 	
 	@:overload(function(v:PVector):Void{})
 	@:overload(function(v:PVector, n:Single):PVector{})
-	@:overload(function(v1:PVector, v2: PVector):PVector{})
+	@:overload(function(v1:PVector, v2:PVector):PVector{})
 	/* Multiply a vector by a scalar, and write the result into a target PVector. */
-	@:overload(function(v:PVector, n:Single, target: PVector):PVector{})
-	@:overload(function(v1:PVector, v2: PVector, target: PVector):PVector{})
+	@:overload(function(v:PVector, n:Single, target:PVector):PVector{})
+	@:overload(function(v1:PVector, v2:PVector, target:PVector):PVector{})
 	/* ( begin auto-generated from PVector_mult.xml ) Multiplies a vector by a scalar or multiplies one vector by another. */
 	public function mult(n:Single):Void;
 	
-	@:overload(function(target:PVector): PVector{})
+	@:overload(function(target:PVector):PVector{})
 	/* ( begin auto-generated from PVector_normalize.xml ) Normalize the vector to length 1 (make it a unit vector). */
 	public function normalize():Void;
 	
@@ -106,15 +106,15 @@ extern class PVector {
 	public function set(source:jvm.NativeArray<Single>):Void;
 	
 	/* Sets the magnitude of this vector, storing the result in another vector. */
-	@:overload(function(target:PVector, len:Single): PVector{})
+	@:overload(function(target:PVector, len:Single):PVector{})
 	/* ( begin auto-generated from PVector_setMag.xml ) Set the magnitude of this vector to the value used for the len parameter. */
 	public function setMag(len:Single):Void;
 	
 	/* Subtract one vector from another */
-	@:overload(function(v1:PVector, v2: PVector):PVector{})
+	@:overload(function(v1:PVector, v2:PVector):PVector{})
 	@:overload(function(x:Single, y:Single, z:Single):Void{})
 	/* Subtract one vector from another and store in another vector */
-	@:overload(function(v1:PVector, v2: PVector, target: PVector):PVector{})
+	@:overload(function(v1:PVector, v2:PVector, target:PVector):PVector{})
 	/* ( begin auto-generated from PVector_sub.xml ) Subtracts x, y, and z components from a vector, subtracts one vector from another, or subtracts two independent vectors. */
 	public function sub(v:PVector):Void;
 	

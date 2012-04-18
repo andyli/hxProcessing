@@ -2,7 +2,6 @@ package;
 
 import processing.core.PApplet;
 import processing.core.PConstants;
-import processing.core.PColor;
 import processing.core.PFont;
 import processing.core.PVector;
 import processing.core.PImage;
