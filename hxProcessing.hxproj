@@ -50,6 +50,33 @@
     <Compile Include="src\processing\core\PMatrix3D.hx" />
     <Compile Include="src\processing\core\PGraphics.hx" />
     <Compile Include="src\processing\core\PStyle.hx" />
+    <Compile Include="src\ddf\minim\AudioEffect.hx" />
+    <Compile Include="src\ddf\minim\AudioListener.hx" />
+    <Compile Include="src\ddf\minim\AudioSignal.hx" />
+    <Compile Include="src\ddf\minim\BufferedAudio.hx" />
+    <Compile Include="src\ddf\minim\Effectable.hx" />
+    <Compile Include="src\ddf\minim\Playable.hx" />
+    <Compile Include="src\ddf\minim\Polyphonic.hx" />
+    <Compile Include="src\ddf\minim\Recordable.hx" />
+    <Compile Include="src\ddf\minim\Triggerable.hx" />
+    <Compile Include="src\ddf\minim\AudioInput.hx" />
+    <Compile Include="src\ddf\minim\AudioMetaData.hx" />
+    <Compile Include="src\ddf\minim\AudioOutput.hx" />
+    <Compile Include="src\ddf\minim\AudioRecorder.hx" />
+    <Compile Include="src\ddf\minim\AudioSample.hx" />
+    <Compile Include="src\ddf\minim\AudioSnippet.hx" />
+    <Compile Include="src\ddf\minim\Controller.hx" />
+    <Compile Include="src\ddf\minim\EffectsChain.hx" />
+    <Compile Include="src\ddf\minim\SignalChain.hx" />
+    <Compile Include="src\ddf\minim\SignalSplitter.hx" />
+    <Compile Include="src\ddf\minim\spi\AudioRecording.hx" />
+    <Compile Include="src\ddf\minim\spi\AudioRecordingStream.hx" />
+    <Compile Include="src\ddf\minim\spi\AudioResource.hx" />
+    <Compile Include="src\ddf\minim\spi\AudioStream.hx" />
+    <Compile Include="src\ddf\minim\spi\AudioSynthesizer.hx" />
+    <Compile Include="src\ddf\minim\spi\MinimServiceProvider.hx" />
+    <Compile Include="src\ddf\minim\spi\SampleRecorder.hx" />
+    <Compile Include="src\ddf\minim\analysis\DFT.hx" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="src\ddf\" />
@@ -59,5 +86,6 @@
     <Folder Include="src\toxi\" />
     <Folder Include="src\toxi\geom\" />
     <Folder Include="src\toxi\color\" />
+    <Folder Include="src\ddf\minim\spi\" />
   </ItemGroup>
 </Project>

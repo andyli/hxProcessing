@@ -2,18 +2,20 @@ package ddf.minim;
 
 #if !jvm private typedef Single = Float; #end
 
-extern class AudioPlayer extends ddf.minim.AudioSource, implements ddf.minim.Effectable, implements ddf.minim.Playable, implements ddf.minim.Recordable {
+extern class AudioSnippet extends ddf.minim.Controller, implements ddf.minim.Playable {
 
 	
 
-	/* Constructs an AudioPlayer that plays recording. */
-	public function new(recording:ddf.minim.spi.AudioRecordingStream):Void;
+	public function new(rec:ddf.minim.spi.AudioRecording):Void;
 	
+	
+	/* Closes the snippet so that any resources it is using can be released. */
+	public function close():Void;
 	
 	/* Sets the position to millis milliseconds from the beginning. */
 	public function cue(millis:Int):Void;
 	
-	/* Returns the meta data for the recording being played by this player. */
+	/* Returns the meta data for this. */
 	public function getMetaData():AudioMetaData;
 	
 	/* Returns true if this is currently playing and has more than one loop left to play. */
