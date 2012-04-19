@@ -6,16 +6,16 @@ extern interface AudioBuffer  {
 
 	
 
-	/* Gets the ith sample in the buffer. */
+	/** Gets the ith sample in the buffer. */
 	public function get(i:Int):Single;
 	
-	/* Gets the current level of the buffer. */
+	/** Gets the current level of the buffer. */
 	public function level():Single;
 	
-	/* Returns the length of the buffer. */
+	/** Returns the length of the buffer. */
 	public function size():Int;
 	
-	/* Returns the samples in the buffer in a new float array. */
+	/** Returns the samples in the buffer in a new float array. */
 	public function toArray():java.NativeArray<Single>;
 	
 	

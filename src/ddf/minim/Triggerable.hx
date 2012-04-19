@@ -6,10 +6,10 @@ extern interface Triggerable  {
 
 	
 
-	/* Stops all sound being produced. */
+	/** Stops all sound being produced. */
 	public function stop():Void;
 	
-	/* Triggers the sound to play once. */
+	/** Triggers the sound to play once. */
 	public function trigger():Void;
 	
 	

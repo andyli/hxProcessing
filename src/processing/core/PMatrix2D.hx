@@ -17,7 +17,7 @@ extern class PMatrix2D implements processing.core.PMatrix {
 	
 	
 	@:overload(function(source:PMatrix3D):Void{})
-	/* Multiply this matrix by another. */
+	/** Multiply this matrix by another. */
 	@:overload(function(source:PMatrix):Void{})
 	@:overload(function(n00:Single, n01:Single, n02:Single, n10:Single, n11:Single, n12:Single):Void{})
 	@:overload(function(n00:Single, n01:Single, n02:Single, n03:Single, n10:Single, n11:Single, n12:Single, n13:Single, n20:Single, n21:Single, n22:Single, n23:Single, n30:Single, n31:Single, n32:Single, n33:Single):Void{})
@@ -25,17 +25,17 @@ extern class PMatrix2D implements processing.core.PMatrix {
 	
 	public function determinant():Single;
 	
-	/* Copies the matrix contents into a 6 entry float array. */
+	/** Copies the matrix contents into a 6 entry float array. */
 	@:overload(function(target:java.NativeArray<Single>):java.NativeArray<Single>{})
-	/* Returns a copy of this PMatrix. */
+	/** Returns a copy of this PMatrix. */
 	public function get():PMatrix;
 	
-	/* Invert this matrix. */
+	/** Invert this matrix. */
 	public function invert():Bool;
 	
-	/* Multiply the x and y coordinates of a PVector against this matrix. */
+	/** Multiply the x and y coordinates of a PVector against this matrix. */
 	@:overload(function(source:PVector, target:PVector):PVector{})
-	/* Multiply a two element vector against this matrix. */
+	/** Multiply a two element vector against this matrix. */
 	public function mult(vec:java.NativeArray<Single>, out:java.NativeArray<Single>):java.NativeArray<Single>;
 	
 	public function multX(x:Single, y:Single):Single;
@@ -45,7 +45,7 @@ extern class PMatrix2D implements processing.core.PMatrix {
 	@:overload(function(left:PMatrix3D):Void{})
 	@:overload(function(n00:Single, n01:Single, n02:Single, n10:Single, n11:Single, n12:Single):Void{})
 	@:overload(function(n00:Single, n01:Single, n02:Single, n03:Single, n10:Single, n11:Single, n12:Single, n13:Single, n20:Single, n21:Single, n22:Single, n23:Single, n30:Single, n31:Single, n32:Single, n33:Single):Void{})
-	/* Apply another matrix to the left of this one. */
+	/** Apply another matrix to the left of this one. */
 	public function preApply(left:PMatrix2D):Void;
 	
 	public function print():Void;
@@ -78,7 +78,7 @@ extern class PMatrix2D implements processing.core.PMatrix {
 	@:overload(function(x:Single, y:Single, z:Single):Void{})
 	public function translate(tx:Single, ty:Single):Void;
 	
-	/* Transpose this matrix. */
+	/** Transpose this matrix. */
 	public function transpose():Void;
 	
 	

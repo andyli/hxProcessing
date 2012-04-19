@@ -35,13 +35,13 @@ extern class PConstants {
 	
 	// stroke
 	
-	/** stroke argb values */
+	/*** stroke argb values */
 	static public var SR:Int;
 	static public var SG:Int;
 	static public var SB:Int;
 	static public var SA:Int;
 	
-	/** stroke weight */
+	/*** stroke weight */
 	static public var SW:Int;
 	
 	// transformations (2D and 3D)
@@ -115,21 +115,21 @@ extern class PConstants {
 	
 	// max/min values for numbers
 	
-	/**
+	/***
 	* Same as Float.MAX_VALUE, but included for parity with MIN_VALUE,
 	* and to avoid teaching static methods on the first day.
 	*/
 	static var MAX_FLOAT:Single;
-	/**
+	/***
 	* Note that Float.MIN_VALUE is the smallest <EM>positive</EM> value
 	* for a floating point number, not actually the minimum (negative) value
 	* for a float. This constant equals 0xFF7FFFFF, the smallest (farthest
 	* negative) value a float can have before it hits NaN.
 	*/
 	static var MIN_FLOAT:Single;
-	/** Largest possible (positive) integer value */
+	/*** Largest possible (positive) integer value */
 	static var MAX_INT:Int;
-	/** Smallest possible (negative) integer value */
+	/*** Smallest possible (negative) integer value */
 	static var MIN_INT:Int;
 	
 	// shapes
@@ -142,7 +142,7 @@ extern class PConstants {
 	
 	// useful goodness
 	
-	/**
+	/***
 	* ( begin auto-generated from PI.xml )
 	*
 	* PI is a mathematical constant with the value 3.14159265358979323846. It
@@ -158,7 +158,7 @@ extern class PConstants {
 	*
 	*/
 	static var PI:Single;
-	/**
+	/***
 	* ( begin auto-generated from HALF_PI.xml )
 	*
 	* HALF_PI is a mathematical constant with the value
@@ -174,7 +174,7 @@ extern class PConstants {
 	*/
 	static var HALF_PI:Single;
 	static var THIRD_PI:Single;
-	/**
+	/***
 	* ( begin auto-generated from QUARTER_PI.xml )
 	*
 	* QUARTER_PI is a mathematical constant with the value 0.7853982. It is
@@ -189,7 +189,7 @@ extern class PConstants {
 	* @see PConstants#HALF_PI
 	*/
 	static var QUARTER_PI:Single;
-	/**
+	/***
 	* ( begin auto-generated from TWO_PI.xml )
 	*
 	* TWO_PI is a mathematical constant with the value 6.28318530717958647693.
@@ -344,51 +344,51 @@ extern class PConstants {
 	
 	// shape drawing modes
 	
-	/** Draw mode convention to use (x, y) to (width, height) */
+	/*** Draw mode convention to use (x, y) to (width, height) */
 	static var CORNER:Int;
-	/** Draw mode convention to use (x1, y1) to (x2, y2) coordinates */
+	/*** Draw mode convention to use (x1, y1) to (x2, y2) coordinates */
 	static var CORNERS:Int;
-	/** Draw mode from the center, and using the radius */
+	/*** Draw mode from the center, and using the radius */
 	static var RADIUS:Int;
-	/** @deprecated Use RADIUS instead. */
+	/*** @deprecated Use RADIUS instead. */
 	static var CENTER_RADIUS:Int;
-	/**
+	/***
 	* Draw from the center, using second pair of values as the diameter.
 	* Formerly called CENTER_DIAMETER in alpha releases.
 	*/
 	static var CENTER:Int;
-	/**
+	/***
 	* Synonym for the CENTER constant. Draw from the center,
 	* using second pair of values as the diameter.
 	*/
 	static var DIAMETER:Int;
-	/** @deprecated Use DIAMETER instead. */
+	/*** @deprecated Use DIAMETER instead. */
 	static var CENTER_DIAMETER:Int;
 	
 	
 	// vertically alignment modes for text
 	
-	/** Default vertical alignment for text placement */
+	/*** Default vertical alignment for text placement */
 	static var BASELINE:Int;
-	/** Align text to the top */
+	/*** Align text to the top */
 	static var TOP:Int;
-	/** Align text from the bottom, using the baseline. */
+	/*** Align text from the bottom, using the baseline. */
 	static var BOTTOM:Int;
 	
 	
 	// uv texture orientation modes
 	
-	/** texture coordinates in 0..1 range */
+	/*** texture coordinates in 0..1 range */
 	static var NORMAL:Int;
-	/** @deprecated use NORMAL instead */
+	/*** @deprecated use NORMAL instead */
 	static var NORMALIZED:Int;
-	/** texture coordinates based on image width/height */
+	/*** texture coordinates based on image width/height */
 	static var IMAGE:Int;
 	
 	
 	// text placement modes
 	
-	/**
+	/***
 	* textMode(MODEL) is the default, meaning that characters
 	* will be affected by transformations like any other shapes.
 	* <p/>
@@ -396,7 +396,7 @@ extern class PConstants {
 	*/
 	static var MODEL:Int;
 	
-	/**
+	/***
 	* textMode(SHAPE) draws text using the the glyph outlines of
 	* individual characters rather than as textures. If the outlines are
 	* not available, then textMode(SHAPE) will be ignored and textMode(MODEL)
@@ -414,32 +414,32 @@ extern class PConstants {
 	
 	// PTexture
 	
-	/** This constant identifies the texture target GL_TEXTURE_2D, that is, textures with normalized coordinates */
+	/*** This constant identifies the texture target GL_TEXTURE_2D, that is, textures with normalized coordinates */
 	public static var TEXTURE2D:Int;
 	
-	/** This constant identifies the nearest texture filter (point sampling) */
+	/*** This constant identifies the nearest texture filter (point sampling) */
 	//public static var POINT:Int; // shared with shape feature
-	/** This constant identifies the linear texture filter, usually called bilinear sampling */
+	/*** This constant identifies the linear texture filter, usually called bilinear sampling */
 	public static var BILINEAR:Int;
-	/** This constant identifies the linear/linear function to build mipmaps  */
+	/*** This constant identifies the linear/linear function to build mipmaps  */
 	public static var TRILINEAR:Int;
 	
-	/** This constant identifies the clamp-to-edge wrapping mode */
+	/*** This constant identifies the clamp-to-edge wrapping mode */
 	public static var CLAMP:Int;
-	/** This constant identifies the repeat wrapping mode */
+	/*** This constant identifies the repeat wrapping mode */
 	public static var REPEAT:Int;
 	
-	/** Point sprite distance attenuation functions */
+	/*** Point sprite distance attenuation functions */
 	public static var LINEAR:Int;
 	public static var QUADRATIC:Int;
 	
 	// PShape3D
 	
-	/**  Static usage mode for PShape3D (vertices won't be updated after creation).  */
+	/***  Static usage mode for PShape3D (vertices won't be updated after creation).  */
 	public static var STATIC:Int;
-	/**  Dynamic usage mode for PShape3D (vertices will be updated after creation). */
+	/***  Dynamic usage mode for PShape3D (vertices will be updated after creation). */
 	public static var DYNAMIC:Int;
-	/**  Dynamic usage mode for PShape3D (vertices will be updated at every frame). */
+	/***  Dynamic usage mode for PShape3D (vertices will be updated at every frame). */
 	public static var STREAM:Int;
 	
 	
@@ -470,7 +470,7 @@ extern class PConstants {
 	// for 0125, these were changed to 'char' values, because they
 	// can be upgraded to ints automatically by Java, but having them
 	// as ints prevented split(blah, TAB) from working
-	/*
+	/**
 	static final char BACKSPACE = 8;
 	static final char TAB       = 9;
 	static final char ENTER     = 10;
@@ -496,9 +496,9 @@ extern class PConstants {
 	
 	// orientations (only used on Android, ignored on desktop)
 	
-	/** Screen orientation constant for portrait (the hamburger way). */
+	/*** Screen orientation constant for portrait (the hamburger way). */
 	static var PORTRAIT:Int;
-	/** Screen orientation constant for landscape (the hot dog way). */
+	/*** Screen orientation constant for landscape (the hot dog way). */
 	static var LANDSCAPE:Int;
 	
 	

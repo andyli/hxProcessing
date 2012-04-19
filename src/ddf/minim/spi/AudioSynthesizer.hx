@@ -6,10 +6,10 @@ extern interface AudioSynthesizer implements ddf.minim.spi.AudioResource, implem
 
 	
 
-	/* Sets the AudioEffect to apply to the signal. */
+	/** Sets the AudioEffect to apply to the signal. */
 	public function setAudioEffect(effect:AudioEffect):Void;
 	
-	/* Sets the AudioSignal used by this sythesizer. */
+	/** Sets the AudioSignal used by this sythesizer. */
 	public function setAudioSignal(signal:AudioSignal):Void;
 	
 	

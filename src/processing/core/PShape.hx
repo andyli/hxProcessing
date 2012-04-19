@@ -4,28 +4,28 @@ package processing.core;
 
 extern class PShape implements processing.core.PConstants {
 
-	/* Collections of vertices created with beginShape(). */
+	/** Collections of vertices created with beginShape(). */
 	static public var GEOMETRY:Int;
-	/* A series of vertex, curveVertex, and bezierVertex calls. */
+	/** A series of vertex, curveVertex, and bezierVertex calls. */
 	static public var PATH:Int;
-	/* A line, ellipse, arc, image, etc. */
+	/** A line, ellipse, arc, image, etc. */
 	static public var PRIMITIVE:Int;
-	/* The current colorMode */
+	/** The current colorMode */
 	//public var colorMode:Int;
-	/* Max value for alpha set by colorMode */
+	/** Max value for alpha set by colorMode */
 	public var colorModeA:Single;
-	/* Max value for red (or hue) set by colorMode */
+	/** Max value for red (or hue) set by colorMode */
 	public var colorModeX:Single;
-	/* Max value for green (or saturation) set by colorMode */
+	/** Max value for green (or saturation) set by colorMode */
 	public var colorModeY:Single;
-	/* Max value for blue (or value) set by colorMode */
+	/** Max value for blue (or value) set by colorMode */
 	public var colorModeZ:Single;
 	public var depth:Single;
-	/* ( begin auto-generated from PShape_height.xml ) The height of the PShape document. */
+	/** ( begin auto-generated from PShape_height.xml ) The height of the PShape document. */
 	public var height:Single;
-	/* To mark the shape dirty upon changes in its geometry */
+	/** To mark the shape dirty upon changes in its geometry */
 	public var modified:Bool;
-	/* ( begin auto-generated from PShape_width.xml ) The width of the PShape document. */
+	/** ( begin auto-generated from PShape_width.xml ) The width of the PShape document. */
 	public var width:Single;
 
 	@:overload(function(family:Int):Void{})
@@ -35,7 +35,7 @@ extern class PShape implements processing.core.PConstants {
 	@:overload(function(who:PShape, idx:Int):Void{})
 	public function addChild(who:PShape):Void;
 	
-	/* Add a shape to the name lookup table. */
+	/** Add a shape to the name lookup table. */
 	public function addName(nom:String, shape:PShape):Void;
 	
 	@:overload(function(source:PMatrix):Void{})
@@ -54,7 +54,7 @@ extern class PShape implements processing.core.PConstants {
 	@:overload(function(mode:Int, max:Single):Void{})
 	@:overload(function(mode:Int, maxX:Single, maxY:Single, maxZ:Single):Void{})
 	@:overload(function(mode:Int, maxX:Single, maxY:Single, maxZ:Single, maxA:Single):Void{})
-	/* Set the pivot point for all transformations. */
+	/** Set the pivot point for all transformations. */
 	public function colorMode(mode:Int):Void;
 	
 	inline public function colorModeGet():Int {
@@ -70,16 +70,16 @@ extern class PShape implements processing.core.PConstants {
 	@:overload(function(x:Single, y:Single, z:Single):Void{})
 	public function curveVertex(x:Single, y:Single):Void;
 	
-	/* ( begin auto-generated from PShape_disableStyle.xml ) Disables the shape's style data and uses Processing's current styles. */
+	/** ( begin auto-generated from PShape_disableStyle.xml ) Disables the shape's style data and uses Processing's current styles. */
 	public function disableStyle():Void;
 	
-	/* Called by the following (the shape() command adds the g) PShape s = loadShapes("blah.svg"); shape(s); */
+	/** Called by the following (the shape() command adds the g) PShape s = loadShapes("blah.svg"); shape(s); */
 	public function draw(g:PGraphics):Void;
 	
-	/* Draws the SVG document. */
+	/** Draws the SVG document. */
 	public function drawImpl(g:PGraphics):Void;
 	
-	/* ( begin auto-generated from PShape_enableStyle.xml ) Enables the shape's style data and ignores Processing's current styles. */
+	/** ( begin auto-generated from PShape_enableStyle.xml ) Enables the shape's style data and ignores Processing's current styles. */
 	public function enableStyle():Void;
 	
 	@:overload(function(mode:Int):Void{})
@@ -94,29 +94,29 @@ extern class PShape implements processing.core.PConstants {
 	@:overload(function(x:Single, y:Single, z:Single, a:Single):Void{})
 	public function fill(rgb:Int):Void;
 	
-	/* Same as getChild(name), except that it first walks all the way up the hierarchy to the eldest grandparent, so that children can be found anywhere. */
+	/** Same as getChild(name), except that it first walks all the way up the hierarchy to the eldest grandparent, so that children can be found anywhere. */
 	public function findChild(target:String):PShape;
 	
 	public function getCenter():PVector;
 	
 	@:overload(function(target:String):PShape{})
-	/* ( begin auto-generated from PShape_getChild.xml ) Extracts a child shape from a parent shape. */
+	/** ( begin auto-generated from PShape_getChild.xml ) Extracts a child shape from a parent shape. */
 	public function getChild(index:Int):PShape;
 	
 	public function getChildCount():Int;
 	
-	/* Returns the index of child who. */
+	/** Returns the index of child who. */
 	public function getChildIndex(who:PShape):Int;
 	
 	public function getChildren():java.NativeArray<PShape>;
 	
-	/* Get the depth of the shape area (not necessarily the shape boundary). */
+	/** Get the depth of the shape area (not necessarily the shape boundary). */
 	public function getDepth():Single;
 	
-	/* The shape type, one of GROUP, PRIMITIVE, PATH, or GEOMETRY. */
+	/** The shape type, one of GROUP, PRIMITIVE, PATH, or GEOMETRY. */
 	public function getFamily():Int;
 	
-	/* Get the height of the drawing area (not necessarily the shape boundary). */
+	/** Get the height of the drawing area (not necessarily the shape boundary). */
 	public function getHeight():Single;
 	
 	public function getKind():Int;
@@ -132,7 +132,7 @@ extern class PShape implements processing.core.PConstants {
 	
 	public function getVertex(index:Int):java.NativeArray<Single>;
 	
-	/* One of VERTEX, BEZIER_VERTEX, CURVE_VERTEX, or BREAK. */
+	/** One of VERTEX, BEZIER_VERTEX, CURVE_VERTEX, or BREAK. */
 	public function getVertexCode(index:Int):Int;
 	
 	public function getVertexCodeCount():Int;
@@ -147,15 +147,15 @@ extern class PShape implements processing.core.PConstants {
 	
 	public function getVertexZ(index:Int):Single;
 	
-	/* Get the width of the drawing area (not necessarily the shape boundary). */
+	/** Get the width of the drawing area (not necessarily the shape boundary). */
 	public function getWidth():Single;
 	
-	/* Return true if this shape is 3D. */
+	/** Return true if this shape is 3D. */
 	public function is3D():Bool;
 	
 	public function isClosed():Bool;
 	
-	/* ( begin auto-generated from PShape_isVisible.xml ) Returns a boolean value "true" if the image is set to be visible, "false" if not. */
+	/** ( begin auto-generated from PShape_isVisible.xml ) Returns a boolean value "true" if the image is set to be visible, "false" if not. */
 	public function isVisible():Bool;
 	
 	public function noFill():Void;
@@ -173,28 +173,28 @@ extern class PShape implements processing.core.PConstants {
 	@:overload(function(cx:Single, cy:Single, cz:Single, x3:Single, y3:Single, z3:Single):Void{})
 	public function quadraticVertex(cx:Single, cy:Single, x3:Single, y3:Single):Void;
 	
-	/* Remove the child shape with index idx. */
+	/** Remove the child shape with index idx. */
 	public function removeChild(idx:Int):Void;
 	
-	/* ( begin auto-generated from PShape_resetMatrix.xml ) Replaces the current matrix of a shape with the identity matrix. */
+	/** ( begin auto-generated from PShape_resetMatrix.xml ) Replaces the current matrix of a shape with the identity matrix. */
 	public function resetMatrix():Void;
 	
 	@:overload(function(angle:Single, v0:Single, v1:Single, v2:Single):Void{})
-	/* ( begin auto-generated from PShape_rotate.xml ) Rotates a shape the amount specified by the angle parameter. */
+	/** ( begin auto-generated from PShape_rotate.xml ) Rotates a shape the amount specified by the angle parameter. */
 	public function rotate(angle:Single):Void;
 	
-	/* ( begin auto-generated from PShape_rotateX.xml ) Rotates a shape around the x-axis the amount specified by the angle parameter. */
+	/** ( begin auto-generated from PShape_rotateX.xml ) Rotates a shape around the x-axis the amount specified by the angle parameter. */
 	public function rotateX(angle:Single):Void;
 	
-	/* ( begin auto-generated from PShape_rotateY.xml ) Rotates a shape around the y-axis the amount specified by the angle parameter. */
+	/** ( begin auto-generated from PShape_rotateY.xml ) Rotates a shape around the y-axis the amount specified by the angle parameter. */
 	public function rotateY(angle:Single):Void;
 	
-	/* ( begin auto-generated from PShape_rotateZ.xml ) Rotates a shape around the z-axis the amount specified by the angle parameter. */
+	/** ( begin auto-generated from PShape_rotateZ.xml ) Rotates a shape around the z-axis the amount specified by the angle parameter. */
 	public function rotateZ(angle:Single):Void;
 	
 	@:overload(function(x:Single, y:Single):Void{})
 	@:overload(function(x:Single, y:Single, z:Single):Void{})
-	/* ( begin auto-generated from PShape_scale.xml ) Increases or decreases the size of a shape by expanding and contracting vertices. */
+	/** ( begin auto-generated from PShape_scale.xml ) Increases or decreases the size of a shape by expanding and contracting vertices. */
 	public function scale(s:Single):Void;
 	
 	public function setKind(kind:Int):Void;
@@ -205,7 +205,7 @@ extern class PShape implements processing.core.PConstants {
 	
 	public function setParams(source:java.NativeArray<Single>):Void;
 	
-	/* ( begin auto-generated from PShape_setVisible.xml ) Sets the shape to be visible or invisible. */
+	/** ( begin auto-generated from PShape_setVisible.xml ) Sets the shape to be visible or invisible. */
 	public function setVisible(visible:Bool):Void;
 	
 	public function solid(solid:Bool):Void;
@@ -233,7 +233,7 @@ extern class PShape implements processing.core.PConstants {
 	public function tint(rgb:Int):Void;
 	
 	@:overload(function(tx:Single, ty:Single, tz:Single):Void{})
-	/* ( begin auto-generated from PShape_translate.xml ) Specifies an amount to displace the shape. */
+	/** ( begin auto-generated from PShape_translate.xml ) Specifies an amount to displace the shape. */
 	public function translate(tx:Single, ty:Single):Void;
 	
 	public function updateRoot(root:PShape):Void;
