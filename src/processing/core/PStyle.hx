@@ -1,6 +1,6 @@
 package processing.core;
 
-#if !jvm private typedef Single = Float; #end
+#if !java private typedef Single = Float; #end
 
 extern class PStyle implements processing.core.PConstants {
 

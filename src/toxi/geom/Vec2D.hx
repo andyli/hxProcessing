@@ -1,6 +1,6 @@
 package toxi.geom;
 
-#if !jvm
+#if !java
 private typedef Single = Float;
 #end
 
@@ -76,7 +76,7 @@ extern class Vec2D implements ReadonlyVec2D {
 	public function to3DXY():Vec3D;
 	public function to3DXZ():Vec3D;
 	public function to3DYZ():Vec3D;
-	public function toArray():jvm.NativeArray<Single>;
+	public function toArray():java.NativeArray<Single>;
 	public function toCartesian():Vec2D;
 	public function toPolar():Vec2D;
 	public function toString():String;

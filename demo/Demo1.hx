@@ -27,7 +27,7 @@ import feffects.easing.Quad;
 import feffects.easing.Bounce;
 import feffects.easing.Expo;
 
-#if !jvm
+#if !java
 private typedef Single = Float;
 #end
 
@@ -184,7 +184,7 @@ class Demo1 extends PApplet {
 	}
 	
 	static function main():Void {
-		var args = new jvm.NativeArray<String>(2);
+		var args = new java.NativeArray<String>(2);
 		args[0] = "--bgcolor=#000000";
 		args[1] = "hxProcessing";
 		PApplet.main(args);

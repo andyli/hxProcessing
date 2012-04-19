@@ -1,6 +1,6 @@
 package processing.core;
 
-#if !jvm private typedef Single = Float; #end
+#if !java private typedef Single = Float; #end
 
 extern class PGraphics extends processing.core.PImage, implements PConstants {
 
@@ -626,8 +626,8 @@ extern class PGraphics extends processing.core.PImage, implements PConstants {
 	/* Advanced */
 	@:overload(function(str:String, x1:Single, y1:Single, x2:Single, y2:Single):Void{})
 	/* Advanced */
-	@:overload(function(chars:jvm.NativeArray<Int>, start:Int, stop:Int, x:Single, y:Single):Void{})
-	@:overload(function(chars:jvm.NativeArray<Int>, start:Int, stop:Int, x:Single, y:Single, z:Single):Void{})
+	@:overload(function(chars:java.NativeArray<Int>, start:Int, stop:Int, x:Single, y:Single):Void{})
+	@:overload(function(chars:java.NativeArray<Int>, start:Int, stop:Int, x:Single, y:Single, z:Single):Void{})
 	public function text(num:Int, x:Single, y:Single):Void;
 	
 	/* ( begin auto-generated from textAlign.xml ) Sets the current alignment for drawing text. */
@@ -675,7 +675,7 @@ extern class PGraphics extends processing.core.PImage, implements PConstants {
 	
 	/* ( begin auto-generated from textWidth.xml ) Calculates and returns the width of any character or text string. */
 	@:overload(function(str:String):Single{})
-	@:overload(function(chars:jvm.NativeArray<Int>, start:Int, length:Int):Single{})
+	@:overload(function(chars:java.NativeArray<Int>, start:Int, length:Int):Single{})
 	public function textWidth(c:Int):Single;
 	
 	/* ( begin auto-generated from texture.xml ) Sets a texture to be applied to vertex points. */
@@ -713,7 +713,7 @@ extern class PGraphics extends processing.core.PImage, implements PConstants {
 	/* ( begin auto-generated from vertex.xml ) All shapes are constructed by connecting a series of vertices. */
 	@:overload(function(x:Single, y:Single, z:Single, u:Single, v:Single):Void{})
 	/* Used by renderer subclasses or PShape to efficiently pass in already formatted vertex information. */
-	public function vertex(v:jvm.NativeArray<Single>):Void;
+	public function vertex(v:java.NativeArray<Single>):Void;
 	
 	
 }

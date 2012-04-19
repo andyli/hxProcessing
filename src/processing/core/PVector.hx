@@ -1,6 +1,6 @@
 package processing.core;
 
-#if !jvm private typedef Single = Float; #end
+#if !java private typedef Single = Float; #end
 
 extern class PVector {
 
@@ -31,7 +31,7 @@ extern class PVector {
 	static public function angleBetween(v1:PVector, v2:PVector):Single;
 	
 	/* ( begin auto-generated from PVector_array.xml ) Return a representation of this vector as a float array. */
-	public function array():jvm.NativeArray<Single>;
+	public function array():java.NativeArray<Single>;
 	
 	@:overload(function(v:PVector, target:PVector):PVector{})
 	@:overload(function(v1:PVector, v2:PVector, target:PVector):PVector{})
@@ -61,7 +61,7 @@ extern class PVector {
 	
 	public function equals(obj:Dynamic):Bool;
 	
-	@:overload(function(target:jvm.NativeArray<Single>):jvm.NativeArray<Single>{})
+	@:overload(function(target:java.NativeArray<Single>):java.NativeArray<Single>{})
 	/* ( begin auto-generated from PVector_get.xml ) Gets a copy of the vector, returns a PVector object. */
 	public function get():PVector;
 	
@@ -103,7 +103,7 @@ extern class PVector {
 	/* ( begin auto-generated from PVector_set.xml ) Sets the x, y, and z component of the vector using three separate variables, the data from a PVector, or the values from a float array. */
 	@:overload(function(x:Single, y:Single, z:Single):Void{})
 	/* Set the x, y (and maybe z) coordinates using a float[] array as the source. */
-	public function set(source:jvm.NativeArray<Single>):Void;
+	public function set(source:java.NativeArray<Single>):Void;
 	
 	/* Sets the magnitude of this vector, storing the result in another vector. */
 	@:overload(function(target:PVector, len:Single):PVector{})

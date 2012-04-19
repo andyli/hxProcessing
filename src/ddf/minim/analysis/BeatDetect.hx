@@ -1,6 +1,6 @@
 package ddf.minim.analysis;
 
-#if !jvm private typedef Single = Float; #end
+#if !java private typedef Single = Float; #end
 
 extern class BeatDetect  {
 
@@ -18,7 +18,7 @@ extern class BeatDetect  {
 	/* Analyze the samples in ab. */
 	@:overload(function(ab:AudioBuffer):Void{})
 	/* Analyze the samples in buffer. */
-	public function detect(buffer:jvm.NativeArray<Single>):Void;
+	public function detect(buffer:java.NativeArray<Single>):Void;
 	
 	/* Set the object to use the requested algorithm. */
 	public function detectMode(algo:Int):Void;

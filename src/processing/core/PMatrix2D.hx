@@ -1,6 +1,6 @@
 package processing.core;
 
-#if !jvm private typedef Single = Float; #end
+#if !java private typedef Single = Float; #end
 
 extern class PMatrix2D implements processing.core.PMatrix {
 
@@ -26,7 +26,7 @@ extern class PMatrix2D implements processing.core.PMatrix {
 	public function determinant():Single;
 	
 	/* Copies the matrix contents into a 6 entry float array. */
-	@:overload(function(target:jvm.NativeArray<Single>):jvm.NativeArray<Single>{})
+	@:overload(function(target:java.NativeArray<Single>):java.NativeArray<Single>{})
 	/* Returns a copy of this PMatrix. */
 	public function get():PMatrix;
 	
@@ -36,7 +36,7 @@ extern class PMatrix2D implements processing.core.PMatrix {
 	/* Multiply the x and y coordinates of a PVector against this matrix. */
 	@:overload(function(source:PVector, target:PVector):PVector{})
 	/* Multiply a two element vector against this matrix. */
-	public function mult(vec:jvm.NativeArray<Single>, out:jvm.NativeArray<Single>):jvm.NativeArray<Single>;
+	public function mult(vec:java.NativeArray<Single>, out:java.NativeArray<Single>):java.NativeArray<Single>;
 	
 	public function multX(x:Single, y:Single):Single;
 	
@@ -69,7 +69,7 @@ extern class PMatrix2D implements processing.core.PMatrix {
 	@:overload(function(matrix:PMatrix):Void{})
 	@:overload(function(m00:Single, m01:Single, m02:Single, m10:Single, m11:Single, m12:Single):Void{})
 	@:overload(function(m00:Single, m01:Single, m02:Single, m03:Single, m10:Single, m11:Single, m12:Single, m13:Single, m20:Single, m21:Single, m22:Single, m23:Single, m30:Single, m31:Single, m32:Single, m33:Single):Void{})
-	public function set(source:jvm.NativeArray<Single>):Void;
+	public function set(source:java.NativeArray<Single>):Void;
 	
 	public function shearX(angle:Single):Void;
 	

@@ -1,6 +1,6 @@
 package ddf.minim;
 
-#if !jvm private typedef Single = Float; #end
+#if !java private typedef Single = Float; #end
 
 extern interface AudioBuffer  {
 
@@ -16,7 +16,7 @@ extern interface AudioBuffer  {
 	public function size():Int;
 	
 	/* Returns the samples in the buffer in a new float array. */
-	public function toArray():jvm.NativeArray<Single>;
+	public function toArray():java.NativeArray<Single>;
 	
 	
 }

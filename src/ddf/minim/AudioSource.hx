@@ -1,6 +1,6 @@
 package ddf.minim;
 
-#if !jvm private typedef Single = Float; #end
+#if !java private typedef Single = Float; #end
 
 extern class AudioSource extends ddf.minim.Controller, implements ddf.minim.Effectable, implements ddf.minim.Recordable {
 

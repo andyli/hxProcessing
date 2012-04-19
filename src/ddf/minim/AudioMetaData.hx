@@ -1,6 +1,6 @@
 package ddf.minim;
 
-#if !jvm private typedef Single = Float; #end
+#if !java private typedef Single = Float; #end
 
 extern class AudioMetaData  {
 

@@ -1,6 +1,6 @@
 package ddf.minim;
 
-#if !jvm private typedef Single = Float; #end
+#if !java private typedef Single = Float; #end
 
 extern class AudioSample extends ddf.minim.AudioSource, implements ddf.minim.BufferedAudio, implements ddf.minim.Effectable, implements ddf.minim.Recordable, implements ddf.minim.Triggerable {
 
@@ -20,7 +20,7 @@ extern class AudioSample extends ddf.minim.AudioSource, implements ddf.minim.Buf
 	public function trigger():Void;
 
 	/* Gets the samples for the requested channel number as a float array. */
-	public function getChannel(channelNumber:Int):jvm.NativeArray<Single>;
+	public function getChannel(channelNumber:Int):java.NativeArray<Single>;
 	
 	/* Gets the length in milliseconds of the buffered audio. */
 	public function length():Int;

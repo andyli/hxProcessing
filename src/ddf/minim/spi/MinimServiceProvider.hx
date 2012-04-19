@@ -1,6 +1,6 @@
 package ddf.minim.spi;
 
-#if !jvm private typedef Single = Float; #end
+#if !java private typedef Single = Float; #end
 
 extern interface MinimServiceProvider  {
 
@@ -19,9 +19,9 @@ extern interface MinimServiceProvider  {
 	public function getAudioRecordingStream(filename:String, bufferSize:Int):AudioRecordingStream;
 	
 	/* Should return an AudioSample that will store the provided samples. */
-	@:overload(function(samples:jvm.NativeArray<Single>, format:javax.sound.sampled.AudioFormat, bufferSize:Int):AudioSample{})
+	@:overload(function(samples:java.NativeArray<Single>, format:javax.sound.sampled.AudioFormat, bufferSize:Int):AudioSample{})
 	/* Should return an AudioSample that will store the provided samples. */
-	@:overload(function(left:jvm.NativeArray<Single>, right:jvm.NativeArray<Single>, format:javax.sound.sampled.AudioFormat, bufferSize:Int):AudioSample{})
+	@:overload(function(left:java.NativeArray<Single>, right:java.NativeArray<Single>, format:javax.sound.sampled.AudioFormat, bufferSize:Int):AudioSample{})
 	/* Should return an AudioSample that will load the requested file into memory. */
 	public function getAudioSample(filename:String, bufferSize:Int):AudioSample;
 	

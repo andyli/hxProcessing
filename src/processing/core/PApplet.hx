@@ -1,6 +1,6 @@
 package processing.core;
 
-#if !jvm private typedef Single = Float; #end
+#if !java private typedef Single = Float; #end
 
 extern class PApplet implements PConstants {
 
@@ -26,14 +26,14 @@ extern class PApplet implements PConstants {
 	/* When run externally to a PdeEditor, this is sent by the applet when it quits. */
 	static public var EXTERNAL_STOP:String;
 	/* GIF image of the Processing logo. */
-	static public var ICON_IMAGE:jvm.NativeArray<Int>;
+	static public var ICON_IMAGE:java.NativeArray<Int>;
 	/* Modifier flags for the shortcut key used to trigger menus. */
 	static public var MENU_SHORTCUT:Int;
 	static public var MIN_WINDOW_HEIGHT:Int;
 	/* Minimum dimensions for the window holding an applet. */
 	static public var MIN_WINDOW_WIDTH:Int;
 	/* Command line options passed in from main(). */
-	public var args:jvm.NativeArray<String>;
+	public var args:java.NativeArray<String>;
 	/* true if no size() command has been executed. */
 	public var defaultSize:Bool;
 	/* ( begin auto-generated from screenHeight.xml ) System variable that stores the height of the computer screen. */
@@ -82,7 +82,7 @@ extern class PApplet implements PConstants {
 	/* true if the animation thread is paused. */
 	public var paused:Bool;
 	/* ( begin auto-generated from pixels.xml ) Array containing the values for all the pixels in the display window. */
-	public var pixels:jvm.NativeArray<Int>;
+	public var pixels:java.NativeArray<Int>;
 	/* Current platform in use, one of the PConstants WINDOWS, MACOSX, MACOS9, LINUX or OTHER. */
 	static public var platform:Int;
 	/* ( begin auto-generated from pmouseX.xml ) The system variable pmouseX always contains the horizontal position of the mouse in the frame previous to the current frame. You may find that pmouseX and pmouseY have different values inside draw() and inside events like mousePressed() and mouseMoved(). */
@@ -125,13 +125,13 @@ extern class PApplet implements PConstants {
 	/* ( begin auto-generated from ambientLight.xml ) Adds an ambient light. */
 	public function ambientLight(red:Single, green:Single, blue:Single):Void;
 	
-	@:overload(function(array:jvm.NativeArray<Int>, value:Int):jvm.NativeArray<Int>{})
+	@:overload(function(array:java.NativeArray<Int>, value:Int):java.NativeArray<Int>{})
 	/* ( begin auto-generated from append.xml ) Expands an array by one element and adds data to the new position. */
-	@:overload(function(array:jvm.NativeArray<Int>, value:Int):jvm.NativeArray<Int>{})
-	@:overload(function(array:jvm.NativeArray<Single>, value:Single):jvm.NativeArray<Single>{})
-	@:overload(function(array:jvm.NativeArray<String>, value:String):jvm.NativeArray<String>{})
+	@:overload(function(array:java.NativeArray<Int>, value:Int):java.NativeArray<Int>{})
+	@:overload(function(array:java.NativeArray<Single>, value:Single):java.NativeArray<Single>{})
+	@:overload(function(array:java.NativeArray<String>, value:String):java.NativeArray<String>{})
 	@:overload(function(array:Dynamic, value:Dynamic):Dynamic{})
-	static public function append(array:jvm.NativeArray<Int>, value:Int):jvm.NativeArray<Int>;
+	static public function append(array:java.NativeArray<Int>, value:Int):java.NativeArray<Int>;
 	
 	@:overload(function(source:PMatrix3D):Void{})
 	/* ( begin auto-generated from applyMatrix.xml ) Multiplies the current matrix by the one specified through the parameters. */
@@ -264,14 +264,14 @@ extern class PApplet implements PConstants {
 	/* ( begin auto-generated from colorMode.xml ) Changes the way Processing interprets color data. */
 	public function colorMode(mode:Int):Void;
 	
-	@:overload(function(a:jvm.NativeArray<Int>, b:jvm.NativeArray<Int>):jvm.NativeArray<Int>{})
-	@:overload(function(a:jvm.NativeArray<Int>, b:jvm.NativeArray<Int>):jvm.NativeArray<Int>{})
-	@:overload(function(a:jvm.NativeArray<Int>, b:jvm.NativeArray<Int>):jvm.NativeArray<Int>{})
-	@:overload(function(a:jvm.NativeArray<Single>, b:jvm.NativeArray<Single>):jvm.NativeArray<Single>{})
-	@:overload(function(a:jvm.NativeArray<String>, b:jvm.NativeArray<String>):jvm.NativeArray<String>{})
+	@:overload(function(a:java.NativeArray<Int>, b:java.NativeArray<Int>):java.NativeArray<Int>{})
+	@:overload(function(a:java.NativeArray<Int>, b:java.NativeArray<Int>):java.NativeArray<Int>{})
+	@:overload(function(a:java.NativeArray<Int>, b:java.NativeArray<Int>):java.NativeArray<Int>{})
+	@:overload(function(a:java.NativeArray<Single>, b:java.NativeArray<Single>):java.NativeArray<Single>{})
+	@:overload(function(a:java.NativeArray<String>, b:java.NativeArray<String>):java.NativeArray<String>{})
 	@:overload(function(a:Dynamic, b:Dynamic):Dynamic{})
 	/* ( begin auto-generated from concat.xml ) Concatenates two arrays. */
-	static public function concat(a:jvm.NativeArray<Bool>, b:jvm.NativeArray<Bool>):jvm.NativeArray<Bool>;
+	static public function concat(a:java.NativeArray<Bool>, b:java.NativeArray<Bool>):java.NativeArray<Bool>;
 	
 	/* ( begin auto-generated from constrain.xml ) Constrains a value to not exceed a maximum and minimum value. */
 	@:overload(function(amt:Single, low:Single, high:Single):Single{})
@@ -287,7 +287,7 @@ extern class PApplet implements PConstants {
 	
 	@:overload(function(name:String, size:Single, smooth:Bool): PFont{})
 	/* ( begin auto-generated from createFont.xml ) Dynamically converts a font to the format used by Processing from either a font name that's installed on the computer, or from a .ttf or .otf file inside the sketches "data" folder. */
-	@:overload(function(name:String, size:Single, smooth:Bool, charset:jvm.NativeArray<Int>): PFont{})
+	@:overload(function(name:String, size:Single, smooth:Bool, charset:java.NativeArray<Int>): PFont{})
 	public function createFont(name:String, size:Single): PFont;
 	
 	/* ( begin auto-generated from createGraphics.xml ) Creates and returns a new PGraphics object of the types P2D or P3D. */
@@ -429,7 +429,7 @@ extern class PApplet implements PConstants {
 	@:overload(function(mode:Int):Void{})
 	public function endShape():Void;
 	
-	//static public function exec(argv:jvm.NativeArray<String>):java.lang.Process;
+	//static public function exec(argv:java.NativeArray<String>):java.lang.Process;
 	
 	/* ( begin auto-generated from exit.xml ) Quits/stops/exits the program. */
 	public function exit():Void;
@@ -437,25 +437,25 @@ extern class PApplet implements PConstants {
 	/* ( begin auto-generated from exp.xml ) Returns Euler's number e (2.71828...) raised to the power of the value parameter. */
 	static public function exp(n:Single):Single;
 	
-	@:overload(function(list:jvm.NativeArray<Int>):jvm.NativeArray<Int>{})
-	@:overload(function(list:jvm.NativeArray<Int>):jvm.NativeArray<Int>{})
-	@:overload(function(list:jvm.NativeArray<Int>):jvm.NativeArray<Int>{})
-	@:overload(function(list:jvm.NativeArray<Int>):jvm.NativeArray<Int>{})
-	@:overload(function(list:jvm.NativeArray<Single>):jvm.NativeArray<Single>{})
-	@:overload(function(list:jvm.NativeArray<Float>):jvm.NativeArray<Float>{})
-	@:overload(function(list:jvm.NativeArray<String>):jvm.NativeArray<String>{})
+	@:overload(function(list:java.NativeArray<Int>):java.NativeArray<Int>{})
+	@:overload(function(list:java.NativeArray<Int>):java.NativeArray<Int>{})
+	@:overload(function(list:java.NativeArray<Int>):java.NativeArray<Int>{})
+	@:overload(function(list:java.NativeArray<Int>):java.NativeArray<Int>{})
+	@:overload(function(list:java.NativeArray<Single>):java.NativeArray<Single>{})
+	@:overload(function(list:java.NativeArray<Float>):java.NativeArray<Float>{})
+	@:overload(function(list:java.NativeArray<String>):java.NativeArray<String>{})
 	@:overload(function(array:Dynamic):Dynamic{})
-	@:overload(function(list:jvm.NativeArray<Bool>, newSize:Int):jvm.NativeArray<Bool>{})
-	@:overload(function(list:jvm.NativeArray<Int>, newSize:Int):jvm.NativeArray<Int>{})
-	@:overload(function(list:jvm.NativeArray<Int>, newSize:Int):jvm.NativeArray<Int>{})
-	@:overload(function(list:jvm.NativeArray<Int>, newSize:Int):jvm.NativeArray<Int>{})
-	@:overload(function(list:jvm.NativeArray<Int>, newSize:Int):jvm.NativeArray<Int>{})
-	@:overload(function(list:jvm.NativeArray<Single>, newSize:Int):jvm.NativeArray<Single>{})
-	@:overload(function(list:jvm.NativeArray<Float>, newSize:Int):jvm.NativeArray<Float>{})
-	@:overload(function(list:jvm.NativeArray<String>, newSize:Int):jvm.NativeArray<String>{})
+	@:overload(function(list:java.NativeArray<Bool>, newSize:Int):java.NativeArray<Bool>{})
+	@:overload(function(list:java.NativeArray<Int>, newSize:Int):java.NativeArray<Int>{})
+	@:overload(function(list:java.NativeArray<Int>, newSize:Int):java.NativeArray<Int>{})
+	@:overload(function(list:java.NativeArray<Int>, newSize:Int):java.NativeArray<Int>{})
+	@:overload(function(list:java.NativeArray<Int>, newSize:Int):java.NativeArray<Int>{})
+	@:overload(function(list:java.NativeArray<Single>, newSize:Int):java.NativeArray<Single>{})
+	@:overload(function(list:java.NativeArray<Float>, newSize:Int):java.NativeArray<Float>{})
+	@:overload(function(list:java.NativeArray<String>, newSize:Int):java.NativeArray<String>{})
 	@:overload(function(list:Dynamic, newSize:Int):Dynamic{})
 	/* ( begin auto-generated from expand.xml ) Increases the size of an array. */
-	static public function expand(list:jvm.NativeArray<Bool>):jvm.NativeArray<Bool>;
+	static public function expand(list:java.NativeArray<Bool>):java.NativeArray<Bool>;
 	
 	@:overload(function(gray:Single):Void{})
 	@:overload(function(rgb:Int, alpha:Single):Void{})
@@ -544,9 +544,9 @@ extern class PApplet implements PConstants {
 	/* Return true if this renderer does rendering through OpenGL. */
 	public function isGL():Bool;
 	
-	@:overload(function(list:jvm.NativeArray<String>, separator:String):String{})
+	@:overload(function(list:java.NativeArray<String>, separator:String):String{})
 	/* ( begin auto-generated from join.xml ) Combines an array of Strings into one String, each separated by the character(s) used for the separator parameter. */
-	static public function join(list:jvm.NativeArray<String>, separator:Int):String;
+	static public function join(list:java.NativeArray<String>, separator:Int):String;
 	
 	/* Overriding keyXxxxx(KeyEvent e) functions will cause the 'key', 'keyCode', and 'keyEvent' variables to no longer work; key events will no longer be queued until the end of draw(); and the keyPressed(), keyReleased() and keyTyped() methods will no longer be called. */
 	@:overload(function(e:java.awt.event.KeyEvent):Void{})
@@ -589,10 +589,10 @@ extern class PApplet implements PConstants {
 	@:overload(function(url:String, target:String):Void{})
 	public function link(here:String):Void;
 	
-	@:overload(function(input:java.io.InputStream):jvm.NativeArray<Int>{})
-	@:overload(function(file:java.io.File):jvm.NativeArray<Int>{})
+	@:overload(function(input:java.io.InputStream):java.NativeArray<Int>{})
+	@:overload(function(file:java.io.File):java.NativeArray<Int>{})
 	/* ( begin auto-generated from loadBytes.xml ) Reads the contents of a file or url and places it in a byte array. */
-	public function loadBytes(filename:String):jvm.NativeArray<Int>;
+	public function loadBytes(filename:String):java.NativeArray<Int>;
 	
 	/* ( begin auto-generated from loadFont.xml ) Loads a font into a variable of type PFont. */
 	public function loadFont(filename:String): PFont;
@@ -610,11 +610,11 @@ extern class PApplet implements PConstants {
 	/* ( begin auto-generated from loadShape.xml ) Loads vector shapes into a variable of type PShape. */
 	public function loadShape(filename:String): PShape;
 	
-	@:overload(function(input:java.io.InputStream):jvm.NativeArray<String>{})
-	@:overload(function(reader:java.io.BufferedReader):jvm.NativeArray<String>{})
-	@:overload(function(file:java.io.File):jvm.NativeArray<String>{})
+	@:overload(function(input:java.io.InputStream):java.NativeArray<String>{})
+	@:overload(function(reader:java.io.BufferedReader):java.NativeArray<String>{})
+	@:overload(function(file:java.io.File):java.NativeArray<String>{})
 	/* ( begin auto-generated from loadStrings.xml ) Reads the contents of a file or url and creates a String array of its individual lines. */
-	public function loadStrings(filename:String):jvm.NativeArray<String>;
+	public function loadStrings(filename:String):java.NativeArray<String>;
 	
 	//public function loadTable(filename:String): Table;
 	
@@ -631,28 +631,28 @@ extern class PApplet implements PConstants {
 	@:overload(function(a:Single, b:Single, c:Single):Single{})
 	static public function mag(a:Single, b:Single):Single;
 	
-	static public function main(args:jvm.NativeArray<String>):Void;
+	static public function main(args:java.NativeArray<String>):Void;
 	
 	/* ( begin auto-generated from map.xml ) Re-maps a number from one range to another. */
 	static public function map(value:Single, istart:Single, istop:Single, ostart:Single, ostop:Single):Single;
 	
 	@:overload(function(img:PImage):Void{})
 	/* ( begin auto-generated from PImage_mask.xml ) Masks part of an image from displaying by loading another image and using it as an alpha channel. */
-	public function mask(maskArray:jvm.NativeArray<Int>):Void;
+	public function mask(maskArray:java.NativeArray<Int>):Void;
 	
 	/* ( begin auto-generated from match.xml ) The match() function is used to apply a regular expression to a piece of text, and return matching groups (elements found inside parentheses) as a String array. */
-	static public function match(str:String, regexp:String):jvm.NativeArray<String>;
+	static public function match(str:String, regexp:String):java.NativeArray<String>;
 	
 	/* ( begin auto-generated from matchAll.xml ) This function is used to apply a regular expression to a piece of text, and return a list of matching groups (elements found inside parentheses) as a two-dimensional String array. */
-	static public function matchAll(what:String, regexp:String):jvm.NativeArray<jvm.NativeArray<String>>;
+	static public function matchAll(what:String, regexp:String):java.NativeArray<java.NativeArray<String>>;
 	
-	@:overload(function(list:jvm.NativeArray<Single>):Single{})
+	@:overload(function(list:java.NativeArray<Single>):Single{})
 	/* ( begin auto-generated from max.xml ) Determines the largest value in a sequence of numbers. */
 	@:overload(function(a:Int, b:Int):Int{})
 	@:overload(function(a:Single, b:Single):Single{})
 	@:overload(function(a:Int, b:Int, c:Int):Int{})
 	@:overload(function(a:Single, b:Single, c:Single):Single{})
-	static public function max(list:jvm.NativeArray<Int>):Int;
+	static public function max(list:java.NativeArray<Int>):Int;
 	
 	/* Call a method in the current class based on its name. */
 	public function method(name:String):Void;
@@ -660,14 +660,14 @@ extern class PApplet implements PConstants {
 	/* ( begin auto-generated from millis.xml ) Returns the number of milliseconds (thousandths of a second) since starting an applet. */
 	public function millis():Int;
 	
-	@:overload(function(list:jvm.NativeArray<Single>):Single{})
+	@:overload(function(list:java.NativeArray<Single>):Single{})
 	/* Find the maximum value in an array. */
 	@:overload(function(a:Int, b:Int):Int{})
 	@:overload(function(a:Single, b:Single):Single{})
 	@:overload(function(a:Int, b:Int, c:Int):Int{})
 	/* ( begin auto-generated from min.xml ) Determines the smallest value in a sequence of numbers. */
 	@:overload(function(a:Single, b:Single, c:Single):Single{})
-	static public function min(list:jvm.NativeArray<Int>):Int;
+	static public function min(list:java.NativeArray<Int>):Int;
 	
 	/* ( begin auto-generated from minute.xml ) Processing communicates with the clock on your computer. */
 	static public function minute():Int;
@@ -713,28 +713,28 @@ extern class PApplet implements PConstants {
 	/* ( begin auto-generated from mouseReleased.xml ) The mouseReleased() function is called every time a mouse button is released. */
 	public function mouseReleased():Void;
 	
-	@:overload(function(num:jvm.NativeArray<Int>, digits:Int):jvm.NativeArray<String>{})
+	@:overload(function(num:java.NativeArray<Int>, digits:Int):java.NativeArray<String>{})
 	@:overload(function(num:Single, left:Int, right:Int):String{})
-	@:overload(function(num:jvm.NativeArray<Single>, left:Int, right:Int):jvm.NativeArray<String>{})
+	@:overload(function(num:java.NativeArray<Single>, left:Int, right:Int):java.NativeArray<String>{})
 	/* ( begin auto-generated from nf.xml ) Utility function for formatting numbers into strings. */
 	static public function nf(num:Int, digits:Int):String;
 	
 	/* ( begin auto-generated from nfc.xml ) Utility function for formatting numbers into strings and placing appropriate commas to mark units of 1000. */
-	@:overload(function(num:jvm.NativeArray<Int>):jvm.NativeArray<String>{})
+	@:overload(function(num:java.NativeArray<Int>):java.NativeArray<String>{})
 	@:overload(function(num:Single, right:Int):String{})
-	@:overload(function(num:jvm.NativeArray<Single>, right:Int):jvm.NativeArray<String>{})
+	@:overload(function(num:java.NativeArray<Single>, right:Int):java.NativeArray<String>{})
 	/* nfc() or "number format with commas". */
 	static public function nfc(num:Int):String;
 	
-	@:overload(function(num:jvm.NativeArray<Int>, digits:Int):jvm.NativeArray<String>{})
+	@:overload(function(num:java.NativeArray<Int>, digits:Int):java.NativeArray<String>{})
 	@:overload(function(num:Single, left:Int, right:Int):String{})
-	@:overload(function(num:jvm.NativeArray<Single>, left:Int, right:Int):jvm.NativeArray<String>{})
+	@:overload(function(num:java.NativeArray<Single>, left:Int, right:Int):java.NativeArray<String>{})
 	/* ( begin auto-generated from nfp.xml ) Utility function for formatting numbers into strings. */
 	static public function nfp(num:Int, digits:Int):String;
 	
-	@:overload(function(num:jvm.NativeArray<Int>, digits:Int):jvm.NativeArray<String>{})
+	@:overload(function(num:java.NativeArray<Int>, digits:Int):java.NativeArray<String>{})
 	@:overload(function(num:Single, left:Int, right:Int):String{})
-	@:overload(function(num:jvm.NativeArray<Single>, left:Int, right:Int):jvm.NativeArray<String>{})
+	@:overload(function(num:java.NativeArray<Single>, left:Int, right:Int):java.NativeArray<String>{})
 	/* ( begin auto-generated from nfs.xml ) Utility function for formatting numbers into strings. */
 	static public function nfs(num:Int, digits:Int):String;
 	
@@ -783,7 +783,7 @@ extern class PApplet implements PConstants {
 	public function normal(nx:Single, ny:Single, nz:Single):Void;
 	
 	/* Launch a process using a platforms shell. */
-	@:overload(function(argv:jvm.NativeArray<String>):java.lang.Process{})
+	@:overload(function(argv:java.NativeArray<String>):java.lang.Process{})
 	/* ( begin auto-generated from open.xml ) Attempts to open an application or file using your platform's launcher. */
 	static public function open(filename:String):Void;
 	
@@ -805,31 +805,31 @@ extern class PApplet implements PConstants {
 	/* Convert the string "true" or "false" to a boolean. */
 	@:overload(function(what:String):Bool{})
 	/* Convert an int array to a boolean array. */
-	@:overload(function(what:jvm.NativeArray<Int>):jvm.NativeArray<Bool>{})
-	@:overload(function(what:jvm.NativeArray<String>):jvm.NativeArray<Bool>{})
+	@:overload(function(what:java.NativeArray<Int>):java.NativeArray<Bool>{})
+	@:overload(function(what:java.NativeArray<String>):java.NativeArray<Bool>{})
 	/* Convert an integer to a boolean. */
 	static public function parseBoolean(what:Int):Bool;
 	
 	@:overload(function(what:Int):Int{})
 	@:overload(function(what:Int):Int{})
 	@:overload(function(what:Single):Int{})
-	@:overload(function(what:jvm.NativeArray<Bool>):jvm.NativeArray<Int>{})
-	@:overload(function(what:jvm.NativeArray<Int>):jvm.NativeArray<Single>{})
-	@:overload(function(what:jvm.NativeArray<Int>):jvm.NativeArray<Int>{})
-	@:overload(function(what:jvm.NativeArray<Int>):jvm.NativeArray<Int>{})
-	@:overload(function(what:jvm.NativeArray<Single>):jvm.NativeArray<Int>{})
+	@:overload(function(what:java.NativeArray<Bool>):java.NativeArray<Int>{})
+	@:overload(function(what:java.NativeArray<Int>):java.NativeArray<Single>{})
+	@:overload(function(what:java.NativeArray<Int>):java.NativeArray<Int>{})
+	@:overload(function(what:java.NativeArray<Int>):java.NativeArray<Int>{})
+	@:overload(function(what:java.NativeArray<Single>):java.NativeArray<Int>{})
 	static public function parseByte(what:Bool):Int;
 	
 	@:overload(function(what:Int):Int{})
-	@:overload(function(what:jvm.NativeArray<Int>):jvm.NativeArray<Int>{})
-	@:overload(function(what:jvm.NativeArray<Int>):jvm.NativeArray<Int>{})
+	@:overload(function(what:java.NativeArray<Int>):java.NativeArray<Int>{})
+	@:overload(function(what:java.NativeArray<Int>):java.NativeArray<Int>{})
 	static public function parseChar(what:Int):Int;
 	
 	@:overload(function(what:String):Single{})
-	@:overload(function(what:jvm.NativeArray<Int>):jvm.NativeArray<Single>{})
-	@:overload(function(what:jvm.NativeArray<String>):jvm.NativeArray<Single>{})
+	@:overload(function(what:java.NativeArray<Int>):java.NativeArray<Single>{})
+	@:overload(function(what:java.NativeArray<String>):java.NativeArray<Single>{})
 	@:overload(function(what:String, otherwise:Single):Single{})
-	@:overload(function(what:jvm.NativeArray<String>, missing:Single):jvm.NativeArray<Single>{})
+	@:overload(function(what:java.NativeArray<String>, missing:Single):java.NativeArray<Single>{})
 	/* Convert an int to a float value. */
 	static public function parseFloat(what:Int):Single;
 	
@@ -841,16 +841,16 @@ extern class PApplet implements PConstants {
 	@:overload(function(what:Single):Int{})
 	/* Parse a String into an int value. */
 	@:overload(function(what:String):Int{})
-	@:overload(function(what:jvm.NativeArray<Bool>):jvm.NativeArray<Int>{})
-	@:overload(function(what:jvm.NativeArray<Int>):jvm.NativeArray<Int>{})
-	@:overload(function(what:jvm.NativeArray<Int>):jvm.NativeArray<Int>{})
-	@:overload(function(what:jvm.NativeArray<Single>):jvm.NativeArray<Int>{})
+	@:overload(function(what:java.NativeArray<Bool>):java.NativeArray<Int>{})
+	@:overload(function(what:java.NativeArray<Int>):java.NativeArray<Int>{})
+	@:overload(function(what:java.NativeArray<Int>):java.NativeArray<Int>{})
+	@:overload(function(what:java.NativeArray<Single>):java.NativeArray<Int>{})
 	/* Make an array of int elements from an array of String objects. */
-	@:overload(function(what:jvm.NativeArray<String>):jvm.NativeArray<Int>{})
+	@:overload(function(what:java.NativeArray<String>):java.NativeArray<Int>{})
 	/* Parse a String to an int, and provide an alternate value that should be used when the number is invalid. */
 	@:overload(function(what:String, otherwise:Int):Int{})
 	/* Make an array of int elements from an array of String objects. */
-	@:overload(function(what:jvm.NativeArray<String>, missing:Int):jvm.NativeArray<Int>{})
+	@:overload(function(what:java.NativeArray<String>, missing:Int):java.NativeArray<Int>{})
 	static public function parseInt(what:Bool):Int;
 	
 	@:overload(function(fovy:Single, aspect:Single, zNear:Single, zFar:Single):Void{})
@@ -971,14 +971,14 @@ extern class PApplet implements PConstants {
 	/* ( begin auto-generated from resetMatrix.xml ) Replaces the current matrix with the identity matrix. */
 	public function resetMatrix():Void;
 	
-	@:overload(function(list:jvm.NativeArray<Int>):jvm.NativeArray<Int>{})
-	@:overload(function(list:jvm.NativeArray<Int>):jvm.NativeArray<Int>{})
-	@:overload(function(list:jvm.NativeArray<Int>):jvm.NativeArray<Int>{})
-	@:overload(function(list:jvm.NativeArray<Single>):jvm.NativeArray<Single>{})
-	@:overload(function(list:jvm.NativeArray<String>):jvm.NativeArray<String>{})
+	@:overload(function(list:java.NativeArray<Int>):java.NativeArray<Int>{})
+	@:overload(function(list:java.NativeArray<Int>):java.NativeArray<Int>{})
+	@:overload(function(list:java.NativeArray<Int>):java.NativeArray<Int>{})
+	@:overload(function(list:java.NativeArray<Single>):java.NativeArray<Single>{})
+	@:overload(function(list:java.NativeArray<String>):java.NativeArray<String>{})
 	@:overload(function(list:Dynamic):Dynamic{})
 	/* ( begin auto-generated from reverse.xml ) Reverses the order of an array. */
-	static public function reverse(list:jvm.NativeArray<Bool>):jvm.NativeArray<Bool>;
+	static public function reverse(list:java.NativeArray<Bool>):java.NativeArray<Bool>;
 	
 	/* Advanced */
 	@:overload(function(angle:Single, vx:Single, vy:Single, vz:Single):Void{})
@@ -1001,7 +1001,7 @@ extern class PApplet implements PConstants {
 	public function run():Void;
 	
 	/* main() method for running this class from the command line. */
-	static public function runSketch(args:jvm.NativeArray<String>, constructedApplet: PApplet):Void;
+	static public function runSketch(args:java.NativeArray<String>, constructedApplet: PApplet):Void;
 	
 	/* ( begin auto-generated from saturation.xml ) Extracts the saturation value from a color. */
 	public function saturation(rgb:Int):Single;
@@ -1009,10 +1009,10 @@ extern class PApplet implements PConstants {
 	/* ( begin auto-generated from save.xml ) Saves an image from the display window. */
 	public function save(filename:String):Void;
 	
-	@:overload(function(file:java.io.File, data:jvm.NativeArray<Int>):Void{})
-	@:overload(function(output:java.io.OutputStream, data:jvm.NativeArray<Int>):Void{})
+	@:overload(function(file:java.io.File, data:java.NativeArray<Int>):Void{})
+	@:overload(function(output:java.io.OutputStream, data:java.NativeArray<Int>):Void{})
 	/* ( begin auto-generated from saveBytes.xml ) Opposite of loadBytes(), will write an entire array of bytes to a file. */
-	public function saveBytes(filename:String, data:jvm.NativeArray<Int>):Void;
+	public function saveBytes(filename:String, data:java.NativeArray<Int>):Void;
 	
 	/* Identical to savePath(), but returns a File object. */
 	//public function saveFile(where:String): java.io.File;
@@ -1032,10 +1032,10 @@ extern class PApplet implements PConstants {
 	/* ( begin auto-generated from saveStream.xml ) Save the contents of a stream to a file in the sketch folder. */
 	public function saveStream(target:String, source:String):Bool;
 	
-	@:overload(function(file:java.io.File, data:jvm.NativeArray<String>):Void{})
-	@:overload(function(output:java.io.OutputStream, data:jvm.NativeArray<String>):Void{})
+	@:overload(function(file:java.io.File, data:java.NativeArray<String>):Void{})
+	@:overload(function(output:java.io.OutputStream, data:java.NativeArray<String>):Void{})
 	/* ( begin auto-generated from saveStrings.xml ) Writes an array of strings to a file, one line per string. */
-	public function saveStrings(filename:String, data:jvm.NativeArray<String>):Void;
+	public function saveStrings(filename:String, data:java.NativeArray<String>):Void;
 	
 	/* Advanced */
 	@:overload(function(x:Single, y:Single):Void{})
@@ -1116,14 +1116,14 @@ extern class PApplet implements PConstants {
 	/* ( begin auto-generated from shininess.xml ) Sets the amount of gloss in the surface of shapes. */
 	public function shininess(shine:Single):Void;
 	
-	@:overload(function(list:jvm.NativeArray<Int>):jvm.NativeArray<Int>{})
-	@:overload(function(list:jvm.NativeArray<Int>):jvm.NativeArray<Int>{})
-	@:overload(function(list:jvm.NativeArray<Int>):jvm.NativeArray<Int>{})
-	@:overload(function(list:jvm.NativeArray<Single>):jvm.NativeArray<Single>{})
-	@:overload(function(list:jvm.NativeArray<String>):jvm.NativeArray<String>{})
+	@:overload(function(list:java.NativeArray<Int>):java.NativeArray<Int>{})
+	@:overload(function(list:java.NativeArray<Int>):java.NativeArray<Int>{})
+	@:overload(function(list:java.NativeArray<Int>):java.NativeArray<Int>{})
+	@:overload(function(list:java.NativeArray<Single>):java.NativeArray<Single>{})
+	@:overload(function(list:java.NativeArray<String>):java.NativeArray<String>{})
 	@:overload(function(list:Dynamic):Dynamic{})
 	/* ( begin auto-generated from shorten.xml ) Decreases an array by one element and returns the shortened array. */
-	static public function shorten(list:jvm.NativeArray<Bool>):jvm.NativeArray<Bool>;
+	static public function shorten(list:java.NativeArray<Bool>):java.NativeArray<Bool>;
 	
 	/* Display a warning that the specified method is only available with 3D. */
 	static public function showDepthWarning(method:String):Void;
@@ -1171,17 +1171,17 @@ extern class PApplet implements PConstants {
 	/* ( begin auto-generated from smooth.xml ) Draws all geometry with smooth (anti-aliased) edges. */
 	public function smooth():Void;
 	
-	@:overload(function(list:jvm.NativeArray<Int>):jvm.NativeArray<Int>{})
-	@:overload(function(list:jvm.NativeArray<Int>):jvm.NativeArray<Int>{})
-	@:overload(function(list:jvm.NativeArray<Single>):jvm.NativeArray<Single>{})
-	@:overload(function(list:jvm.NativeArray<String>):jvm.NativeArray<String>{})
-	@:overload(function(list:jvm.NativeArray<Int>, count:Int):jvm.NativeArray<Int>{})
-	@:overload(function(list:jvm.NativeArray<Int>, count:Int):jvm.NativeArray<Int>{})
-	@:overload(function(list:jvm.NativeArray<Int>, count:Int):jvm.NativeArray<Int>{})
-	@:overload(function(list:jvm.NativeArray<Single>, count:Int):jvm.NativeArray<Single>{})
-	@:overload(function(list:jvm.NativeArray<String>, count:Int):jvm.NativeArray<String>{})
+	@:overload(function(list:java.NativeArray<Int>):java.NativeArray<Int>{})
+	@:overload(function(list:java.NativeArray<Int>):java.NativeArray<Int>{})
+	@:overload(function(list:java.NativeArray<Single>):java.NativeArray<Single>{})
+	@:overload(function(list:java.NativeArray<String>):java.NativeArray<String>{})
+	@:overload(function(list:java.NativeArray<Int>, count:Int):java.NativeArray<Int>{})
+	@:overload(function(list:java.NativeArray<Int>, count:Int):java.NativeArray<Int>{})
+	@:overload(function(list:java.NativeArray<Int>, count:Int):java.NativeArray<Int>{})
+	@:overload(function(list:java.NativeArray<Single>, count:Int):java.NativeArray<Single>{})
+	@:overload(function(list:java.NativeArray<String>, count:Int):java.NativeArray<String>{})
 	/* ( begin auto-generated from sort.xml ) Sorts an array of numbers from smallest to largest and puts an array of words in alphabetical order. */
-	static public function sort(list:jvm.NativeArray<Int>):jvm.NativeArray<Int>;
+	static public function sort(list:java.NativeArray<Int>):java.NativeArray<Int>;
 	
 	/* gray number specifying value between white and black */
 	@:overload(function(gray:Single):Void{})
@@ -1196,28 +1196,28 @@ extern class PApplet implements PConstants {
 	/* ( begin auto-generated from sphereDetail.xml ) Controls the detail used to render a sphere by adjusting the number of vertices of the sphere mesh. */
 	public function sphereDetail(res:Int):Void;
 	
-	@:overload(function(list:jvm.NativeArray<Bool>, value:jvm.NativeArray<Bool>, index:Int):jvm.NativeArray<Bool>{})
-	@:overload(function(list:jvm.NativeArray<Int>, value:Int, index:Int):jvm.NativeArray<Int>{})
-	@:overload(function(list:jvm.NativeArray<Int>, value:Int, index:Int):jvm.NativeArray<Int>{})
-	@:overload(function(list:jvm.NativeArray<Int>, value:Int, index:Int):jvm.NativeArray<Int>{})
-	@:overload(function(list:jvm.NativeArray<Int>, value:jvm.NativeArray<Int>, index:Int):jvm.NativeArray<Int>{})
-	@:overload(function(list:jvm.NativeArray<Int>, value:jvm.NativeArray<Int>, index:Int):jvm.NativeArray<Int>{})
-	@:overload(function(list:jvm.NativeArray<Int>, value:jvm.NativeArray<Int>, index:Int):jvm.NativeArray<Int>{})
-	@:overload(function(list:jvm.NativeArray<Single>, value:Single, index:Int):jvm.NativeArray<Single>{})
-	@:overload(function(list:jvm.NativeArray<Single>, value:jvm.NativeArray<Single>, index:Int):jvm.NativeArray<Single>{})
-	@:overload(function(list:jvm.NativeArray<String>, value:String, index:Int):jvm.NativeArray<String>{})
-	@:overload(function(list:jvm.NativeArray<String>, value:jvm.NativeArray<String>, index:Int):jvm.NativeArray<String>{})
+	@:overload(function(list:java.NativeArray<Bool>, value:java.NativeArray<Bool>, index:Int):java.NativeArray<Bool>{})
+	@:overload(function(list:java.NativeArray<Int>, value:Int, index:Int):java.NativeArray<Int>{})
+	@:overload(function(list:java.NativeArray<Int>, value:Int, index:Int):java.NativeArray<Int>{})
+	@:overload(function(list:java.NativeArray<Int>, value:Int, index:Int):java.NativeArray<Int>{})
+	@:overload(function(list:java.NativeArray<Int>, value:java.NativeArray<Int>, index:Int):java.NativeArray<Int>{})
+	@:overload(function(list:java.NativeArray<Int>, value:java.NativeArray<Int>, index:Int):java.NativeArray<Int>{})
+	@:overload(function(list:java.NativeArray<Int>, value:java.NativeArray<Int>, index:Int):java.NativeArray<Int>{})
+	@:overload(function(list:java.NativeArray<Single>, value:Single, index:Int):java.NativeArray<Single>{})
+	@:overload(function(list:java.NativeArray<Single>, value:java.NativeArray<Single>, index:Int):java.NativeArray<Single>{})
+	@:overload(function(list:java.NativeArray<String>, value:String, index:Int):java.NativeArray<String>{})
+	@:overload(function(list:java.NativeArray<String>, value:java.NativeArray<String>, index:Int):java.NativeArray<String>{})
 	@:overload(function(list:Dynamic, value:Dynamic, index:Int):Dynamic{})
 	/* ( begin auto-generated from splice.xml ) Inserts a value or array of values into an existing array. */
-	static public function splice(list:jvm.NativeArray<Bool>, value:Bool, index:Int):jvm.NativeArray<Bool>;
+	static public function splice(list:java.NativeArray<Bool>, value:Bool, index:Int):java.NativeArray<Bool>;
 	
-	@:overload(function(value:String, delim:String):jvm.NativeArray<String>{})
+	@:overload(function(value:String, delim:String):java.NativeArray<String>{})
 	/* ( begin auto-generated from split.xml ) The split() function breaks a string into pieces using a character or string as the divider. */
-	static public function split(value:String, delim:Int):jvm.NativeArray<String>;
+	static public function split(value:String, delim:Int):java.NativeArray<String>;
 	
 	/* ( begin auto-generated from splitTokens.xml ) The splitTokens() function splits a String at one or many character "tokens." The tokens parameter specifies the character or characters to be used as a boundary. */
-	@:overload(function(value:String, delim:String):jvm.NativeArray<String>{})
-	static public function splitTokens(value:String):jvm.NativeArray<String>;
+	@:overload(function(value:String, delim:String):java.NativeArray<String>{})
+	static public function splitTokens(value:String):java.NativeArray<String>;
 	
 	/* ( begin auto-generated from spotLight.xml ) Adds a spot light. */
 	public function spotLight(red:Single, green:Single, blue:Single, x:Single, y:Single, z:Single, nx:Single, ny:Single, nz:Single, angle:Single, concentration:Single):Void;
@@ -1241,11 +1241,11 @@ extern class PApplet implements PConstants {
 	@:overload(function(x:Int):String{})
 	@:overload(function(x:Int):String{})
 	@:overload(function(x:Single):String{})
-	@:overload(function(x:jvm.NativeArray<Bool>):jvm.NativeArray<String>{})
-	@:overload(function(x:jvm.NativeArray<Int>):jvm.NativeArray<String>{})
-	@:overload(function(x:jvm.NativeArray<Int>):jvm.NativeArray<String>{})
-	@:overload(function(x:jvm.NativeArray<Int>):jvm.NativeArray<String>{})
-	@:overload(function(x:jvm.NativeArray<Single>):jvm.NativeArray<String>{})
+	@:overload(function(x:java.NativeArray<Bool>):java.NativeArray<String>{})
+	@:overload(function(x:java.NativeArray<Int>):java.NativeArray<String>{})
+	@:overload(function(x:java.NativeArray<Int>):java.NativeArray<String>{})
+	@:overload(function(x:java.NativeArray<Int>):java.NativeArray<String>{})
+	@:overload(function(x:java.NativeArray<Single>):java.NativeArray<String>{})
 	static public function str(x:Bool):String;
 	
 	@:overload(function(gray:Single):Void{})
@@ -1267,21 +1267,21 @@ extern class PApplet implements PConstants {
 	
 	public function style(s:PStyle):Void;
 	
-	@:overload(function(list:jvm.NativeArray<Int>, start:Int):jvm.NativeArray<Int>{})
-	@:overload(function(list:jvm.NativeArray<Int>, start:Int):jvm.NativeArray<Int>{})
-	@:overload(function(list:jvm.NativeArray<Int>, start:Int):jvm.NativeArray<Int>{})
-	@:overload(function(list:jvm.NativeArray<Single>, start:Int):jvm.NativeArray<Single>{})
-	@:overload(function(list:jvm.NativeArray<String>, start:Int):jvm.NativeArray<String>{})
+	@:overload(function(list:java.NativeArray<Int>, start:Int):java.NativeArray<Int>{})
+	@:overload(function(list:java.NativeArray<Int>, start:Int):java.NativeArray<Int>{})
+	@:overload(function(list:java.NativeArray<Int>, start:Int):java.NativeArray<Int>{})
+	@:overload(function(list:java.NativeArray<Single>, start:Int):java.NativeArray<Single>{})
+	@:overload(function(list:java.NativeArray<String>, start:Int):java.NativeArray<String>{})
 	@:overload(function(list:Dynamic, start:Int):Dynamic{})
 	/* ( begin auto-generated from subset.xml ) Extracts an array of elements from an existing array. */
-	@:overload(function(list:jvm.NativeArray<Bool>, start:Int, count:Int):jvm.NativeArray<Bool>{})
-	@:overload(function(list:jvm.NativeArray<Int>, start:Int, count:Int):jvm.NativeArray<Int>{})
-	@:overload(function(list:jvm.NativeArray<Int>, start:Int, count:Int):jvm.NativeArray<Int>{})
-	@:overload(function(list:jvm.NativeArray<Int>, start:Int, count:Int):jvm.NativeArray<Int>{})
-	@:overload(function(list:jvm.NativeArray<Single>, start:Int, count:Int):jvm.NativeArray<Single>{})
-	@:overload(function(list:jvm.NativeArray<String>, start:Int, count:Int):jvm.NativeArray<String>{})
+	@:overload(function(list:java.NativeArray<Bool>, start:Int, count:Int):java.NativeArray<Bool>{})
+	@:overload(function(list:java.NativeArray<Int>, start:Int, count:Int):java.NativeArray<Int>{})
+	@:overload(function(list:java.NativeArray<Int>, start:Int, count:Int):java.NativeArray<Int>{})
+	@:overload(function(list:java.NativeArray<Int>, start:Int, count:Int):java.NativeArray<Int>{})
+	@:overload(function(list:java.NativeArray<Single>, start:Int, count:Int):java.NativeArray<Single>{})
+	@:overload(function(list:java.NativeArray<String>, start:Int, count:Int):java.NativeArray<String>{})
 	@:overload(function(list:Dynamic, start:Int, count:Int):Dynamic{})
-	static public function subset(list:jvm.NativeArray<Bool>, start:Int):jvm.NativeArray<Bool>;
+	static public function subset(list:java.NativeArray<Bool>, start:Int):java.NativeArray<Bool>;
 	
 	/* ( begin auto-generated from tan.xml ) Calculates the ratio of the sine and cosine of an angle. */
 	static public function tan(angle:Single):Single;
@@ -1299,8 +1299,8 @@ extern class PApplet implements PConstants {
 	/* Advanced */
 	@:overload(function(str:String, x1:Single, y1:Single, x2:Single, y2:Single):Void{})
 	/* Advanced */
-	@:overload(function(chars:jvm.NativeArray<Int>, start:Int, stop:Int, x:Single, y:Single):Void{})
-	@:overload(function(chars:jvm.NativeArray<Int>, start:Int, stop:Int, x:Single, y:Single, z:Single):Void{})
+	@:overload(function(chars:java.NativeArray<Int>, start:Int, stop:Int, x:Single, y:Single):Void{})
+	@:overload(function(chars:java.NativeArray<Int>, start:Int, stop:Int, x:Single, y:Single, z:Single):Void{})
 	/* ( begin auto-generated from text.xml ) Draws text to the screen. */
 	public function text(c:Int, x:Single, y:Single):Void;
 	
@@ -1329,7 +1329,7 @@ extern class PApplet implements PConstants {
 	
 	/* ( begin auto-generated from textWidth.xml ) Calculates and returns the width of any character or text string. */
 	@:overload(function(str:String):Single{})
-	@:overload(function(chars:jvm.NativeArray<Int>, start:Int, length:Int):Single{})
+	@:overload(function(chars:java.NativeArray<Int>, start:Int, length:Int):Single{})
 	public function textWidth(c:Int):Single;
 	
 	/* ( begin auto-generated from texture.xml ) Sets a texture to be applied to vertex points. */
@@ -1356,7 +1356,7 @@ extern class PApplet implements PConstants {
 	/* ( begin auto-generated from triangle.xml ) A triangle is a plane created by connecting three points. */
 	public function triangle(x1:Single, y1:Single, x2:Single, y2:Single, x3:Single, y3:Single):Void;
 	
-	@:overload(function(array:jvm.NativeArray<String>):jvm.NativeArray<String>{})
+	@:overload(function(array:java.NativeArray<String>):java.NativeArray<String>{})
 	/* ( begin auto-generated from trim.xml ) Removes whitespace characters from the beginning and end of a String. */
 	static public function trim(str:String):String;
 	
@@ -1399,7 +1399,7 @@ extern class PApplet implements PConstants {
 	/* ( begin auto-generated from vertex.xml ) All shapes are constructed by connecting a series of vertices. */
 	@:overload(function(x:Single, y:Single, z:Single, u:Single, v:Single):Void{})
 	/* Used by renderer subclasses or PShape to efficiently pass in already formatted vertex information. */
-	public function vertex(v:jvm.NativeArray<Single>):Void;
+	public function vertex(v:java.NativeArray<Single>):Void;
 	
 	/* ( begin auto-generated from year.xml ) Processing communicates with the clock on your computer. */
 	static public function year():Int;

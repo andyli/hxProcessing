@@ -1,6 +1,6 @@
 package processing.core;
 
-#if !jvm private typedef Single = Float; #end
+#if !java private typedef Single = Float; #end
 
 extern class PShape implements processing.core.PConstants {
 
@@ -108,7 +108,7 @@ extern class PShape implements processing.core.PConstants {
 	/* Returns the index of child who. */
 	public function getChildIndex(who:PShape):Int;
 	
-	public function getChildren():jvm.NativeArray<PShape>;
+	public function getChildren():java.NativeArray<PShape>;
 	
 	/* Get the depth of the shape area (not necessarily the shape boundary). */
 	public function getDepth():Single;
@@ -125,19 +125,19 @@ extern class PShape implements processing.core.PConstants {
 	
 	public function getParam(index:Int):Single;
 	
-	@:overload(function(target:jvm.NativeArray<Single>):jvm.NativeArray<Single>{})
-	public function getParams():jvm.NativeArray<Single>;
+	@:overload(function(target:java.NativeArray<Single>):java.NativeArray<Single>{})
+	public function getParams():java.NativeArray<Single>;
 	
 	public function getParent():PShape;
 	
-	public function getVertex(index:Int):jvm.NativeArray<Single>;
+	public function getVertex(index:Int):java.NativeArray<Single>;
 	
 	/* One of VERTEX, BEZIER_VERTEX, CURVE_VERTEX, or BREAK. */
 	public function getVertexCode(index:Int):Int;
 	
 	public function getVertexCodeCount():Int;
 	
-	public function getVertexCodes():jvm.NativeArray<Int>;
+	public function getVertexCodes():java.NativeArray<Int>;
 	
 	public function getVertexCount():Int;
 	
@@ -203,7 +203,7 @@ extern class PShape implements processing.core.PConstants {
 	
 	public function setName(name:String):Void;
 	
-	public function setParams(source:jvm.NativeArray<Single>):Void;
+	public function setParams(source:java.NativeArray<Single>):Void;
 	
 	/* ( begin auto-generated from PShape_setVisible.xml ) Sets the shape to be visible or invisible. */
 	public function setVisible(visible:Bool):Void;

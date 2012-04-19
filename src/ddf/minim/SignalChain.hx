@@ -1,6 +1,6 @@
 package ddf.minim;
 
-#if !jvm private typedef Single = Float; #end
+#if !java private typedef Single = Float; #end
 
 extern class SignalChain implements ddf.minim.AudioSignal {
 
@@ -36,9 +36,9 @@ extern class SignalChain implements ddf.minim.AudioSignal {
 	public function enableAll():Void;
 	
 	/* Asks all the enabled signals in the chain to generate a left and right buffer of samples, adds the signals together and puts the result in left and right. */
-	@:overload(function(left:jvm.NativeArray<Single>, right:jvm.NativeArray<Single>):Void{})
+	@:overload(function(left:java.NativeArray<Single>, right:java.NativeArray<Single>):Void{})
 	/* Asks all the enabled signals in the chain to generate a new buffer of samples, adds the buffers together and puts the result in signal. */
-	public function generate(signal:jvm.NativeArray<Single>):Void;
+	public function generate(signal:java.NativeArray<Single>):Void;
 	
 	/* Gets the ith signal in the chain. */
 	public function get(i:Int):AudioSignal;

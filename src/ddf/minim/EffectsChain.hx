@@ -1,6 +1,6 @@
 package ddf.minim;
 
-#if !jvm private typedef Single = Float; #end
+#if !java private typedef Single = Float; #end
 
 extern class EffectsChain implements ddf.minim.AudioEffect {
 
@@ -45,9 +45,9 @@ extern class EffectsChain implements ddf.minim.AudioEffect {
 	public function isEnabled(e:AudioEffect):Bool;
 	
 	/* Sends sampL and sampR to each effect in the chain, in order. */
-	@:overload(function(sampL:jvm.NativeArray<Single>, sampR:jvm.NativeArray<Single>):Void{})
+	@:overload(function(sampL:java.NativeArray<Single>, sampR:java.NativeArray<Single>):Void{})
 	/* Sends samp to each effect in the chain, in order. */
-	public function process(samp:jvm.NativeArray<Single>):Void;
+	public function process(samp:java.NativeArray<Single>):Void;
 	
 	/* Removes e from the chain. */
 	@:overload(function(e:AudioEffect):Void{})

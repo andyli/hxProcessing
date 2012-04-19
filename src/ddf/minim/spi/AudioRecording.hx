@@ -1,6 +1,6 @@
 package ddf.minim.spi;
 
-#if !jvm private typedef Single = Float; #end
+#if !java private typedef Single = Float; #end
 
 extern interface AudioRecording implements ddf.minim.spi.AudioResource {
 

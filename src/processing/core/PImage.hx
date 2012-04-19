@@ -1,6 +1,6 @@
 package processing.core;
 
-#if !jvm private typedef Single = Float; #end
+#if !java private typedef Single = Float; #end
 
 extern class PImage implements PConstants {
 
@@ -11,7 +11,7 @@ extern class PImage implements PConstants {
 	/* Path to parent object that will be used with save(). */
 	public var parent: PApplet;
 	/* ( begin auto-generated from pixels.xml ) Array containing the values for all the pixels in the display window. */
-	public var pixels:jvm.NativeArray<Int>;
+	public var pixels:java.NativeArray<Int>;
 	/* ( begin auto-generated from PImage_width.xml ) The width of the image in units of pixels. */
 	public var width:Int;
 
@@ -76,7 +76,7 @@ extern class PImage implements PConstants {
 	
 	@:overload(function(img:PImage):Void{})
 	/* ( begin auto-generated from PImage_mask.xml ) Masks part of an image from displaying by loading another image and using it as an alpha channel. */
-	public function mask(maskArray:jvm.NativeArray<Int>):Void;
+	public function mask(maskArray:java.NativeArray<Int>):Void;
 	
 	/* Remove information associated with this renderer from the cache, if any. */
 	public function removeCache(renderer:PGraphics):Void;

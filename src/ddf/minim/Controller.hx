@@ -1,6 +1,6 @@
 package ddf.minim;
 
-#if !jvm private typedef Single = Float; #end
+#if !java private typedef Single = Float; #end
 
 extern class Controller  {
 
@@ -18,7 +18,7 @@ extern class Controller  {
 	//static public var VOLUME:javax.sound.sampled.FloatControl.Type;
 
 	/* Constructs a Controller for the given Line. */
-	//public function new(cntrls:jvm.NativeArray<javax.sound.sampled.Control>):Void;
+	//public function new(cntrls:java.NativeArray<javax.sound.sampled.Control>):Void;
 	
 	
 	/* Gets the balance control for the Line, if it exists. */
@@ -33,7 +33,7 @@ extern class Controller  {
 	//public function getControl(type:javax.sound.sampled.Control.Type):javax.sound.sampled.Control;
 	
 	/* Returns an array of all the available Controls for the DataLine being controlled. */
-	//public function getControls():jvm.NativeArray<javax.sound.sampled.Control>;
+	//public function getControls():java.NativeArray<javax.sound.sampled.Control>;
 	
 	/* Returns the current gain. */
 	public function getGain():Single;

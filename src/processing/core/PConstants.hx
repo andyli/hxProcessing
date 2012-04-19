@@ -1,6 +1,6 @@
 package processing.core;
 
-#if !jvm
+#if !java
 private typedef Single = Float;
 #end
 
@@ -107,7 +107,7 @@ extern class PConstants {
 	static var MACOSX:Int;
 	static var LINUX:Int;
 	
-	static var platformNames:jvm.NativeArray<String>;
+	static var platformNames:java.NativeArray<String>;
 	
 	
 	static var EPSILON:Single;

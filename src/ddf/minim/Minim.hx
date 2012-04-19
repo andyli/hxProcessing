@@ -1,6 +1,6 @@
 package ddf.minim;
 
-#if !jvm private typedef Single = Float; #end
+#if !java private typedef Single = Float; #end
 
 extern class Minim  {
 
@@ -30,13 +30,13 @@ extern class Minim  {
 	public function createRecorder(source:Recordable, fileName:String, buffered:Bool):AudioRecorder;
 	
 	/* Creates an AudioSample using the provided left and right channel samples with an output buffer size of 1024. */
-	//@:overload(function(left:jvm.NativeArray<Single>, right:jvm.NativeArray<Single>, format:javax.sound.sampled.AudioFormat):AudioSample{})
+	//@:overload(function(left:java.NativeArray<Single>, right:java.NativeArray<Single>, format:javax.sound.sampled.AudioFormat):AudioSample{})
 	/* Creates an AudioSample using the provided samples and AudioFormat, with the desired output buffer size. */
-	//@:overload(function(samples:jvm.NativeArray<Single>, format:javax.sound.sampled.AudioFormat, bufferSize:Int):AudioSample{})
+	//@:overload(function(samples:java.NativeArray<Single>, format:javax.sound.sampled.AudioFormat, bufferSize:Int):AudioSample{})
 	/* Creates an AudioSample using the provided left and right channel samples. */
-	//@:overload(function(left:jvm.NativeArray<Single>, right:jvm.NativeArray<Single>, format:javax.sound.sampled.AudioFormat, bufferSize:Int):AudioSample{})
+	//@:overload(function(left:java.NativeArray<Single>, right:java.NativeArray<Single>, format:javax.sound.sampled.AudioFormat, bufferSize:Int):AudioSample{})
 	/* Creates an AudioSample using the provided samples and AudioFormat, with an output buffer size of 1024 samples. */
-	//public function createSample(samples:jvm.NativeArray<Single>, format:javax.sound.sampled.AudioFormat):AudioSample;
+	//public function createSample(samples:java.NativeArray<Single>, format:javax.sound.sampled.AudioFormat):AudioSample;
 	
 	/* Displays a debug message, but only if debugOn() has been called. */
 	static public function debug(s:String):Void;

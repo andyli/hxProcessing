@@ -1,6 +1,6 @@
 package ddf.minim;
 
-#if !jvm private typedef Single = Float; #end
+#if !java private typedef Single = Float; #end
 
 extern class SignalSplitter implements ddf.minim.AudioListener, implements ddf.minim.Recordable {
 
@@ -26,9 +26,9 @@ extern class SignalSplitter implements ddf.minim.AudioListener, implements ddf.m
 	public function sampleRate():Single;
 	
 	/* Called by the Recordable object this is attached to when that object has new samples. */
-	@:overload(function(sampL:jvm.NativeArray<Single>, sampR:jvm.NativeArray<Single>):Void{})
+	@:overload(function(sampL:java.NativeArray<Single>, sampR:java.NativeArray<Single>):Void{})
 	/* Called by the Recordable object this is attached to when that object has new samples. */
-	public function samples(samp:jvm.NativeArray<Single>):Void;
+	public function samples(samp:java.NativeArray<Single>):Void;
 	
 	/* Returns either Minim.MONO or Minim.STEREO */
 	public function type():Int;

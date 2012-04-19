@@ -1,6 +1,6 @@
 package processing.core;
 
-#if !jvm private typedef Single = Float; #end
+#if !java private typedef Single = Float; #end
 
 
 extern class Glyph  {
@@ -24,15 +24,15 @@ extern class Glyph  {
 extern class PFont implements processing.core.PConstants {
 
 	/* The default Processing character set. */
-	static public var CHARSET:jvm.NativeArray<Int>;
+	static public var CHARSET:java.NativeArray<Int>;
 
 	@:overload(function(input:java.io.InputStream):Void{})
 	/* ( begin auto-generated from PFont.xml ) PFont is the font class for Processing. */
 	@:overload(function(font:java.awt.Font, smooth:Bool):Void{})
 	/* Create a new image-based font on the fly. */
-	@:overload(function(font:java.awt.Font, smooth:Bool, charset:jvm.NativeArray<Int>):Void{})
+	@:overload(function(font:java.awt.Font, smooth:Bool, charset:java.NativeArray<Int>):Void{})
 	/* Adds an additional parameter that indicates the font came from a file, not a built-in OS font. */
-	@:overload(function(font:java.awt.Font, smooth:Bool, charset:jvm.NativeArray<Int>, stream:Bool):Void{})
+	@:overload(function(font:java.awt.Font, smooth:Bool, charset:java.NativeArray<Int>, stream:Bool):Void{})
 	public function new():Void;
 	
 	
@@ -71,7 +71,7 @@ extern class PFont implements processing.core.PConstants {
 	public function kern(a:Int, b:Int):Single;
 	
 	/* ( begin auto-generated from PFont_list.xml ) Gets a list of the fonts installed on the system. */
-	static public function list():jvm.NativeArray<String>;
+	static public function list():java.NativeArray<String>;
 	
 	static public function loadFonts():Void;
 	

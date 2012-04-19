@@ -1,6 +1,6 @@
 package ddf.minim.analysis;
 
-#if !jvm private typedef Single = Float; #end
+#if !java private typedef Single = Float; #end
 
 extern class FourierTransform  {
 
@@ -18,11 +18,11 @@ extern class FourierTransform  {
 	/* Performs a forward transform on buffer. */
 	@:overload(function(buffer:AudioBuffer):Void{})
 	/* Performs a forward transform on values in buffer. */
-	@:overload(function(buffer:jvm.NativeArray<Single>, startAt:Int):Void{})
+	@:overload(function(buffer:java.NativeArray<Single>, startAt:Int):Void{})
 	/* Performs a forward transform on buffer. */
 	@:overload(function(buffer:AudioBuffer, startAt:Int):Void{})
 	/* Performs a forward transform on buffer. */
-	public function forward(buffer:jvm.NativeArray<Single>):Void;
+	public function forward(buffer:java.NativeArray<Single>):Void;
 	
 	/* Returns the index of the frequency band that contains the requested frequency. */
 	public function freqToIndex(freq:Single):Int;
@@ -48,9 +48,9 @@ extern class FourierTransform  {
 	/* Performs an inverse transform of the frequency spectrum and places the result in buffer. */
 	@:overload(function(buffer:AudioBuffer):Void{})
 	/* Performs an inverse transform of the frequency spectrum represented by freqReal and freqImag and places the result in buffer. */
-	@:overload(function(freqReal:jvm.NativeArray<Single>, freqImag:jvm.NativeArray<Single>, buffer:jvm.NativeArray<Single>):Void{})
+	@:overload(function(freqReal:java.NativeArray<Single>, freqImag:java.NativeArray<Single>, buffer:java.NativeArray<Single>):Void{})
 	/* Performs an inverse transform of the frequency spectrum and places the result in buffer. */
-	public function inverse(buffer:jvm.NativeArray<Single>):Void;
+	public function inverse(buffer:java.NativeArray<Single>):Void;
 	
 	/* Sets the number of averages used when computing the spectrum and spaces the averages in a linear manner. */
 	public function linAverages(numAvg:Int):Void;

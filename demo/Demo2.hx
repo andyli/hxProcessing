@@ -13,7 +13,7 @@ import org.casalib.util.NumberUtil;
 using org.casalib.util.NumberUtil;
 using Std;
 
-#if !jvm
+#if !java
 private typedef Single = Float;
 #end
 
@@ -139,7 +139,7 @@ class Demo2 extends PApplet {
 	}
 	
 	static function main():Void {
-		var args = new jvm.NativeArray<String>(2);
+		var args = new java.NativeArray<String>(2);
 		args[0] = "--bgcolor=#000000";
 		args[1] = "hxProcessing";
 		PApplet.main(args);

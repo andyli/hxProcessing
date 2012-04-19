@@ -1,6 +1,6 @@
 package toxi.geom;
 
-#if !jvm
+#if !java
 private typedef Single = Float;
 #end
 
@@ -42,7 +42,7 @@ extern interface ReadonlyVec3D {
 	public function magSquared():Single;
 	public function scale(s:ReadonlyVec3D):Vec3D;
 	public function sub(v:ReadonlyVec3D):Vec3D;
-	public function toArray():jvm.NativeArray<Single>;
+	public function toArray():java.NativeArray<Single>;
 	public function toCartesian():Vec3D;
 	public function toSpherical():Vec3D;
 	public function to2DXY():Vec2D;

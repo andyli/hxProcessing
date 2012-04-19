@@ -1,10 +1,10 @@
 package toxi.color;
 
-#if !jvm
+#if !java
 private typedef Single = Float;
 #end
 
-import jvm.NativeArray;
+import java.NativeArray;
 
 extern class TColor implements ReadonlyTColor {
 	static public function newARGB(argb:Int):TColor;

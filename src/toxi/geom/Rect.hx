@@ -1,6 +1,6 @@
 package toxi.geom;
 
-#if !jvm
+#if !java
 private typedef Single = Float;
 #end
 
