@@ -15,7 +15,6 @@ import ddf.minim.Minim;
 import ddf.minim.AudioPlayer;
 import ddf.minim.analysis.FFT;
 import ddf.minim.analysis.BeatDetect;
-import org.casalib.util.NumberUtil;
 using Std;
 
 // easing equations:
