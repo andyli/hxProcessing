@@ -20,8 +20,6 @@ extern class Minim  {
 	/** The .wav file format. */
 	//static public var WAV:javax.sound.sampled.AudioFileFormat.Type;
 
-	/** Creates an instance of Minim that will use the provided implementation for audio. */
-	@:overload(function(parent:processing.core.PApplet, msp:MinimServiceProvider):Void{})
 	/** Creates an instance of Minim that will use the Javasound implementation. */
 	public function new(parent:processing.core.PApplet):Void;
 	

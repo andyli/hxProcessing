@@ -378,8 +378,6 @@ extern class PApplet implements PConstants {
 	/** Called by the browser or applet viewer to inform this applet that it is being reclaimed and that it should destroy any resources that it has allocated. */
 	public function destroy():Void;
 	
-	/** Same as above but with an exception. */
-	@:overload(function(what:String, e: java.lang.Exception):Void{})
 	/** Function for an applet/application to kill itself and display an error. */
 	public function die(what:String):Void;
 	
@@ -473,11 +471,9 @@ extern class PApplet implements PConstants {
 	static public function floor(n:Single):Int;
 	
 	public function flush():Void;
-	
-	@:overload(function(e:java.awt.event.FocusEvent):Void{})
+
 	public function focusGained():Void;
 	
-	@:overload(function(e:java.awt.event.FocusEvent):Void{})
 	public function focusLost():Void;
 	
 	/** ( begin auto-generated from frameRate.xml ) Specifies the number of frames to be displayed every second. */
@@ -548,8 +544,6 @@ extern class PApplet implements PConstants {
 	/** ( begin auto-generated from join.xml ) Combines an array of Strings into one String, each separated by the character(s) used for the separator parameter. */
 	static public function join(list:java.NativeArray<String>, separator:Int):String;
 	
-	/** Overriding keyXxxxx(KeyEvent e) functions will cause the 'key', 'keyCode', and 'keyEvent' variables to no longer work; key events will no longer be queued until the end of draw(); and the keyPressed(), keyReleased() and keyTyped() methods will no longer be called. */
-	@:overload(function(e:java.awt.event.KeyEvent):Void{})
 	/** ( begin auto-generated from keyPressed.xml ) The keyPressed() function is called once every time a key is pressed. */
 	public function keyPressed():Void;
 	
@@ -557,11 +551,9 @@ extern class PApplet implements PConstants {
 		return untyped keyPressed;
 	}
 	
-	@:overload(function(e:java.awt.event.KeyEvent):Void{})
 	/** ( begin auto-generated from keyReleased.xml ) The keyReleased() function is called once every time a key is released. */
 	public function keyReleased():Void;
 	
-	@:overload(function(e:java.awt.event.KeyEvent):Void{})
 	/** ( begin auto-generated from keyTyped.xml ) The keyTyped() function is called once every time a key is pressed, but action keys such as Ctrl, Shift, and Alt are ignored. */
 	public function keyTyped():Void;
 	
@@ -611,7 +603,6 @@ extern class PApplet implements PConstants {
 	public function loadShape(filename:String): PShape;
 	
 	@:overload(function(input:java.io.InputStream):java.NativeArray<String>{})
-	@:overload(function(reader:java.io.BufferedReader):java.NativeArray<String>{})
 	@:overload(function(file:java.io.File):java.NativeArray<String>{})
 	/** ( begin auto-generated from loadStrings.xml ) Reads the contents of a file or url and creates a String array of its individual lines. */
 	public function loadStrings(filename:String):java.NativeArray<String>;
@@ -684,11 +675,9 @@ extern class PApplet implements PConstants {
 	/** ( begin auto-generated from month.xml ) Processing communicates with the clock on your computer. */
 	static public function month():Int;
 	
-	@:overload(function(e:java.awt.event.MouseEvent):Void{})
 	/** ( begin auto-generated from mouseClicked.xml ) The mouseClicked() function is called once after a mouse button has been pressed and then released. */
 	public function mouseClicked():Void;
 	
-	@:overload(function(e:java.awt.event.MouseEvent):Void{})
 	/** ( begin auto-generated from mouseDragged.xml ) The mouseDragged() function is called once every time the mouse moves and a mouse button is pressed. */
 	public function mouseDragged():Void;
 	
@@ -696,12 +685,9 @@ extern class PApplet implements PConstants {
 	
 	//public function mouseExited(e:java.awt.event.MouseEvent):Void;
 	
-	@:overload(function(e:java.awt.event.MouseEvent):Void{})
 	/** ( begin auto-generated from mouseMoved.xml ) The mouseMoved() function is called every time the mouse moves and a mouse button is not pressed. */
 	public function mouseMoved():Void;
 	
-	/** If you override this or any function that takes a "MouseEvent e" without calling its super.mouseXxxx() then mouseX, mouseY, mousePressed, and mouseEvent will no longer be set. */
-	@:overload(function(e:java.awt.event.MouseEvent):Void{})
 	/** ( begin auto-generated from mousePressed.xml ) The mousePressed() function is called once after every time a mouse button is pressed. */
 	public function mousePressed():Void;
 	
@@ -709,7 +695,6 @@ extern class PApplet implements PConstants {
 		return untyped mousePressed;
 	}
 	
-	@:overload(function(e:java.awt.event.MouseEvent):Void{})
 	/** ( begin auto-generated from mouseReleased.xml ) The mouseReleased() function is called every time a mouse button is released. */
 	public function mouseReleased():Void;
 	

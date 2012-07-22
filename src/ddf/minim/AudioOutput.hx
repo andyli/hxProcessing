@@ -32,7 +32,6 @@ extern class AudioOutput extends ddf.minim.AudioSource, implements ddf.minim.Eff
 	public function hasSignal(signal:AudioSignal):Bool;
 	
 	/** Returns true if signal is in the chain and is also enabled. */
-	@:overload(function(signal:AudioSignal){})
 	override public function isEnabled(signal:AudioEffect):Bool;
 	
 	/** Returns true if at least one signal in the chain is enabled. */

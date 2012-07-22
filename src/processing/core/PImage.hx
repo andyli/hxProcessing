@@ -16,7 +16,6 @@ extern class PImage implements PConstants {
 	public var width:Int;
 
 	/** Construct a new PImage from a java.awt.Image. */
-	@:overload(function(img:java.awt.Image):Void{})
 	@:overload(function(width:Int, height:Int):Void{})
 	@:overload(function(width:Int, height:Int, format:Int):Void{})
 	/** ( begin auto-generated from PImage.xml ) Datatype for storing images. */
