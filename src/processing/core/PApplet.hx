@@ -2,7 +2,7 @@ package processing.core;
 
 #if !java private typedef Single = Float; #end
 
-extern class PApplet implements PConstants {
+extern class PApplet {
 
 	static public var ARGS_BGCOLOR:String;
 	static public var ARGS_DISPLAY:String;

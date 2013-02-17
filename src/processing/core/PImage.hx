@@ -2,7 +2,7 @@ package processing.core;
 
 #if !java private typedef Single = Float; #end
 
-extern class PImage implements PConstants {
+extern class PImage {
 
 	/** Format for this image, one of RGB, ARGB or ALPHA. */
 	public var format:Int;

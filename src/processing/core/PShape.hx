@@ -2,7 +2,7 @@ package processing.core;
 
 #if !java private typedef Single = Float; #end
 
-extern class PShape implements processing.core.PConstants {
+extern class PShape {
 
 	/** Collections of vertices created with beginShape(). */
 	static public var GEOMETRY:Int;

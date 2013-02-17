@@ -2,7 +2,7 @@ package processing.core;
 
 #if !java private typedef Single = Float; #end
 
-extern class PStyle implements processing.core.PConstants {
+extern class PStyle {
 
 	public var ambientB:Single;
 	public var ambientG:Single;

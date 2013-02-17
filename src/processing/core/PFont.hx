@@ -21,7 +21,7 @@ extern class Glyph  {
 	
 }
 
-extern class PFont implements processing.core.PConstants {
+extern class PFont {
 
 	/** The default Processing character set. */
 	static public var CHARSET:java.NativeArray<Int>;

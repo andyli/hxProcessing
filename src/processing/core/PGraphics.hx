@@ -2,7 +2,7 @@ package processing.core;
 
 #if !java private typedef Single = Float; #end
 
-extern class PGraphics extends processing.core.PImage, implements PConstants {
+extern class PGraphics extends processing.core.PImage {
 
 	static public var DEFAULT_VERTICES:Int;
 	public var ambientB:Single;
