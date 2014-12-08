@@ -1,15 +1,9 @@
 package;
 
-import processing.core.PApplet;
-import processing.core.PConstants;
-import processing.core.PFont;
-import processing.core.PVector;
-import processing.core.PImage;
-import toxi.geom.Vec2D;
-import toxi.geom.Rect;
-import toxi.color.TColor;
+import processing.core.*;
+import processing.core.PConstants.PConstants_Statics.*;
+import toxi.geom.*;
 using toxi.color.TColor;
-import org.casalib.util.NumberUtil;
 using org.casalib.util.NumberUtil;
 using Std;
 
@@ -38,10 +32,10 @@ class Demo2 extends PApplet {
 	var blocks:Array<Array<Block>>;
 	var tree:PImage;
 	
-	override function setup():Void {
+	@:overload override function setup():Void {
 		background(0, 0, 0);
 		frameRate(30);
-		size(800, 600, PConstants.JAVA2D);
+		size(800, 600, JAVA2D);
 		smooth();
 		
 		var block = new Block();
@@ -61,8 +55,8 @@ class Demo2 extends PApplet {
 			}
 		}
 		
-		filter(PConstants.BLUR, 6);
-		filter(PConstants.POSTERIZE, 4);
+		filter(BLUR, 6);
+		filter(POSTERIZE, 4);
 		
 		loadPixels();
 		for(i in 0...35) {
@@ -92,7 +86,7 @@ class Demo2 extends PApplet {
 				!pixels[idx(pt.add(new Vec2D(-5, 21)))].newARGB().hue().isBetween(0.2,0.3);
 	}
 	
-	override function draw():Void {
+	@:overload override function draw():Void {
 		
 	}
 	
@@ -134,14 +128,14 @@ class Demo2 extends PApplet {
 		branch(blockLayer, ++i);
 	}
 	
-	override function mousePressed():Void {
+	@:overload override function mousePressed():Void {
 		setup();
 	}
 	
 	static function main():Void {
 		var args = new java.NativeArray<String>(2);
 		args[0] = "--bgcolor=#000000";
-		args[1] = "hxProcessing";
+		args[1] = "haxe.root.Demo2";
 		PApplet.main(args);
 	}
 }

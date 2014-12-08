@@ -1,6 +1,1 @@
--java bin
--main Demo1
--cp src
--cp demo
--lib feffects
--lib casalib
+demo1.hxml

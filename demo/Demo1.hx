@@ -1,20 +1,11 @@
 package;
 
-import processing.core.PApplet;
-import processing.core.PConstants;
-import processing.core.PFont;
-import processing.core.PImage;
-import processing.core.PVector;
+import processing.core.*;
+import processing.core.PConstants.PConstants_Statics.*;
 import toxi.color.TColor;
-import toxi.geom.Triangle3D;
-import toxi.geom.Triangle2D;
-import toxi.geom.Vec3D;
-import toxi.geom.Vec2D;
-import toxi.geom.Line2D;
-import ddf.minim.Minim;
-import ddf.minim.AudioPlayer;
-import ddf.minim.analysis.FFT;
-import ddf.minim.analysis.BeatDetect;
+import toxi.geom.*;
+import ddf.minim.*;
+import ddf.minim.analysis.*;
 using Std;
 
 // easing equations:
@@ -22,9 +13,7 @@ using Std;
 // b: Starting value.
 // c: Change needed in value.
 // d: Expected easing duration (in frames or seconds).
-import feffects.easing.Quad;
-import feffects.easing.Bounce;
-import feffects.easing.Expo;
+import feffects.easing.*;
 
 #if !java
 private typedef Single = Float;
@@ -54,11 +43,11 @@ class Demo1 extends PApplet {
 		vertex(tri.a.x(), tri.a.y(), tri.a.z());
 		vertex(tri.b.x(), tri.b.y(), tri.b.z());
 		vertex(tri.c.x(), tri.c.y(), tri.c.z());
-		endShape(PConstants.CLOSE);
+		endShape(CLOSE);
 	}
 	
-	override public function setup():Void {
-		size(800, 600, PConstants.P3D);
+	@:overload override public function setup():Void {
+		size(800, 600, P3D);
 		frameRate(24);
 		smooth();
 		
@@ -105,7 +94,7 @@ class Demo1 extends PApplet {
 		
 	}
 	
-	override public function draw():Void {
+	@:overload override public function draw():Void {
 		background(200, 235, 255);
 		
 		beat.detect(jingle.mix.toArray());
@@ -153,7 +142,7 @@ class Demo1 extends PApplet {
 		vertex(initPts[1].x(), initPts[1].y(), initPts[1].z());
 		vertex(initPts[2].x(), initPts[2].y(), initPts[2].z());
 		vertex(initPts[3].x(), initPts[3].y(), initPts[3].z());
-		endShape(PConstants.CLOSE);
+		endShape(CLOSE);
 		
 		for (i in 0...triangles.length) {
 			var tril = triangles[i];
@@ -177,15 +166,15 @@ class Demo1 extends PApplet {
 		
 		/* good effect but slow...
 		var cap = get(0, 0, width, height);
-		filter(PConstants.BLUR, 2);
-		blend(cap, 0, 0, width, height, 0, 0, width, height, PConstants.LIGHTEST);
+		filter(BLUR, 2);
+		blend(cap, 0, 0, width, height, 0, 0, width, height, LIGHTEST);
 		*/
 	}
 	
 	static function main():Void {
 		var args = new java.NativeArray<String>(2);
 		args[0] = "--bgcolor=#000000";
-		args[1] = "hxProcessing";
+		args[1] = "haxe.root.Demo1";
 		PApplet.main(args);
 	}
 }
