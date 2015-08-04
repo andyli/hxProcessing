@@ -1,13 +1,15 @@
+## uncomment one of the below for your system
+# processing-win32.hxml
+# processing-win64.hxml
+# processing-mac.hxml
+# processing-linux32.hxml
+# processing-linux64.hxml
+
 -java bin
 -main Demo1
 -cp demo
 -lib feffects
--lib casalib
--java-lib lib/processing/core.jar
--java-lib lib/processing/gluegen-rt.jar
--java-lib lib/processing/gluegen-rt-natives-macosx-universal.jar
--java-lib lib/processing/jogl-all.jar
--java-lib lib/processing/jogl-all-natives-macosx-universal.jar
+
 -java-lib lib/libraries/toxiclibscore.jar
 -java-lib lib/libraries/colorutils.jar
 -java-lib lib/libraries/minim.jar
@@ -17,4 +19,5 @@
 -java-lib lib/libraries/jsminim.jar
 -java-lib lib/libraries/tritonus_aos.jar
 -java-lib lib/libraries/tritonus_share.jar
+
 -cmd java -jar bin/Demo1.jar

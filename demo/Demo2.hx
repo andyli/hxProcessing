@@ -4,7 +4,6 @@ import processing.core.*;
 import processing.core.PConstants.PConstants_Statics.*;
 import toxi.geom.*;
 using toxi.color.TColor;
-using org.casalib.util.NumberUtil;
 using Std;
 
 #if !java
@@ -31,6 +30,16 @@ class Demo2 extends PApplet {
 	var theta:Float;
 	var blocks:Array<Array<Block>>;
 	var tree:PImage;
+
+	inline public static function randomIntegerWithinRange(min:Int, max:Int):Int {
+		return Math.floor(Math.random() * (1 + max - min) + min);
+	}
+	inline public static function randomWithinRange(min:Float, max:Float):Float {
+		return min + (Math.random() * (max - min));
+	}
+	inline public static function isBetween(v:Float, min:Float, max:Float):Bool {
+		return v > min && v < max;
+	}
 	
 	@:overload override function setup():Void {
 		background(0, 0, 0);
@@ -62,11 +71,11 @@ class Demo2 extends PApplet {
 		for(i in 0...35) {
 			var pt;
 			do {
-				pt = new Vec2D(NumberUtil.randomIntegerWithinRange(5, width-22), NumberUtil.randomIntegerWithinRange(5, height-22));
+				pt = new Vec2D(randomIntegerWithinRange(5, width-22), randomIntegerWithinRange(5, height-22));
 			} while (checkPtIsLand(pt));
 			
 			do {
-				pt.addSelf(new Vec2D(10 * NumberUtil.randomIntegerWithinRange(-2, 2), 10 * NumberUtil.randomIntegerWithinRange(-2, 2)));
+				pt.addSelf(new Vec2D(10 * randomIntegerWithinRange(-2, 2), 10 * randomIntegerWithinRange(-2, 2)));
 			} while (checkPtIsLand(pt) && Math.random() < 0.8);
 			
 			image(tree, pt.x(), pt.y(), 16, 16);
@@ -78,12 +87,12 @@ class Demo2 extends PApplet {
 	}
 	
 	function checkPtIsLand(pt:Vec2D):Bool {
-		return	!pt.x().isBetween(5, width-22) ||
-				!pt.y().isBetween(5, height-22) || 
-				!pixels[idx(pt.add(new Vec2D(-5, -5)))].newARGB().hue().isBetween(0.2,0.3) ||
-				!pixels[idx(pt.add(new Vec2D(21, -5)))].newARGB().hue().isBetween(0.2,0.3) ||
-				!pixels[idx(pt.add(new Vec2D(21, 21)))].newARGB().hue().isBetween(0.2,0.3) ||
-				!pixels[idx(pt.add(new Vec2D(-5, 21)))].newARGB().hue().isBetween(0.2,0.3);
+		return	!isBetween(pt.x(), 5, width-22) ||
+				!isBetween(pt.y(), 5, height-22) || 
+				!isBetween(pixels[idx(pt.add(new Vec2D(-5, -5)))].newARGB().hue(),0.2,0.3) ||
+				!isBetween(pixels[idx(pt.add(new Vec2D(21, -5)))].newARGB().hue(),0.2,0.3) ||
+				!isBetween(pixels[idx(pt.add(new Vec2D(21, 21)))].newARGB().hue(),0.2,0.3) ||
+				!isBetween(pixels[idx(pt.add(new Vec2D(-5, 21)))].newARGB().hue(),0.2,0.3);
 	}
 	
 	@:overload override function draw():Void {
@@ -101,7 +110,7 @@ class Demo2 extends PApplet {
 			var gapY = pBlock.rect.height * (1.0 / i);
 			
 			var divOpt = [3, 5, 7];
-			var div = divOpt[NumberUtil.randomIntegerWithinRange(0, divOpt.length-1)];
+			var div = divOpt[randomIntegerWithinRange(0, divOpt.length-1)];
 			for (i in 0...div)
 			for (j in 0...div)
 			{
@@ -119,7 +128,7 @@ class Demo2 extends PApplet {
 						cast pBlock.rect.getTop() + nY
 					));
 				nBlock.color = Math.random() < 0.5 ? pBlock.color : TColor.newRGBA(0.3, 0.6, 0.2, 1);
-				nBlock.population = pBlock.population * NumberUtil.randomWithinRange(0.6, 0.8);
+				nBlock.population = pBlock.population * randomWithinRange(0.6, 0.8);
 				blockLayer.push(nBlock);
 			}
 		}

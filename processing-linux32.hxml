@@ -1,0 +1,3 @@
+processing.hxml
+-java-lib lib/processing/gluegen-rt-natives-linux-i586.jar
+-java-lib lib/processing/jogl-all-natives-linux-i586.jar

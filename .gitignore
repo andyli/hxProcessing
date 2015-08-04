@@ -2,5 +2,10 @@
 Thumbs.db
 
 bin/Main.jar
+bin/lib
+bin/*.jar
+bin/hxjava_build.txt
+bin/manifest
+bin/cmd
 *.class
 *.java
