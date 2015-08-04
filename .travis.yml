@@ -9,7 +9,8 @@ matrix:
     - haxe: development
 
 install:
-  - haxelib install hxjava
+  - haxelib install demo1.hxml --always
+  - haxelib install demo2.hxml --always
 
 script:
   - haxe processing-linux64.hxml demo1.hxml
