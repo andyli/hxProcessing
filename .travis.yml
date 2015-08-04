@@ -8,6 +8,8 @@ matrix:
   allow_failures:
     - haxe: development
 
+sudo: false
+
 install:
   - haxelib install demo1.hxml --always
   - haxelib install demo2.hxml --always
