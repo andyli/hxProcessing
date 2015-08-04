@@ -1,0 +1,16 @@
+language: haxe
+
+haxe:
+  - development
+  - "3.2.0"
+
+matrix:
+  allow_failures:
+    - haxe: development
+
+install:
+  - haxelib install hxjava
+
+script:
+  - haxe processing-linux64.hxml demo1.hxml
+  - haxe processing-linux64.hxml demo2.hxml
