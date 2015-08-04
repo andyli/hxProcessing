@@ -20,4 +20,5 @@
 -java-lib lib/libraries/tritonus_aos.jar
 -java-lib lib/libraries/tritonus_share.jar
 
--cmd java -jar bin/Demo1.jar
+## uncomment the following line to run after compilation
+# -cmd java -jar bin/Demo1.jar

@@ -15,9 +15,11 @@ before_install:
   - "sh -e /etc/init.d/xvfb start"
 
 install:
+  - haxelib install empty.hxml --always
   - haxelib install demo1.hxml --always
   - haxelib install demo2.hxml --always
 
 script:
+  - haxe processing-linux64.hxml empty.hxml && java -jar bin/Empty.jar
   - haxe processing-linux64.hxml demo1.hxml
   - haxe processing-linux64.hxml demo2.hxml

@@ -6,11 +6,8 @@
 # processing-linux64.hxml
 
 -java bin
--main Demo2
+-main Empty
 -cp demo
 
--java-lib lib/libraries/toxiclibscore.jar
--java-lib lib/libraries/colorutils.jar
-
 ## uncomment the following line to run after compilation
-# -cmd java -jar bin/Demo2.jar
+# -cmd java -jar bin/Empty.jar
