@@ -2,17 +2,26 @@ language: haxe
 
 haxe:
   - development
-  - "3.2.0"
+  - "3.2.1"
 
 matrix:
   allow_failures:
     - haxe: development
 
+os:
+  - linux
+  - osx
+
 sudo: false
 
 before_install:
-  - "export DISPLAY=:99.0"
-  - "sh -e /etc/init.d/xvfb start"
+  - if [ "${TRAVIS_OS_NAME}" = "linux" ]; then
+      export DISPLAY=:99.0;
+      sh -e /etc/init.d/xvfb start;
+      export HXP_PLATFORM=linux64;
+    elif [ "${TRAVIS_OS_NAME}" = "osx" ]; then
+      export HXP_PLATFORM=mac;
+    fi
 
 install:
   - haxelib install empty.hxml --always
@@ -20,6 +29,6 @@ install:
   - haxelib install demo2.hxml --always
 
 script:
-  - haxe processing-linux64.hxml empty.hxml && java -jar bin/Empty.jar
-  - haxe processing-linux64.hxml demo1.hxml
-  - haxe processing-linux64.hxml demo2.hxml
+  - haxe "processing-${HXP_PLATFORM}.hxml" empty.hxml && java -jar bin/Empty.jar
+  - haxe "processing-${HXP_PLATFORM}.hxml" demo1.hxml
+  - haxe "processing-${HXP_PLATFORM}.hxml" demo2.hxml
