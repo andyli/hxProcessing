@@ -10,8 +10,8 @@ install:
     - RefreshEnv
     - mkdir "%HAXELIB_ROOT%"
     - haxelib setup "%HAXELIB_ROOT%"
-    - haxelib install hxjava
-    - haxelib install feffects
+    - haxelib install hxjava   > log.txt || type log.txt && cmd /C exit 1
+    - haxelib install feffects > log.txt || type log.txt && cmd /C exit 1
     - haxelib list
 
 build: off

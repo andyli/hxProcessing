@@ -45,9 +45,12 @@ class Demo1 extends PApplet {
 		vertex(tri.c.x(), tri.c.y(), tri.c.z());
 		endShape(CLOSE);
 	}
+
+	@:overload override public function settings():Void {
+		size(800, 600, P3D);
+	}
 	
 	@:overload override public function setup():Void {
-		size(800, 600, P3D);
 		frameRate(24);
 		smooth();
 		

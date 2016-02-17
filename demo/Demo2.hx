@@ -40,11 +40,14 @@ class Demo2 extends PApplet {
 	inline public static function isBetween(v:Float, min:Float, max:Float):Bool {
 		return v > min && v < max;
 	}
+
+	@:overload override public function settings():Void {
+		size(800, 600, JAVA2D);
+	}
 	
 	@:overload override function setup():Void {
 		background(0, 0, 0);
 		frameRate(30);
-		size(800, 600, JAVA2D);
 		smooth();
 		
 		var block = new Block();
