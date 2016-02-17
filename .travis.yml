@@ -24,9 +24,8 @@ before_install:
     fi
 
 install:
-  - haxelib install empty.hxml --always
-  - haxelib install demo1.hxml --always
-  - haxelib install demo2.hxml --always
+  - haxelib install hxjava
+  - haxelib install feffects
 
 script:
   - haxe "processing-${HXP_PLATFORM}.hxml" empty.hxml && java -jar bin/Empty.jar
