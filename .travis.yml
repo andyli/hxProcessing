@@ -26,6 +26,7 @@ before_install:
 install:
   - haxelib install hxjava
   - haxelib install feffects
+  - haxelib list
 
 script:
   - haxe "processing-${HXP_PLATFORM}.hxml" empty.hxml && java -jar bin/Empty.jar

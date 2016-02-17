@@ -1,0 +1,22 @@
+version: "{build}"
+
+environment:
+    global:
+        HAXELIB_ROOT: C:\projects\haxelib
+        HXP_PLATFORM: win64
+
+install:
+    - cinst haxe -y
+    - RefreshEnv
+    - mkdir "%HAXELIB_ROOT%"
+    - haxelib setup "%HAXELIB_ROOT%"
+    - haxelib install hxjava
+    - haxelib install feffects
+    - haxelib list
+
+build: off
+
+test_script:
+  - haxe "processing-%HXP_PLATFORM%.hxml" empty.hxml && java -jar bin/Empty.jar
+  - haxe "processing-%HXP_PLATFORM%.hxml" demo1.hxml
+  - haxe "processing-%HXP_PLATFORM%.hxml" demo2.hxml
