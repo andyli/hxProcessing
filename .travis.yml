@@ -12,6 +12,7 @@ os:
   - linux
   - osx
 
+dist: trusty
 sudo: false
 
 before_install:
