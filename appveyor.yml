@@ -6,7 +6,7 @@ environment:
         HXP_PLATFORM: win64
 
 install:
-    - cinst haxe -y
+    - cinst haxe --version 3.4.2 -y
     - RefreshEnv
     - mkdir "%HAXELIB_ROOT%"
     - haxelib setup "%HAXELIB_ROOT%"
