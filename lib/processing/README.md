@@ -1,2 +1,2 @@
-This folder contains jars taken from Processing 3.0.2.
-They are GPL/LGPL licensed. Detail can be found at https://github.com/processing/processing/blob/processing-0248-3.0.2/license.txt
+This folder contains jars taken from a Processing 3.3 binary archive (within `core/library/`).
+They are GPL/LGPL licensed. Detail can be found at https://github.com/processing/processing/blob/processing-0257-3.3/license.txt
