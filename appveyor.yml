@@ -3,7 +3,7 @@ version: "{build}"
 environment:
     global:
         HAXELIB_ROOT: C:\projects\haxelib
-        HXP_PLATFORM: win64
+        HXP_PLATFORM: windows-amd64
 
 install:
     - cinst haxe --version 3.4.2 -y

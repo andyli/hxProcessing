@@ -20,9 +20,9 @@ before_install:
   - if [ "${TRAVIS_OS_NAME}" = "linux" ]; then
       export DISPLAY=:99.0;
       sh -e /etc/init.d/xvfb start;
-      export HXP_PLATFORM=linux64;
+      export HXP_PLATFORM=linux-amd64;
     elif [ "${TRAVIS_OS_NAME}" = "osx" ]; then
-      export HXP_PLATFORM=mac;
+      export HXP_PLATFORM=macosx-universal;
     fi
 
 install:
