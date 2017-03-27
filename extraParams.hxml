@@ -1,3 +1,4 @@
 -java-lib lib/processing/core.jar
 -java-lib lib/processing/gluegen-rt.jar
 -java-lib lib/processing/jogl-all.jar
+--macro hxProcessing.NativeLib.add()

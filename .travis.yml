@@ -20,17 +20,18 @@ before_install:
   - if [ "${TRAVIS_OS_NAME}" = "linux" ]; then
       export DISPLAY=:99.0;
       sh -e /etc/init.d/xvfb start;
-      export HXP_PLATFORM=linux-amd64;
+      export HXPROCESSING_PLATFORM=linux-amd64;
     elif [ "${TRAVIS_OS_NAME}" = "osx" ]; then
-      export HXP_PLATFORM=macosx-universal;
+      export HXPROCESSING_PLATFORM=macosx-universal;
     fi
 
 install:
   - haxelib install hxjava
   - haxelib install feffects
+  - haxelib dev hxProcessing .
   - haxelib list
 
 script:
-  - haxe "processing-${HXP_PLATFORM}.hxml" empty.hxml && java -jar bin/Empty.jar
-  - haxe "processing-${HXP_PLATFORM}.hxml" demo1.hxml
-  - haxe "processing-${HXP_PLATFORM}.hxml" demo2.hxml
+  - haxe -D HXPROCESSING_PLATFORM=${HXPROCESSING_PLATFORM} empty.hxml && java -jar bin/Empty.jar
+  - haxe -D HXPROCESSING_PLATFORM=${HXPROCESSING_PLATFORM} demo1.hxml
+  - haxe -D HXPROCESSING_PLATFORM=${HXPROCESSING_PLATFORM} demo2.hxml

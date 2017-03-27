@@ -1,16 +1,18 @@
-## uncomment one of the below for your system
-# processing-win32.hxml
-# processing-win64.hxml
-# processing-mac.hxml
-# processing-linux32.hxml
-# processing-linux64.hxml
-
 -java bin
 -main Demo2
 -cp demo
+-lib hxProcessing
 
 -java-lib lib/libraries/toxiclibscore.jar
 -java-lib lib/libraries/colorutils.jar
+
+## uncomment one of the below for your system
+# -D HXPROCESSING_PLATFORM=windows-i586
+# -D HXPROCESSING_PLATFORM=windows-amd64
+# -D HXPROCESSING_PLATFORM=macosx-universal
+# -D HXPROCESSING_PLATFORM=linux-i586
+# -D HXPROCESSING_PLATFORM=linux-amd64
+# -D HXPROCESSING_PLATFORM=linux-armv6hf
 
 ## uncomment the following line to run after compilation
 # -cmd java -jar bin/Demo2.jar

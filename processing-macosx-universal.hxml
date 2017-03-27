@@ -1,3 +1,0 @@
-processing.hxml
--java-lib lib/processing/gluegen-rt-natives-macosx-universal.jar
--java-lib lib/processing/jogl-all-natives-macosx-universal.jar

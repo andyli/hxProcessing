@@ -1,3 +1,0 @@
-processing.hxml
--java-lib lib/processing/gluegen-rt-natives-windows-amd64.jar
--java-lib lib/processing/jogl-all-natives-windows-amd64.jar

@@ -3,7 +3,7 @@ version: "{build}"
 environment:
     global:
         HAXELIB_ROOT: C:\projects\haxelib
-        HXP_PLATFORM: windows-amd64
+        HXPROCESSING_PLATFORM: windows-amd64
 
 install:
     - cinst haxe --version 3.4.2 -y
@@ -12,11 +12,12 @@ install:
     - haxelib setup "%HAXELIB_ROOT%"
     - haxelib install hxjava   > log.txt || type log.txt && cmd /C exit 1
     - haxelib install feffects > log.txt || type log.txt && cmd /C exit 1
+    - haxelib dev hxProcessing .
     - haxelib list
 
 build: off
 
 test_script:
-  - haxe "processing-%HXP_PLATFORM%.hxml" empty.hxml && java -jar bin/Empty.jar
-  - haxe "processing-%HXP_PLATFORM%.hxml" demo1.hxml
-  - haxe "processing-%HXP_PLATFORM%.hxml" demo2.hxml
+  - haxe -D HXPROCESSING_PLATFORM=%HXPROCESSING_PLATFORM% empty.hxml && java -jar bin/Empty.jar
+  - haxe -D HXPROCESSING_PLATFORM=%HXPROCESSING_PLATFORM% demo1.hxml
+  - haxe -D HXPROCESSING_PLATFORM=%HXPROCESSING_PLATFORM% demo2.hxml

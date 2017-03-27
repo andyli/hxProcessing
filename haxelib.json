@@ -1,0 +1,10 @@
+{
+  "name": "hxProcessing",
+  "url": "http://github.com/andyli/hxProcessing",
+  "license": "LGPL",
+  "tags": ["java"],
+  "description": "Use Processing in Haxe's Java target.",
+  "version": "3.3.0",
+  "releasenote": "Updated to Processing 3.3.",
+  "contributors": ["andyli"]
+}

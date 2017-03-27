@@ -1,3 +1,0 @@
-processing.hxml
--java-lib lib/processing/gluegen-rt-natives-linux-armv6hf.jar
--java-lib lib/processing/jogl-all-natives-linux-armv6hf.jar
